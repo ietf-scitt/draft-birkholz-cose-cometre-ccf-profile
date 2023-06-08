@@ -78,8 +78,8 @@ Algorithms' and to the 'COSE Header Algorithm Parameters' registries
 in the 'Standards Action With Expert Review category.
 
 --- back
-    
+
 # Attic
 
-Not ready to throw these texts into the trash bin yet.    
+Not ready to throw these texts into the trash bin yet.
 
