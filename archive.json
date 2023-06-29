@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-06-27T00:35:20.562048+00:00",
+  "timestamp": "2023-06-29T00:31:56.055579+00:00",
   "repo": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
   "labels": [
     {
@@ -63,7 +63,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2023-06-26T15:25:12Z",
-      "updatedAt": "2023-06-26T15:25:12Z",
+      "updatedAt": "2023-06-28T18:10:30Z",
       "baseRepository": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
       "baseRefName": "main",
       "baseRefOid": "603c69a41ae69c2dfea19c6204b7e03a7cf3bcf1",
@@ -75,7 +75,274 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOJs2zh85ZdzsH",
+          "commit": {
+            "abbreviatedOid": "1c94d93"
+          },
+          "author": "OR13",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-27T14:11:26Z",
+          "updatedAt": "2023-06-27T14:11:26Z",
+          "comments": [
+            {
+              "originalPosition": 126,
+              "body": "very interested to discuss this, and specifically the interop issues, or how it will be used.",
+              "createdAt": "2023-06-27T14:11:26Z",
+              "updatedAt": "2023-06-27T14:11:26Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh85ZdztB",
+          "commit": {
+            "abbreviatedOid": "1c94d93"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-27T14:11:27Z",
+          "updatedAt": "2023-06-27T14:11:28Z",
+          "comments": [
+            {
+              "originalPosition": 44,
+              "body": "```suggestion\r\nThis document defines the `CCF-leaf` and `CCF-inclusion-proof` CBOR types. The signed Merkle Root data type `smtr` is the same as in {{-COMTRE}} but MUST set the protected header parameter carrying the identifier of the tree algorithm, `tree_alg`, to the value TBD_1.\r\n```",
+              "createdAt": "2023-06-27T14:11:28Z",
+              "updatedAt": "2023-06-27T14:11:28Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh85Zd0O9",
+          "commit": {
+            "abbreviatedOid": "1c94d93"
+          },
+          "author": "OR13",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-27T14:12:13Z",
+          "updatedAt": "2023-06-27T14:12:14Z",
+          "comments": [
+            {
+              "originalPosition": 145,
+              "body": "This is indeed all you would need to register.. unless there are more \"tree algorithm\" specific proof types for CCF",
+              "createdAt": "2023-06-27T14:12:14Z",
+              "updatedAt": "2023-06-27T14:12:14Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh85Zd1Jl",
+          "commit": {
+            "abbreviatedOid": "1c94d93"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-27T14:13:53Z",
+          "updatedAt": "2023-06-27T14:13:53Z",
+          "comments": [
+            {
+              "originalPosition": 95,
+              "body": "Maybe highlight again where this CDDL fragment is used? At the moment this is a little bit free-floating, maybe?",
+              "createdAt": "2023-06-27T14:13:53Z",
+              "updatedAt": "2023-06-27T14:13:53Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh85Zd2I2",
+          "commit": {
+            "abbreviatedOid": "1c94d93"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-27T14:15:39Z",
+          "updatedAt": "2023-06-27T14:15:39Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "```suggestion\r\n  I-D.steele-cose-merkle-tree-proofs: COMTRE\r\n```",
+              "createdAt": "2023-06-27T14:15:39Z",
+              "updatedAt": "2023-06-27T14:15:39Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh85Zd5Lu",
+          "commit": {
+            "abbreviatedOid": "1c94d93"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-27T14:19:38Z",
+          "updatedAt": "2023-06-27T14:19:38Z",
+          "comments": [
+            {
+              "originalPosition": 13,
+              "body": "Do we want to say ledger here? [CoMETRE](https://ietf-scitt.github.io/draft-steele-cose-merkle-tree-proofs/#go.draft-steele-cose-merkle-tree-proofs.html) does not use that term.",
+              "createdAt": "2023-06-27T14:19:38Z",
+              "updatedAt": "2023-06-27T14:19:39Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh85ZeYvs",
+          "commit": {
+            "abbreviatedOid": "1c94d93"
+          },
+          "author": "OR13",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "I suggest merging as is",
+          "createdAt": "2023-06-27T14:58:38Z",
+          "updatedAt": "2023-06-27T14:58:38Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOJs2zh85ZeZRD",
+          "commit": {
+            "abbreviatedOid": "1c94d93"
+          },
+          "author": "OR13",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-27T14:59:17Z",
+          "updatedAt": "2023-06-27T14:59:18Z",
+          "comments": [
+            {
+              "originalPosition": 13,
+              "body": "```suggestion\r\nlog tamper-proof.\r\n```",
+              "createdAt": "2023-06-27T14:59:17Z",
+              "updatedAt": "2023-06-27T14:59:18Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh85ZeZf4",
+          "commit": {
+            "abbreviatedOid": "1c94d93"
+          },
+          "author": "OR13",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-27T14:59:35Z",
+          "updatedAt": "2023-06-27T14:59:35Z",
+          "comments": [
+            {
+              "originalPosition": 89,
+              "body": "```suggestion\r\nThe `internal_hash` and `internal_data` bytestrings are internal to the CCF implementation. Similarly, the auxiliary log entries are internal to CCF. They are opaque to receipt Verifiers, but they commit the TS to the whole log contents and may be used for additional, CCF-specific auditing.\r\n```",
+              "createdAt": "2023-06-27T14:59:35Z",
+              "updatedAt": "2023-06-27T14:59:35Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh85ZeaBS",
+          "commit": {
+            "abbreviatedOid": "1c94d93"
+          },
+          "author": "OR13",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-27T15:00:13Z",
+          "updatedAt": "2023-06-27T15:00:13Z",
+          "comments": [
+            {
+              "originalPosition": 145,
+              "body": "Seems ok to call the algorithm a \"ledger\" here.",
+              "createdAt": "2023-06-27T15:00:13Z",
+              "updatedAt": "2023-06-27T15:00:13Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh85ZoIZ3",
+          "commit": {
+            "abbreviatedOid": "1c94d93"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-28T18:07:49Z",
+          "updatedAt": "2023-06-28T18:07:50Z",
+          "comments": [
+            {
+              "originalPosition": 13,
+              "body": "+1 to log\r\n\r\nOkay... one more round. Tamper-Proof is such a strong word.. I am okay, but I would like to quickly float tamper-resilient or tamper-resistant. This is a non-blocking nit. Feel free to ignore",
+              "createdAt": "2023-06-28T18:07:50Z",
+              "updatedAt": "2023-06-28T18:07:50Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh85ZoIlA",
+          "commit": {
+            "abbreviatedOid": "1c94d93"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-28T18:08:19Z",
+          "updatedAt": "2023-06-28T18:08:19Z",
+          "comments": [
+            {
+              "originalPosition": 89,
+              "body": "transitive +1",
+              "createdAt": "2023-06-28T18:08:19Z",
+              "updatedAt": "2023-06-28T18:08:19Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh85ZoI-D",
+          "commit": {
+            "abbreviatedOid": "1c94d93"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-28T18:09:20Z",
+          "updatedAt": "2023-06-28T18:09:20Z",
+          "comments": [
+            {
+              "originalPosition": 145,
+              "body": "lgtm at this stage",
+              "createdAt": "2023-06-28T18:09:20Z",
+              "updatedAt": "2023-06-28T18:09:20Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh85ZoJbd",
+          "commit": {
+            "abbreviatedOid": "1c94d93"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": "okay to merge after all suggestions are accepted and remaining comments are acknowledged",
+          "createdAt": "2023-06-28T18:10:29Z",
+          "updatedAt": "2023-06-28T18:10:29Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
