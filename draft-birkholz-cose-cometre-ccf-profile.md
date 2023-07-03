@@ -41,7 +41,7 @@ normative:
   RFC9162: certificate-transparency-v2
 
 informative:
-  I-D.draft-steele-cose-merkle-tree-proofs: COMTRE
+  I-D.steele-cose-merkle-tree-proofs: COMTRE
 
 --- abstract
 
