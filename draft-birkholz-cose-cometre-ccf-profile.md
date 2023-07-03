@@ -75,7 +75,7 @@ signed-inclusion-proof = [
 ]
 ~~~~
 
-This document defines the `CCF-feaf` and `CCF-inclusion-proof` CBOR types. The signed Merkle Root data type `smtr` is the same as in {{-COMTRE}} but MUST set the protected header parameter carrying the identifier of the tree algorithm, `tree_alg`, to the value TBD_1.
+This document defines the `CCF-leaf` and `CCF-inclusion-proof` CBOR types. The signed Merkle Root data type `smtr` is the same as in {{-COMTRE}} but MUST set the protected header parameter carrying the identifier of the tree algorithm, `tree_alg`, to the value TBD_1.
 
 ## Tree Shape
 
