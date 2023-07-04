@@ -119,7 +119,7 @@ CCF-leaf = [
 ]
 ~~~
 
-The `internal_hash` and `internal_data` bytestrings are internal to the CCF implementation. Similarly, the auxiliary ledger entries are internal to CCF. They are opaque to receipt Verifiers, but they commit the TS to the whole ledger contents and may be used for additional, CCF-specific auditing.
+The `internal_hash` and `internal_data` bytestrings are internal to the CCF implementation. Similarly, the auxiliary tree entries are internal to CCF. They are opaque to receipt Verifiers, but they commit the TS to the whole tree contents and may be used for additional, CCF-specific auditing.
 
 ## Signed Inclusion Proof Format
 
