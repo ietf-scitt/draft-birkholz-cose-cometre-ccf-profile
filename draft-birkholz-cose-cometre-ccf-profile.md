@@ -46,7 +46,7 @@ informative:
 --- abstract
 
 This document describes a tree algorithm for COSE Signed Merkle Tree Proofs specifically designed for implementations that rely on Trusted Execution Environments (TEEs) to make the
-ledger tamper-proof.
+tree more tamper-resistant.
 
 --- middle
 
