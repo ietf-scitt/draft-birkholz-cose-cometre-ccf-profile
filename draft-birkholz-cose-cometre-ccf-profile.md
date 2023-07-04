@@ -121,18 +121,21 @@ CCF-leaf = [
 
 The `internal_hash` and `internal_data` bytestrings are internal to the CCF implementation. Similarly, the auxiliary tree entries are internal to CCF. They are opaque to receipt Verifiers, but they commit the TS to the whole tree contents and may be used for additional, CCF-specific auditing.
 
-## Signed Inclusion Proof Format
+## CCF Inclusion Proof Format
 
-CCF inclusion proofs consist of a list of digests tagged with a single left-or-right bit.
+CCF inclusion proofs are one of the tree-specific fields of a `signed-inclusion-proof`.
+They consist of a list of digests tagged with a single left-or-right bit.
 
 ~~~
-inclusion_proof: [+ proof-element],
+CCF-inclusion-proof: [+ proof-element],
 
 proof-element = [
   left: bool
   hash: bstr
 ]
 ~~~
+
+Unlike some other tree algorithms, the index of the element in the tree is not explicit in the inclusion proof, but the list of left-or-right bits can be treated as the binary decomposition of the index, from the least significant (leaf) to the most significant (root).
 
 ## Inclusion Proof Verification Algorithm
 
