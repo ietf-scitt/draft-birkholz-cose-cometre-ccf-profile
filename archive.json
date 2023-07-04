@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-07-02T00:35:20.737343+00:00",
+  "timestamp": "2023-07-04T00:33:22.805639+00:00",
   "repo": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
   "labels": [
     {
@@ -63,13 +63,13 @@
       "labels": [],
       "body": "",
       "createdAt": "2023-06-26T15:25:12Z",
-      "updatedAt": "2023-06-28T18:10:30Z",
+      "updatedAt": "2023-07-03T13:56:17Z",
       "baseRepository": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
       "baseRefName": "main",
       "baseRefOid": "603c69a41ae69c2dfea19c6204b7e03a7cf3bcf1",
       "headRepository": "ad-l/draft-birkholz-cose-cometre-ccf-profile",
       "headRefName": "main",
-      "headRefOid": "1c94d938c347cde29fd1acf00a9cf04f88e3acdb",
+      "headRefOid": "514aea7b672de34fb4b59cdf1c42b9a80f83e744",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
