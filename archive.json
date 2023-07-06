@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-07-04T00:33:22.805639+00:00",
+  "timestamp": "2023-07-06T00:33:56.906654+00:00",
   "repo": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
   "labels": [
     {
@@ -63,18 +63,33 @@
       "labels": [],
       "body": "",
       "createdAt": "2023-06-26T15:25:12Z",
-      "updatedAt": "2023-07-03T13:56:17Z",
+      "updatedAt": "2023-07-04T15:43:50Z",
       "baseRepository": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
       "baseRefName": "main",
       "baseRefOid": "603c69a41ae69c2dfea19c6204b7e03a7cf3bcf1",
       "headRepository": "ad-l/draft-birkholz-cose-cometre-ccf-profile",
       "headRefName": "main",
-      "headRefOid": "514aea7b672de34fb4b59cdf1c42b9a80f83e744",
+      "headRefOid": "085fdd862d0b39466ebd37452944120cbe1b048d",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
+      "comments": [
+        {
+          "author": "ad-l",
+          "authorAssociation": "NONE",
+          "body": "Thanks for the reviews, I have addressed all the comments.",
+          "createdAt": "2023-07-04T12:38:38Z",
+          "updatedAt": "2023-07-04T12:38:38Z"
+        },
+        {
+          "author": "OR13",
+          "authorAssociation": "NONE",
+          "body": "@ad-l I don't see any reason not to merge.",
+          "createdAt": "2023-07-04T15:43:50Z",
+          "updatedAt": "2023-07-04T15:43:50Z"
+        }
+      ],
       "reviews": [
         {
           "id": "PRR_kwDOJs2zh85ZdzsH",
@@ -341,6 +356,126 @@
           "createdAt": "2023-06-28T18:10:29Z",
           "updatedAt": "2023-06-28T18:10:29Z",
           "comments": []
+        },
+        {
+          "id": "PRR_kwDOJs2zh85aKxem",
+          "commit": {
+            "abbreviatedOid": "1c94d93"
+          },
+          "author": "ad-l",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-07-04T12:18:39Z",
+          "updatedAt": "2023-07-04T12:18:40Z",
+          "comments": [
+            {
+              "originalPosition": 126,
+              "body": "We are working on an internal proposal, maybe something to discuss at the next IETF?",
+              "createdAt": "2023-07-04T12:18:39Z",
+              "updatedAt": "2023-07-04T12:18:40Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh85aKyc9",
+          "commit": {
+            "abbreviatedOid": "1c94d93"
+          },
+          "author": "ad-l",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-07-04T12:21:15Z",
+          "updatedAt": "2023-07-04T12:21:15Z",
+          "comments": [
+            {
+              "originalPosition": 145,
+              "body": "@OR13 I would leave it as here but move the discussion to the latest COMETRE PR to see if we prefer to register multiple \"tree algs\" for different proof types or if we prefer to make \"proof type\" its own registry",
+              "createdAt": "2023-07-04T12:21:15Z",
+              "updatedAt": "2023-07-04T12:21:15Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh85aK0ry",
+          "commit": {
+            "abbreviatedOid": "1c94d93"
+          },
+          "author": "ad-l",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-07-04T12:26:21Z",
+          "updatedAt": "2023-07-04T12:26:22Z",
+          "comments": [
+            {
+              "originalPosition": 13,
+              "body": "Addressed in 8a40a20",
+              "createdAt": "2023-07-04T12:26:21Z",
+              "updatedAt": "2023-07-04T12:26:22Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh85aK04t",
+          "commit": {
+            "abbreviatedOid": "1c94d93"
+          },
+          "author": "ad-l",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-07-04T12:26:51Z",
+          "updatedAt": "2023-07-04T12:26:51Z",
+          "comments": [
+            {
+              "originalPosition": 13,
+              "body": "Addressed both in 8a40a20. I also changed to tamper-resistant, I think I agree with your point",
+              "createdAt": "2023-07-04T12:26:51Z",
+              "updatedAt": "2023-07-04T12:26:51Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh85aK1rH",
+          "commit": {
+            "abbreviatedOid": "1c94d93"
+          },
+          "author": "ad-l",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-07-04T12:28:47Z",
+          "updatedAt": "2023-07-04T12:28:48Z",
+          "comments": [
+            {
+              "originalPosition": 89,
+              "body": "Fixed in 773fcbb",
+              "createdAt": "2023-07-04T12:28:47Z",
+              "updatedAt": "2023-07-04T12:28:48Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh85aK5T9",
+          "commit": {
+            "abbreviatedOid": "1c94d93"
+          },
+          "author": "ad-l",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-07-04T12:38:02Z",
+          "updatedAt": "2023-07-04T12:38:03Z",
+          "comments": [
+            {
+              "originalPosition": 95,
+              "body": "Thanks, this was actually an inconsistency, the type is mentioned first when recalling the `signed-inclusion-proof` type, but it called `CCF-inclusion-proof` there. I fixed the inconsistency in 085fdd8 and also added a mention about the element index not being present",
+              "createdAt": "2023-07-04T12:38:02Z",
+              "updatedAt": "2023-07-04T12:38:03Z"
+            }
+          ]
         }
       ]
     }
