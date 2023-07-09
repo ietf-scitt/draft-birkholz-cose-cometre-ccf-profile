@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-07-06T00:33:56.906654+00:00",
+  "timestamp": "2023-07-09T00:36:48.689330+00:00",
   "repo": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
   "labels": [
     {
@@ -56,28 +56,30 @@
       "id": "PR_kwDOJs2zh85T71E-",
       "title": "Initial version of CCF algorithm ID",
       "url": "https://github.com/ietf-scitt/draft-birkholz-cose-cometre-ccf-profile/pull/1",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "ad-l",
-      "authorAssociation": "NONE",
+      "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2023-06-26T15:25:12Z",
-      "updatedAt": "2023-07-04T15:43:50Z",
+      "updatedAt": "2023-07-06T14:41:21Z",
       "baseRepository": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
       "baseRefName": "main",
       "baseRefOid": "603c69a41ae69c2dfea19c6204b7e03a7cf3bcf1",
       "headRepository": "ad-l/draft-birkholz-cose-cometre-ccf-profile",
       "headRefName": "main",
       "headRefOid": "085fdd862d0b39466ebd37452944120cbe1b048d",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2023-07-06T14:41:21Z",
+      "mergedAt": "2023-07-06T14:41:21Z",
+      "mergedBy": "henkbirkholz",
+      "mergeCommit": {
+        "oid": "c6c5b7cfa9a3c616b7cc3a1aa22c75e9e625093b"
+      },
       "comments": [
         {
           "author": "ad-l",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "body": "Thanks for the reviews, I have addressed all the comments.",
           "createdAt": "2023-07-04T12:38:38Z",
           "updatedAt": "2023-07-04T12:38:38Z"
@@ -363,7 +365,7 @@
             "abbreviatedOid": "1c94d93"
           },
           "author": "ad-l",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2023-07-04T12:18:39Z",
@@ -383,7 +385,7 @@
             "abbreviatedOid": "1c94d93"
           },
           "author": "ad-l",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2023-07-04T12:21:15Z",
@@ -403,7 +405,7 @@
             "abbreviatedOid": "1c94d93"
           },
           "author": "ad-l",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2023-07-04T12:26:21Z",
@@ -423,7 +425,7 @@
             "abbreviatedOid": "1c94d93"
           },
           "author": "ad-l",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2023-07-04T12:26:51Z",
@@ -443,7 +445,7 @@
             "abbreviatedOid": "1c94d93"
           },
           "author": "ad-l",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2023-07-04T12:28:47Z",
@@ -463,7 +465,7 @@
             "abbreviatedOid": "1c94d93"
           },
           "author": "ad-l",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2023-07-04T12:38:02Z",
