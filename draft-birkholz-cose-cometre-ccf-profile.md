@@ -189,7 +189,7 @@ This document requests IANA to add the following new value to the 'COSE Header P
 
 This document requests IANA to add the following new value to the 'Tree Algorithms' registry:
 
-* Identifier: TBD_1
+* Identifier: TBD_1 (requested assignment 2)
 * Tree Algorithm: ccf-ledger
 * Reference: This document
 
