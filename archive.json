@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-07-09T00:36:48.689330+00:00",
+  "timestamp": "2023-07-11T00:28:49.365801+00:00",
   "repo": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
   "labels": [
     {
@@ -476,6 +476,121 @@
               "body": "Thanks, this was actually an inconsistency, the type is mentioned first when recalling the `signed-inclusion-proof` type, but it called `CCF-inclusion-proof` there. I fixed the inconsistency in 085fdd8 and also added a mention about the element index not being present",
               "createdAt": "2023-07-04T12:38:02Z",
               "updatedAt": "2023-07-04T12:38:03Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "id": "PR_kwDOJs2zh85VF8I3",
+      "title": "Align with latest CoMeTre changes",
+      "url": "https://github.com/ietf-scitt/draft-birkholz-cose-cometre-ccf-profile/pull/2",
+      "state": "MERGED",
+      "author": "ad-l",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "This uses the new proof type registry and redefines the signature type. Unlike the CT-style log algorithm the proof type is part of the trusted headers",
+      "createdAt": "2023-07-10T14:16:09Z",
+      "updatedAt": "2023-07-10T14:39:58Z",
+      "baseRepository": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
+      "baseRefName": "main",
+      "baseRefOid": "c6c5b7cfa9a3c616b7cc3a1aa22c75e9e625093b",
+      "headRepository": "ad-l/draft-birkholz-cose-cometre-ccf-profile",
+      "headRefName": "main",
+      "headRefOid": "5524c7f16e8619b70faa59cc7591ea19bf065a2e",
+      "closedAt": "2023-07-10T14:39:58Z",
+      "mergedAt": "2023-07-10T14:39:58Z",
+      "mergedBy": "henkbirkholz",
+      "mergeCommit": {
+        "oid": "5e85e7b58f1b0edba47c31bbc7c09256302df7ab"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJs2zh85auwFT",
+          "commit": {
+            "abbreviatedOid": "882b649"
+          },
+          "author": "OR13",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-07-10T14:19:19Z",
+          "updatedAt": "2023-07-10T14:19:19Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOJs2zh85auzgi",
+          "commit": {
+            "abbreviatedOid": "882b649"
+          },
+          "author": "OR13",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-07-10T14:26:07Z",
+          "updatedAt": "2023-07-10T14:26:08Z",
+          "comments": [
+            {
+              "originalPosition": 133,
+              "body": "I assume this is requesting a tag for the `proof type` for CCF?\r\n\r\nSee https://github.com/ietf-scitt/draft-steele-cose-merkle-tree-proofs/pull/18#issuecomment-1620457971\r\n\r\nThe current Cometre draft takes the 2 layer approach, you would encode a CCF inclusion proof using the TBD_2 tag of cometre... it would be understood as CCF proof, based on TBD_1 tag of cometer using your TBD_1 tag in this draft (you can request assignment of 2 for CCF).",
+              "createdAt": "2023-07-10T14:26:07Z",
+              "updatedAt": "2023-07-10T14:26:08Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh85auzoc",
+          "commit": {
+            "abbreviatedOid": "882b649"
+          },
+          "author": "OR13",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-07-10T14:26:21Z",
+          "updatedAt": "2023-07-10T14:26:21Z",
+          "comments": [
+            {
+              "originalPosition": 142,
+              "body": "```suggestion\r\n* Identifier: TBD_1 (requested assignment 2)\r\n```",
+              "createdAt": "2023-07-10T14:26:21Z",
+              "updatedAt": "2023-07-10T14:26:21Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh85au0oi",
+          "commit": {
+            "abbreviatedOid": "882b649"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": ":ship: it",
+          "createdAt": "2023-07-10T14:28:16Z",
+          "updatedAt": "2023-07-10T14:28:16Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOJs2zh85au6yA",
+          "commit": {
+            "abbreviatedOid": "882b649"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-07-10T14:39:50Z",
+          "updatedAt": "2023-07-10T14:39:51Z",
+          "comments": [
+            {
+              "originalPosition": 133,
+              "body": "we can iron out registration nits during the submission moratorium",
+              "createdAt": "2023-07-10T14:39:51Z",
+              "updatedAt": "2023-07-10T14:39:51Z"
             }
           ]
         }
