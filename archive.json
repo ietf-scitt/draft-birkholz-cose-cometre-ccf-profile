@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-11-05T00:26:36.032627+00:00",
+  "timestamp": "2023-11-07T00:24:40.822695+00:00",
   "repo": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
   "labels": [
     {
@@ -86,7 +86,7 @@
         },
         {
           "author": "OR13",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "body": "@ad-l I don't see any reason not to merge.",
           "createdAt": "2023-07-04T15:43:50Z",
           "updatedAt": "2023-07-04T15:43:50Z"
@@ -99,7 +99,7 @@
             "abbreviatedOid": "1c94d93"
           },
           "author": "OR13",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2023-06-27T14:11:26Z",
@@ -139,7 +139,7 @@
             "abbreviatedOid": "1c94d93"
           },
           "author": "OR13",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2023-06-27T14:12:13Z",
@@ -219,7 +219,7 @@
             "abbreviatedOid": "1c94d93"
           },
           "author": "OR13",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "APPROVED",
           "body": "I suggest merging as is",
           "createdAt": "2023-06-27T14:58:38Z",
@@ -232,7 +232,7 @@
             "abbreviatedOid": "1c94d93"
           },
           "author": "OR13",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2023-06-27T14:59:17Z",
@@ -252,7 +252,7 @@
             "abbreviatedOid": "1c94d93"
           },
           "author": "OR13",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2023-06-27T14:59:35Z",
@@ -272,7 +272,7 @@
             "abbreviatedOid": "1c94d93"
           },
           "author": "OR13",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2023-06-27T15:00:13Z",
