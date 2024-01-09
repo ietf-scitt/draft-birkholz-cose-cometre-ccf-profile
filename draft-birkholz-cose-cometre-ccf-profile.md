@@ -151,7 +151,7 @@ verify_inclusion_receipt(inclusion_receipt):
   let payload = nil
   assert(inclusion_receipt.payload == nil)
 
-  for proof in proofs 
+  for proof in proofs
     let root = compute_root(proof)
     if payload = nil then payload := root
     else assert(root == payload)
