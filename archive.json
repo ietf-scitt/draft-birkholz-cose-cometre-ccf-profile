@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-01-09T00:26:47.731001+00:00",
+  "timestamp": "2024-01-11T00:26:25.260119+00:00",
   "repo": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
   "labels": [
     {
@@ -595,6 +595,32 @@
           ]
         }
       ]
+    },
+    {
+      "number": 3,
+      "id": "PR_kwDOJs2zh85jlrRm",
+      "title": "Update CCF ledger type to latest draft-ietf-cose-merkle-tree-proofs",
+      "url": "https://github.com/ietf-scitt/draft-birkholz-cose-cometre-ccf-profile/pull/3",
+      "state": "OPEN",
+      "author": "ad-l",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-01-09T15:12:14Z",
+      "updatedAt": "2024-01-09T15:17:50Z",
+      "baseRepository": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
+      "baseRefName": "main",
+      "baseRefOid": "5e85e7b58f1b0edba47c31bbc7c09256302df7ab",
+      "headRepository": "ad-l/draft-birkholz-cose-cometre-ccf-profile",
+      "headRefName": "main",
+      "headRefOid": "82a184e255b22409f909b36ade5c755a1a7c6015",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
