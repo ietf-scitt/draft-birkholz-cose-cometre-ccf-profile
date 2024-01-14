@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-01-11T00:26:25.260119+00:00",
+  "timestamp": "2024-01-14T00:29:13.970597+00:00",
   "repo": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
   "labels": [
     {
@@ -608,7 +608,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2024-01-09T15:12:14Z",
-      "updatedAt": "2024-01-09T15:17:50Z",
+      "updatedAt": "2024-01-12T09:37:31Z",
       "baseRepository": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
       "baseRefName": "main",
       "baseRefOid": "5e85e7b58f1b0edba47c31bbc7c09256302df7ab",
@@ -620,7 +620,52 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOJs2zh85sWQY5",
+          "commit": {
+            "abbreviatedOid": "82a184e"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": "I'll push a submission based on this PR state!",
+          "createdAt": "2024-01-12T09:31:39Z",
+          "updatedAt": "2024-01-12T09:37:31Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": ":+1:",
+              "createdAt": "2024-01-12T09:31:39Z",
+              "updatedAt": "2024-01-12T09:37:31Z"
+            },
+            {
+              "originalPosition": 5,
+              "body": "Still a profile, but that does not must be up front.",
+              "createdAt": "2024-01-12T09:32:11Z",
+              "updatedAt": "2024-01-12T09:37:31Z"
+            },
+            {
+              "originalPosition": 54,
+              "body": "Good for now. A pre-existing external references to back that description would bolster that assertion.",
+              "createdAt": "2024-01-12T09:34:01Z",
+              "updatedAt": "2024-01-12T09:37:31Z"
+            },
+            {
+              "originalPosition": 29,
+              "body": "Introducing CCF would go well with a ref, see below.",
+              "createdAt": "2024-01-12T09:36:48Z",
+              "updatedAt": "2024-01-12T09:37:31Z"
+            },
+            {
+              "originalPosition": 163,
+              "body": ":+1:",
+              "createdAt": "2024-01-12T09:37:04Z",
+              "updatedAt": "2024-01-12T09:37:31Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
