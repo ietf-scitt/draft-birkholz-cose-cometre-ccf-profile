@@ -1,0 +1,337 @@
+
+
+
+
+TBD                                                          H. Birkholz
+Internet-Draft                                            Fraunhofer SIT
+Intended status: Standards Track                      A. Delignat-Lavaud
+Expires: 11 January 2024                                      C. Fournet
+                                                      Microsoft Research
+                                                            10 July 2023
+
+
+  A CoMETRE Profile and Tree Algorithm for the Confidential Consortium
+                               Framework
+             draft-birkholz-cose-cometre-ccf-profile-latest
+
+Abstract
+
+   This document defines a new verifiable data structure type for COSE
+   Signed Merkle Tree Proofs specifically designed for implementations
+   that rely on Trusted Execution Environments (TEEs) to provide
+   stronger tamper-evidence guarantees.
+
+Discussion Venues
+
+   This note is to be removed before publishing as an RFC.
+
+   Source for this draft and an issue tracker can be found at
+   https://github.com/ietf-scitt/draft-birkholz-cose-cometre-ccf-
+   profile.
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of BCP 78 and BCP 79.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at https://datatracker.ietf.org/drafts/current/.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on 11 January 2024.
+
+Copyright Notice
+
+   Copyright (c) 2023 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to BCP 78 and the IETF Trust's Legal
+   Provisions Relating to IETF Documents (https://trustee.ietf.org/
+   license-info) in effect on the date of publication of this document.
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.  Code Components
+   extracted from this document must include Revised BSD License text as
+   described in Section 4.e of the Trust Legal Provisions and are
+   provided without warranty as described in the Revised BSD License.
+
+Table of Contents
+
+   1.  Introduction
+     1.1.  Requirements Notation
+   2.  Description of the CCF Ledger Verifiable Data Structure
+     2.1.  Tree Shape
+     2.2.  Leaf Components
+   3.  CCF Inclusion Proofs
+     3.1.  CCF Inclusion Proof Signature
+     3.2.  Inclusion Proof Verification Algorithm
+   4.  Privacy Considerations
+   5.  Security Considerations
+   6.  IANA Considerations
+     6.1.  Additions to Existing Registries
+       6.1.1.  COSE Header Parameters registry
+       6.1.2.  Tree Algorithms
+   7.  References
+     7.1.  Normative References
+     7.2.  Informative References
+   Appendix A.  Attic
+   Authors' Addresses
+
+1.  Introduction
+
+   The Concise Encoding of Signed Merkle Tree Proofs (CoMeTre)
+   [I-D.steele-cose-merkle-tree-proofs] defines a common framework for
+   defining different types of proofs, such as proof of inclusion, about
+   verifiable data structures (also abbreviated as "logs" in this
+   document).  For instance, inclusion proofs guarantee to a verifier
+   that a given serializable element is recorded at a given state of the
+   log, while consistency proofs are used to establish that an inclusion
+   proof is still consistent with the new state of the log at a later
+   time.
+
+   In this document, we define a new type of log, associated with the
+   Confidential Consortium Framework (CCF) ledger.  Compared to
+   [RFC9162], the leaves of CCF trees carry additional opaque
+   information that is used to verify that elements are only written by
+   the Trusted Execution Environment, which addresses the persistence of
+   committed transactions that happen between new signatures of the
+   Merkle Tree root.
+
+1.1.  Requirements Notation
+
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+   "OPTIONAL" in this document are to be interpreted as described in
+   BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
+   capitals, as shown here.
+
+2.  Description of the CCF Ledger Verifiable Data Structure
+
+   This documents extends the verifiable data structure registry of
+   [I-D.steele-cose-merkle-tree-proofs] with the following value:
+
+   +============+============+===============+
+   | Identifier | Algorithm  | Reference     |
+   +============+============+===============+
+   | TBD_1      | CCF_LEDGER | This document |
+   +------------+------------+---------------+
+
+        Table 1: Verifiable Data Structure
+                    Algorithms
+
+2.1.  Tree Shape
+
+   The input of the Merkle Tree Hash (MTH) function is a list of n byte
+   strings, written D_n = {d[0], d[1], ..., d[n-1]}. The output is a
+   single HASH_SIZE byte string, also called the Merkle root hash.
+
+   This function is defined as follows:
+
+   The hash of an empty list is the hash of an empty string:
+
+   MTH({}) = HASH().
+
+   The hash of a list with one entry (also known as a leaf hash) is:
+
+   MTH({d[0]}) = HASH(d[0]).
+
+   For n > 1, let k be the largest power of two smaller than n (i.e., k
+   < n <= 2k).  The Merkle Tree Hash of an n-element list D_n is then
+   defined recursively as:
+
+   MTH(D_n) = HASH(MTH(D[0:k]) || MTH(D[k:n])),
+
+   where:
+
+   *  || denotes concatenation
+
+   *  : denotes concatenation of lists
+
+   *  D[k1:k2] = D'_(k2-k1) denotes the list {d'[0] = d[k1], d'[1] =
+      d[k1+1], ..., d'[k2-k1-1] = d[k2-1]} of length (k2 - k1).
+
+2.2.  Leaf Components
+
+   Each leaf in a CCF ledger carries the following components:
+
+CCF-leaf = [
+  internal-hash: bstr ; a string of HASH_SIZE bytes;
+  internal-data: bstr; a string of at most 1024 bytes; and
+  data_hash: bstr ; the serialization of the element stored at this leaf.
+]
+
+   The internal_hash and internal_data byte strings are internal to the
+   CCF implementation.  Similarly, the auxiliary tree entries are
+   internal to CCF.  They are opaque to receipt Verifiers, but they
+   commit the TS to the whole tree contents and may be used for
+   additional, CCF-specific auditing.
+
+3.  CCF Inclusion Proofs
+
+   CCF inclusion proofs consist of a list of digests tagged with a
+   single left-or-right bit.
+
+   CCF-inclusion-proof: [+ proof-element],
+
+   proof-element = [
+     left: bool
+     hash: bstr
+   ]
+
+   Unlike some other tree algorithms, the index of the element in the
+   tree is not explicit in the inclusion proof, but the list of left-or-
+   right bits can be treated as the binary decomposition of the index,
+   from the least significant (leaf) to the most significant (root).
+
+3.1.  CCF Inclusion Proof Signature
+
+   The proof signature for a CCF inclusion proof is a COSE signature
+   (encoded with the COSE_Sign1 CBOR type) which includes the following
+   additional requirements for protected and unprotected headers.
+   Please note that there may be additional headers defined by the
+   application.
+
+   The protected headers for the CCF inclusion proof signature MUST
+   include the following:
+
+   *  verifiable-data-structure: int/tstr.  This header MUST be set to
+      the verifiable data structure algorithm identifier for ccf-ledger
+      (TBD_1).
+
+   *  proof-type: int.  This header MUST be set to the value of the
+      inclusion proof type in the IANA registry of Verifiable Data
+      Structure Proof Type.
+
+   The unprotected header for a CCF inclusion proof signature MUST
+   include the following:
+
+   *  inclusion-proof: bstr .cbor CCF-inclusion-proof.  This contains
+      the serialized CCF inclusion proof, as defined above.
+
+   *  leaf (label TBD_2): bstr .cbor CCF-leaf.  This contains the CCF-
+      specific serialization of the leaf element
+
+   The payload of the signature is the CCF ledger Markle root digest,
+   and MUST be detached in order to force verifiers to recompute the
+   root from the inclusion proof in the unprotected header.  This
+   provides a safeguard against implementation errors that use the
+   payload of the signature but do not recompute the root from the
+   inclusion proof.
+
+3.2.  Inclusion Proof Verification Algorithm
+
+   CCF uses the following algorithm to recompute the payload of the
+   signature based on the inclusion-proof header:
+
+compute_root(leaf, proof):
+  h := leaf.internal-hash
+       || HASH(leaf.internal-data)
+       || leaf.data-hash
+
+  for [left, hash] in proof:
+      h := HASH(hash + h) if left
+           HASH(h + hash) else
+  return h
+
+verify_inclusion_proof(signed_proof):
+  leaf := signed_proof.unprotected_headers[LEAF_LABEL] or fail
+  proof := signed_proof.unprotected_headers[INCLUSION_PROOF_LABEL] or fail
+  payload := compute_root(leaf, proof)
+  return verif_cose_detached(signed_proof, payload)
+
+4.  Privacy Considerations
+
+   Privacy Considerations
+
+5.  Security Considerations
+
+   Security Considerations
+
+6.  IANA Considerations
+
+6.1.  Additions to Existing Registries
+
+6.1.1.  COSE Header Parameters registry
+
+   This document requests IANA to add the following new value to the
+   'COSE Header Parameters' registry:
+
+   *  Label: TBD_2
+
+   *  Value type: bstr
+
+   *  Reference: This document
+
+6.1.2.  Tree Algorithms
+
+   This document requests IANA to add the following new value to the
+   'Tree Algorithms' registry:
+
+   *  Identifier: TBD_1 (requested assignment 2)
+
+   *  Tree Algorithm: ccf-ledger
+
+   *  Reference: This document
+
+7.  References
+
+7.1.  Normative References
+
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
+              <https://www.rfc-editor.org/rfc/rfc2119>.
+
+   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+              May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
+
+   [RFC9162]  Laurie, B., Messeri, E., and R. Stradling, "Certificate
+              Transparency Version 2.0", RFC 9162, DOI 10.17487/RFC9162,
+              December 2021, <https://www.rfc-editor.org/rfc/rfc9162>.
+
+7.2.  Informative References
+
+   [I-D.steele-cose-merkle-tree-proofs]
+              Steele, O., Birkholz, H., Riechert, M., Delignat-Lavaud,
+              A., and C. Fournet, "Concise Encoding of Signed Merkle
+              Tree Proofs", Work in Progress, Internet-Draft, draft-
+              steele-cose-merkle-tree-proofs-00, 13 March 2023,
+              <https://datatracker.ietf.org/doc/html/draft-steele-cose-
+              merkle-tree-proofs-00>.
+
+Appendix A.  Attic
+
+   Not ready to throw these texts into the trash bin yet.
+
+Authors' Addresses
+
+   Henk Birkholz
+   Fraunhofer SIT
+   Rheinstrasse 75
+   64295 Darmstadt
+   Germany
+   Email: henk.birkholz@sit.fraunhofer.de
+
+
+   Antoine Delignat-Lavaud
+   Microsoft Research
+   21 Station Road
+   Cambridge
+   CB1 2FB
+   United Kingdom
+   Email: antdl@microsoft.com
+
+
+   Cedric Fournet
+   Microsoft Research
+   21 Station Road
+   Cambridge
+   CB1 2FB
+   United Kingdom
+   Email: fournet@microsoft.com
