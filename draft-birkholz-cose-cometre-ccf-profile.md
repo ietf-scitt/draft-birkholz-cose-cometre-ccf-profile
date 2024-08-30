@@ -51,9 +51,12 @@ This document defines a new verifiable data structure type for COSE Signed Merkl
 
 # Introduction
 
-The Concise Encoding of Signed Merkle Tree Proofs (CoMeTre) {{-COMTRE}} defines a common framework for defining different types of proofs, such as proof of inclusion, about verifiable data structures (also abbreviated as "logs" in this document). For instance, inclusion proofs guarantee to a verifier that a given serializable element is recorded at a given state of the log, while consistency proofs are used to establish that an inclusion proof is still consistent with the new state of the log at a later time.
+The Concise Encoding of Signed Merkle Tree Proofs (CoMeTre) {{-COMTRE}} defines a common framework for defining different types of proofs, such as proof of inclusion, about verifiable data structures (VDS). For instance, inclusion proofs guarantee to a verifier that a given serializable element is recorded at a given state of the VDS, while consistency proofs are used to establish that an inclusion proof is still consistent with the new state of the VDS at a later time.
 
-In this document, we define a new type of log, associated with the Confidential Consortium Framework (CCF) ledger. Compared to {{-certificate-transparency-v2}}, the leaves of CCF trees carry additional opaque information that is used to verify that elements are only written by the Trusted Execution Environment, which addresses the persistence of committed transactions that happen between new signatures of the Merkle Tree root.
+In this document, we define a new type of VDS, associated with the Confidential Consortium Framework (CCF) ledger. Compared to {{-certificate-transparency-v2}}, the leaves of CCF trees carry additional opaque information for the following purposes:
+
+1. To bind the full details of the transaction executed, which is a super-set of what is exposed in the proof and captures internal information details useful for detailed system audit, but not for application purposes.
+1. To verify that elements are only written by the Trusted Execution Environment, which addresses the persistence of committed transactions that happen between new signatures of the Merkle Tree root.
 
 ## Requirements Notation
 
@@ -104,13 +107,19 @@ Each leaf in a CCF ledger carries the following components:
 
 ~~~
 CCF-leaf = [
-  internal-hash: bstr ; a string of HASH_SIZE bytes;
-  internal-data: bstr; a string of at most 1024 bytes; and
-  data_hash: bstr ; the serialization of the element stored at this leaf.
+
+  ; a string of HASH_SIZE bytes
+  internal-transaction-hash: bstr
+  
+  ; a string of at most 1024 bytes;
+  internal-evidence: bstr
+  
+  ; a string of HASH_SIZE bytes
+  data-hash: bstr
 ]
 ~~~
 
-The `internal_hash` and `internal_data` byte strings are internal to the CCF implementation. Similarly, the auxiliary tree entries are internal to CCF. They are opaque to receipt Verifiers, but they commit the TS to the whole tree contents and may be used for additional, CCF-specific auditing.
+The `internal-transaction-hash` and `internal-evidence` byte strings are internal to the CCF implementation. They are opaque to receipt Verifiers, but they commit the TS to the whole tree contents and may be used for additional, CCF-specific auditing.
 
 # CCF Inclusion Proofs
 
@@ -120,7 +129,11 @@ CCF inclusion proofs consist of a list of digests tagged with a single left-or-r
 CCF-inclusion-proof: [+ proof-element],
 
 proof-element = [
+
+  ; position of the element
   left: bool
+
+  ; hash of the proof element
   hash: bstr
 ]
 ~~~
@@ -134,14 +147,14 @@ The proof signature for a CCF inclusion proof is a COSE signature (encoded with 
 The protected headers for the CCF inclusion proof signature MUST include the following:
 
 * `verifiable-data-structure: int/tstr`. This header MUST be set to the verifiable data structure algorithm identifier for `ccf-ledger` (TBD_1).
-* `proof-type: int`. This header MUST be set to the value of the `inclusion` proof type in the IANA registry of Verifiable Data Structure Proof Type.
+* `label: int`. This header MUST be set to the value of the `inclusion` proof type in the IANA registry of Verifiable Data Structure Proof Type (-1).
 
 The unprotected header for a CCF inclusion proof signature MUST include the following:
 
 * `inclusion-proof: bstr .cbor CCF-inclusion-proof`. This contains the serialized CCF inclusion proof, as defined above.
 * `leaf` (label TBD_2): `bstr .cbor CCF-leaf`. This contains the CCF-specific serialization of the leaf element
 
-The payload of the signature is the CCF ledger Markle root digest, and MUST be detached in order to force verifiers to recompute the root from the inclusion proof in the unprotected header. This provides a safeguard against implementation errors that use the payload of the signature but do not recompute the root from the inclusion proof.
+The payload of the signature is the CCF ledger Merkle root digest, and MUST be detached in order to force verifiers to recompute the root from the inclusion proof in the unprotected header. This provides a safeguard against implementation errors that use the payload of the signature but do not recompute the root from the inclusion proof.
 
 ## Inclusion Proof Verification Algorithm
 
@@ -149,8 +162,8 @@ CCF uses the following algorithm to recompute the payload of the signature based
 
 ~~~
 compute_root(leaf, proof):
-  h := leaf.internal-hash
-       || HASH(leaf.internal-data)
+  h := leaf.internal-transaction-hash
+       || HASH(leaf.internal-evidence)
        || leaf.data-hash
 
   for [left, hash] in proof:
@@ -162,7 +175,7 @@ verify_inclusion_proof(signed_proof):
   leaf := signed_proof.unprotected_headers[LEAF_LABEL] or fail
   proof := signed_proof.unprotected_headers[INCLUSION_PROOF_LABEL] or fail
   payload := compute_root(leaf, proof)
-  return verif_cose_detached(signed_proof, payload)
+  return verify_cose_detached(signed_proof, payload)
 ~~~
 
 # Privacy Considerations
