@@ -170,7 +170,7 @@ The payload of the signature is the CCF ledger Merkle root digest, and MUST be d
 
 ## Inclusion Proof Verification Algorithm
 
-CCF uses the following algorithm to validate an inclusion receipt:
+CCF uses the following algorithm to verify an inclusion receipt:
 
 ~~~
 compute_root(proof):
