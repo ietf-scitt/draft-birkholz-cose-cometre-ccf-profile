@@ -111,10 +111,10 @@ CCF-leaf = [
 
   ; a string of HASH_SIZE bytes
   internal-transaction-hash: bstr
-  
+
   ; a string of at most 1024 bytes;
   internal-evidence: bstr
-  
+
   ; a string of HASH_SIZE bytes
   data-hash: bstr
 ]
