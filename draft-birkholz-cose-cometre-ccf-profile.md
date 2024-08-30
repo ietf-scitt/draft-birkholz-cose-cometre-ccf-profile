@@ -44,9 +44,13 @@ normative:
 informative:
   I-D.steele-cose-merkle-tree-proofs: COMTRE
 
+  CCF:
+    title: "Confidential Consortium Framework"
+    target: "https://github.com/microsoft/ccf"
+
 --- abstract
 
-This document defines a new verifiable data structure type for COSE Signed Merkle Tree Proofs specifically designed for transaction ledgers produced by Trusted Execution Environments (TEEs) to provide stronger tamper-evidence guarantees.
+This document defines a new verifiable data structure type for COSE Signed Merkle Tree Proofs specifically designed for transaction ledgers produced by Trusted Execution Environments (TEEs), such as the Confidential Consortium Framework ({{CCF}}) to provide stronger tamper-evidence guarantees.
 
 --- middle
 
