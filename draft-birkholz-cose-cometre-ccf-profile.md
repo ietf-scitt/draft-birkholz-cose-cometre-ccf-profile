@@ -1,6 +1,6 @@
 ---
-title: A CoMETRE Profile for CCF COSE Receipts
-abbrev: CoMTRE CCF Profile
+title: COSE Receipts with CCF
+abbrev: COSE Receipts with CCF
 docname: draft-birkholz-cose-cometre-ccf-profile-latest
 stand_alone: true
 ipr: trust200902
