@@ -1,5 +1,5 @@
 ---
-title: A Transaction Ledger Verifiable Structure for COSE Merkle Tree Proofs
+title: A CoMETRE Profile for CCF COSE Receipts
 abbrev: CoMTRE CCF Profile
 docname: draft-birkholz-cose-cometre-ccf-profile-latest
 stand_alone: true
