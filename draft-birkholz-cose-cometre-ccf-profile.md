@@ -8,6 +8,7 @@ area: Security
 wg: TBD
 kw: Internet-Draft
 cat: std
+submissiontype: IETF
 pi:
   toc: yes
   sortrefs: yes
