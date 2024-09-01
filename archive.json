@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-08-29T00:30:52.156325+00:00",
+  "timestamp": "2024-09-01T00:37:49.546495+00:00",
   "repo": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
   "labels": [
     {
@@ -662,6 +662,161 @@
               "body": ":+1:",
               "createdAt": "2024-01-12T09:37:04Z",
               "updatedAt": "2024-01-12T09:37:31Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "id": "PR_kwDOJs2zh85598Yt",
+      "title": "Update draft and leaf details",
+      "url": "https://github.com/ietf-scitt/draft-birkholz-cose-cometre-ccf-profile/pull/4",
+      "state": "OPEN",
+      "author": "achamayou",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "@henkbirkholz @OR13 I have read through https://datatracker.ietf.org/doc/draft-ietf-cose-merkle-tree-proofs/, and made some edits here as discussed to correct the leaf definition.\r\n\r\nThis is deliberately quite light on details, but I am obviously very happy to expand wherever necessary.",
+      "createdAt": "2024-08-30T12:24:57Z",
+      "updatedAt": "2024-08-30T15:53:30Z",
+      "baseRepository": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
+      "baseRefName": "main",
+      "baseRefOid": "5e85e7b58f1b0edba47c31bbc7c09256302df7ab",
+      "headRepository": "achamayou/draft-birkholz-cose-cometre-ccf-profile",
+      "headRefName": "update_with_correct_leaf_details",
+      "headRefOid": "7cd31531f15fd7ce4603cd85c204f16a3e1097d8",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "achamayou",
+          "authorAssociation": "NONE",
+          "body": "@ad-l I had not seen the updates made in https://github.com/ietf-scitt/draft-birkholz-cose-cometre-ccf-profile/pull/3, I have attempted to merge them in here.",
+          "createdAt": "2024-08-30T12:51:48Z",
+          "updatedAt": "2024-08-30T12:51:48Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJs2zh86Hb37o",
+          "commit": {
+            "abbreviatedOid": "da4d863"
+          },
+          "author": "OR13",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-08-30T12:53:02Z",
+          "updatedAt": "2024-08-30T12:55:43Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "CCF COSE Receipts?",
+              "createdAt": "2024-08-30T12:53:03Z",
+              "updatedAt": "2024-08-30T12:55:43Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86HcSFe",
+          "commit": {
+            "abbreviatedOid": "da4d863"
+          },
+          "author": "achamayou",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-08-30T13:25:47Z",
+          "updatedAt": "2024-08-30T13:25:47Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "```suggestion\r\ntitle: A CoMETRE Profile for CCF COSE Receipts\r\n```\r\n\r\nThis title was taken from #3, where it had received positive feedback. What I am suggesting in this comment is what feels most accurate to me, what do you think?",
+              "createdAt": "2024-08-30T13:25:47Z",
+              "updatedAt": "2024-08-30T13:25:47Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86HcUJ_",
+          "commit": {
+            "abbreviatedOid": "da4d863"
+          },
+          "author": "achamayou",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-08-30T13:27:23Z",
+          "updatedAt": "2024-08-30T13:27:23Z",
+          "comments": [
+            {
+              "originalPosition": 29,
+              "body": "@OR13 I saw in #3 that you suggested adding references, which seems like an excellent idea. Do you have some pointers on the best way to add references in this kind of document? Just a link to the project's GitHub/paper?",
+              "createdAt": "2024-08-30T13:27:23Z",
+              "updatedAt": "2024-08-30T13:27:23Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86HdFJH",
+          "commit": {
+            "abbreviatedOid": "da4d863"
+          },
+          "author": "OR13",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-08-30T14:32:32Z",
+          "updatedAt": "2024-08-30T14:32:33Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "Im not attached to any specific title, but I do prefer shorter titles, and I would avoid adding \"CoMETRE\" or \"Merkle\"... \"CCF based COSE Receipts\" or \"COSE Receipts with CCF\" seems sufficient.",
+              "createdAt": "2024-08-30T14:32:33Z",
+              "updatedAt": "2024-08-30T14:32:33Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86HdG8p",
+          "commit": {
+            "abbreviatedOid": "da4d863"
+          },
+          "author": "OR13",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-08-30T14:34:20Z",
+          "updatedAt": "2024-08-30T14:34:20Z",
+          "comments": [
+            {
+              "originalPosition": 29,
+              "body": "Here is an example of how to add an arbitrary informative reference:\r\n\r\nhttps://github.com/cose-wg/draft-ietf-cose-dilithium/pull/5/files#diff-2478aa1dfa824cbb11926553a0f4f8c9cd3e223126798f02e4827a8a56e809e9R62\r\n\r\n",
+              "createdAt": "2024-08-30T14:34:20Z",
+              "updatedAt": "2024-08-30T14:34:21Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86HdKsS",
+          "commit": {
+            "abbreviatedOid": "da4d863"
+          },
+          "author": "achamayou",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-08-30T14:38:53Z",
+          "updatedAt": "2024-08-30T14:38:54Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "Updated :) I was lulled into a longer title by the presence of the abbrev field, but I do agree that shorter is better here.",
+              "createdAt": "2024-08-30T14:38:53Z",
+              "updatedAt": "2024-08-30T14:38:54Z"
             }
           ]
         }
