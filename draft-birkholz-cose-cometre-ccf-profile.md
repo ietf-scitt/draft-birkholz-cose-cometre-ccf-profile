@@ -54,6 +54,10 @@ normative:
     title: "CCF Commit Evidence"
     target: "https://microsoft.github.io/CCF/main/use_apps/verify_tx.html#commit-evidence"
 
+  CCF-Receipt-Verification:
+    title: "CCF Receipt Verification"
+    target: "https://microsoft.github.io/CCF/main/use_apps/verify_tx.html#receipt-verification"
+
 --- abstract
 
 This document defines a new verifiable data structure type for COSE Signed Merkle Tree Proofs specifically designed for transaction ledgers produced by Trusted Execution Environments (TEEs), such as the Confidential Consortium Framework ({{CCF}}) to provide stronger tamper-evidence guarantees.
@@ -189,6 +193,8 @@ verify_inclusion_receipt(inclusion_receipt):
   # Use the Merkle Root as the detached payload
   return verif_cose(inclusion_receipt, payload)
 ~~~
+
+A description can also be found at {{CCF-Receipt-Verification}}.
 
 # Privacy Considerations
 
