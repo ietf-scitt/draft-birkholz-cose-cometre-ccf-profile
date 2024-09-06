@@ -46,6 +46,14 @@ normative:
     title: "Confidential Consortium Framework"
     target: "https://github.com/microsoft/ccf"
 
+  CCF-Ledger-Format:
+    title: "CCF Ledger Format"
+    target: "https://microsoft.github.io/CCF/main/architecture/ledger.html"
+
+  CCF-Commit-Evidence:
+    title: "CCF Commit Evidence"
+    target: "https://microsoft.github.io/CCF/main/use_apps/verify_tx.html#commit-evidence"
+
 --- abstract
 
 This document defines a new verifiable data structure type for COSE Signed Merkle Tree Proofs specifically designed for transaction ledgers produced by Trusted Execution Environments (TEEs), such as the Confidential Consortium Framework ({{CCF}}) to provide stronger tamper-evidence guarantees.
@@ -115,19 +123,15 @@ Each leaf in a CCF ledger carries the following components:
 
 ~~~
 ccf-leaf = [
-
-  ; a string of HASH_SIZE bytes
-  internal-transaction-hash: bstr
-
-  ; a string of at most 1024 bytes;
-  internal-evidence: bstr
-
-  ; a string of HASH_SIZE bytes
-  data-hash: bstr
+  internal-transaction-hash: bstr ; a string of HASH_SIZE bytes
+  internal-evidence: bstr         ; a string of at most 1024 bytes
+  data-hash: bstr                 ; a string of HASH_SIZE bytes
 ]
 ~~~
 
 The `internal-transaction-hash` and `internal-evidence` byte strings are internal to the CCF implementation. They can be safely ignored by receipt Verifiers, but they commit the TS to the whole tree contents and may be used for additional, CCF-specific auditing.
+
+`internal-transaction-hash` is a hash over the complete entry in the {{CCF-Ledger-Format}}, and `internal-evidence` is a revealable {{CCF-Commit-Evidence}} value that allows early persistence of ledger entries before distributed consensus can be established.
 
 # CCF Inclusion Proofs
 
@@ -140,12 +144,8 @@ ccf-inclusion-proof-map = {
 }
 
 ccf-proof-element = [
-
-  ; position of the element
-  left: bool
-
-  ; hash of the proof element
-  hash: bstr
+  left: bool ; position of the element
+  hash: bstr ; hash of the proof element
 ]
 ~~~
 
