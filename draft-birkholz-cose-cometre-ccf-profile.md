@@ -114,7 +114,7 @@ where:
 Each leaf in a CCF ledger carries the following components:
 
 ~~~
-CCF-leaf = [
+ccf-leaf = [
 
   ; a string of HASH_SIZE bytes
   internal-transaction-hash: bstr
@@ -134,10 +134,10 @@ The `internal-transaction-hash` and `internal-evidence` byte strings are interna
 CCF inclusion proofs consist of a list of digests tagged with a single left-or-right bit.
 
 ~~~
-CCF-inclusion-proof: [
-  leaf (label TBD_2): CCF-leaf
-  path (label TBD_3): [+ ccf-proof-element]
-]
+ccf-inclusion-proof-map = {
+  (leaf: TBD_2) => ccf-leaf
+  (path: TBD_3) => [+ ccf-proof-element]
+}
 
 ccf-proof-element = [
 
@@ -162,7 +162,7 @@ The protected headers for the CCF inclusion proof signature MUST include the fol
 
 The unprotected header for a CCF inclusion proof signature MUST include the following:
 
-* `inclusion-proof: bstr .cbor CCF-inclusion-proof`. This contains the serialized CCF inclusion proof, as defined above.
+* `inclusion-proof: bstr .cbor ccf-inclusion-proof`. This contains the serialized CCF inclusion proof, as defined above.
 
 The payload of the signature is the CCF ledger Merkle root digest, and MUST be detached in order to force verifiers to recompute the root from the inclusion proof in the unprotected header. This provides a safeguard against implementation errors that use the payload of the signature but do not recompute the root from the inclusion proof.
 
@@ -207,11 +207,11 @@ Security Considerations
 This document requests IANA to add the following new value to the 'COSE Header Parameters' registry:
 
 * Label: TBD_2
-* Value type: `bstr`
+* Value type: ccf-leaf
 * Reference: This document
 
 * Label: TBD_3
-* Value type: `bstr`
+* Value type: [+ ccf-proof-element]
 * Reference: This document
 
 ### Tree Algorithms {#tree-alg-registry}
