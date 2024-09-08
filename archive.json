@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-09-05T00:31:22.942458+00:00",
+  "timestamp": "2024-09-08T00:35:05.701768+00:00",
   "repo": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
   "labels": [
     {
@@ -679,13 +679,13 @@
       "labels": [],
       "body": "@henkbirkholz @OR13 I have read through https://datatracker.ietf.org/doc/draft-ietf-cose-merkle-tree-proofs/, and made some edits here as discussed to correct the leaf definition.\r\n\r\nThis is deliberately quite light on details, but I am obviously very happy to expand wherever necessary.",
       "createdAt": "2024-08-30T12:24:57Z",
-      "updatedAt": "2024-08-30T15:53:30Z",
+      "updatedAt": "2024-09-06T17:25:46Z",
       "baseRepository": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
       "baseRefName": "main",
       "baseRefOid": "5e85e7b58f1b0edba47c31bbc7c09256302df7ab",
       "headRepository": "achamayou/draft-birkholz-cose-cometre-ccf-profile",
       "headRefName": "update_with_correct_leaf_details",
-      "headRefOid": "7cd31531f15fd7ce4603cd85c204f16a3e1097d8",
+      "headRefOid": "567aef4505742faf187016921bb1ad96508d5e0b",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -697,6 +697,13 @@
           "body": "@ad-l I had not seen the updates made in https://github.com/ietf-scitt/draft-birkholz-cose-cometre-ccf-profile/pull/3, I have attempted to merge them in here.",
           "createdAt": "2024-08-30T12:51:48Z",
           "updatedAt": "2024-08-30T12:51:48Z"
+        },
+        {
+          "author": "achamayou",
+          "authorAssociation": "NONE",
+          "body": "@henkbirkholz if/when you have a chance, I would be grateful for a review and some feedback on how to take this forward :)",
+          "createdAt": "2024-09-05T10:07:49Z",
+          "updatedAt": "2024-09-05T10:07:49Z"
         }
       ],
       "reviews": [
@@ -817,6 +824,210 @@
               "body": "Updated :) I was lulled into a longer title by the presence of the abbrev field, but I do agree that shorter is better here.",
               "createdAt": "2024-08-30T14:38:53Z",
               "updatedAt": "2024-08-30T14:38:54Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86IHABR",
+          "commit": {
+            "abbreviatedOid": "7cd3153"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-09-05T16:15:34Z",
+          "updatedAt": "2024-09-05T16:21:40Z",
+          "comments": [
+            {
+              "originalPosition": 35,
+              "body": "Maybe:\r\n```suggestion\r\nThe COSE Receipts document {{-COMTRE}} defines a common framework for defining different types of proofs, such as proof of inclusion, about verifiable data structures (VDS). For instance, inclusion proofs guarantee to a verifier that a given serializable element is recorded at a given state of the VDS, while consistency proofs are used to establish that an inclusion proof is still consistent with the new state of the VDS at a later time.\r\n```\r\nAlso, shouldn't I-D.steele-cose-merkle-tree-proofs (`{{-COMETRE}}`)be a normative reference? ",
+              "createdAt": "2024-09-05T16:15:34Z",
+              "updatedAt": "2024-09-05T16:21:40Z"
+            },
+            {
+              "originalPosition": 114,
+              "body": "```suggestion\r\n```\r\nWhy newlines? For readability? Maybe appending the comments behind the array members combines readability and no newlines in the array definition.",
+              "createdAt": "2024-09-05T16:18:30Z",
+              "updatedAt": "2024-09-05T16:21:40Z"
+            },
+            {
+              "originalPosition": 104,
+              "body": "labels/keys in arrays are intended to improve readability for humans and are not conveyed in the end. Was the intend maybe to use a map here, instead?\r\n\r\nIf so, is that also a possibility for other arrays that include elements with string label definitions (e.g., CCF-leaf that looks to me more like an annotation for humans that read the CDDL definition, but now I am not so sure)?\r\n\r\nAs all elements are mandatory, an array is an okay choice in any case. Just unsure about the intend of the labels.",
+              "createdAt": "2024-09-05T16:18:49Z",
+              "updatedAt": "2024-09-05T16:21:40Z"
+            },
+            {
+              "originalPosition": 96,
+              "body": "If internal-transaction-hash and internal-evidence are not defined here, but are specified in CCF, maybe a reference to the definition is appropriate here?",
+              "createdAt": "2024-09-05T16:20:15Z",
+              "updatedAt": "2024-09-05T16:21:40Z"
+            },
+            {
+              "originalPosition": 173,
+              "body": "Polishing the registration section is still a todo, but that does not have to be part of this PR.",
+              "createdAt": "2024-09-05T16:21:13Z",
+              "updatedAt": "2024-09-05T16:21:40Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86IHFSl",
+          "commit": {
+            "abbreviatedOid": "7cd3153"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-09-05T16:24:26Z",
+          "updatedAt": "2024-09-05T16:24:26Z",
+          "comments": [
+            {
+              "originalPosition": 35,
+              "body": "Err... I-D.**IETF**-cose-merkle-tree-proofs I mean, of course :sweat_smile: ",
+              "createdAt": "2024-09-05T16:24:26Z",
+              "updatedAt": "2024-09-05T16:24:26Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86ISY3v",
+          "commit": {
+            "abbreviatedOid": "7cd3153"
+          },
+          "author": "achamayou",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-09-06T15:11:18Z",
+          "updatedAt": "2024-09-06T15:11:18Z",
+          "comments": [
+            {
+              "originalPosition": 173,
+              "body": "Sorry for asking a lot of dumb questions, but can you help me understand what's needed in that section, perhaps through a pointer to somewhere that does it right?",
+              "createdAt": "2024-09-06T15:11:18Z",
+              "updatedAt": "2024-09-06T15:11:18Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86ISam1",
+          "commit": {
+            "abbreviatedOid": "7cd3153"
+          },
+          "author": "achamayou",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-09-06T15:14:47Z",
+          "updatedAt": "2024-09-06T15:14:47Z",
+          "comments": [
+            {
+              "originalPosition": 114,
+              "body": "I adopted the style I found in https://datatracker.ietf.org/doc/draft-ietf-cose-hash-envelope/, but I am super happy to line up on what's generally preferred.",
+              "createdAt": "2024-09-06T15:14:47Z",
+              "updatedAt": "2024-09-06T15:14:47Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86IScDV",
+          "commit": {
+            "abbreviatedOid": "7cd3153"
+          },
+          "author": "achamayou",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-09-06T15:17:38Z",
+          "updatedAt": "2024-09-06T15:17:38Z",
+          "comments": [
+            {
+              "originalPosition": 104,
+              "body": "I think I prefer an array over a map here, repeating the keys seems quite wasteful considering this is not a self-describing document. I think I should have used comments here rather than labels, let me fix that.",
+              "createdAt": "2024-09-06T15:17:38Z",
+              "updatedAt": "2024-09-06T15:17:38Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86IScr-",
+          "commit": {
+            "abbreviatedOid": "7cd3153"
+          },
+          "author": "achamayou",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-09-06T15:18:53Z",
+          "updatedAt": "2024-09-06T15:18:53Z",
+          "comments": [
+            {
+              "originalPosition": 96,
+              "body": "I do not know to what extent it is ok to be specific, but I will add references.",
+              "createdAt": "2024-09-06T15:18:53Z",
+              "updatedAt": "2024-09-06T15:18:53Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86ISdLe",
+          "commit": {
+            "abbreviatedOid": "7cd3153"
+          },
+          "author": "achamayou",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-09-06T15:19:51Z",
+          "updatedAt": "2024-09-06T15:19:51Z",
+          "comments": [
+            {
+              "originalPosition": 35,
+              "body": "Will fix",
+              "createdAt": "2024-09-06T15:19:51Z",
+              "updatedAt": "2024-09-06T15:19:52Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86ITVJl",
+          "commit": {
+            "abbreviatedOid": "9c6e360"
+          },
+          "author": "achamayou",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-09-06T17:01:39Z",
+          "updatedAt": "2024-09-06T17:01:40Z",
+          "comments": [
+            {
+              "originalPosition": 104,
+              "body": "Sorry read that too quickly, a map does seem preferable at the top-level.",
+              "createdAt": "2024-09-06T17:01:40Z",
+              "updatedAt": "2024-09-06T17:01:40Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86ITd--",
+          "commit": {
+            "abbreviatedOid": "7cd3153"
+          },
+          "author": "achamayou",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-09-06T17:22:01Z",
+          "updatedAt": "2024-09-06T17:22:01Z",
+          "comments": [
+            {
+              "originalPosition": 114,
+              "body": "Reverted to something more compact.",
+              "createdAt": "2024-09-06T17:22:01Z",
+              "updatedAt": "2024-09-06T17:22:02Z"
             }
           ]
         }
