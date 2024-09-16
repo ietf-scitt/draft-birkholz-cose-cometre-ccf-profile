@@ -137,6 +137,8 @@ The `internal-transaction-hash` and `internal-evidence` byte strings are interna
 
 `internal-transaction-hash` is a hash over the complete entry in the {{CCF-Ledger-Format}}, and `internal-evidence` is a revealable {{CCF-Commit-Evidence}} value that allows early persistence of ledger entries before distributed consensus can be established.
 
+`data-hash` summarises the subject of the proof: the data which is included in the ledger at this transaction.
+
 # CCF Inclusion Proofs
 
 CCF inclusion proofs consist of a list of digests tagged with a single left-or-right bit.
@@ -191,7 +193,7 @@ verify_inclusion_receipt(inclusion_receipt):
   let payload = compute_root(proof)
 
   # Use the Merkle Root as the detached payload
-  return verif_cose(inclusion_receipt, payload)
+  return verify_cose(inclusion_receipt, payload)
 ~~~
 
 A description can also be found at {{CCF-Receipt-Verification}}.
