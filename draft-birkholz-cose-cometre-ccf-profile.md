@@ -144,7 +144,7 @@ The `internal-transaction-hash` and `internal-evidence` byte strings are interna
 CCF inclusion proofs consist of a list of digests tagged with a single left-or-right bit.
 
 ~~~
-ccf-inclusion-proof-map = {
+ccf-inclusion-proof = bstr .cbor {
   (leaf: TBD_2) => ccf-leaf
   (path: TBD_3) => [+ ccf-proof-element]
 }
