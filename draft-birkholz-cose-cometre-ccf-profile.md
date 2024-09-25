@@ -145,13 +145,13 @@ CCF inclusion proofs consist of a list of digests tagged with a single left-or-r
 
 ~~~
 ccf-inclusion-proof = bstr .cbor {
-  (leaf: TBD_2) => ccf-leaf
-  (path: TBD_3) => [+ ccf-proof-element]
+  leaf: ccf-leaf              ; leaf label TBD_2
+  path: [+ ccf-proof-element] ; path label TBD_3
 }
 
 ccf-proof-element = [
   left: bool ; position of the element
-  hash: bstr ; hash of the proof element
+  hash: bstr ; hash of the proof element (string of HASH_SIZE bytes)
 ]
 ~~~
 
@@ -214,11 +214,11 @@ Security Considerations
 
 This document requests IANA to add the following new value to the 'COSE Header Parameters' registry:
 
-* Label: TBD_2
+* Label: TBD_2 (requested assignment 36)
 * Value type: ccf-leaf
 * Reference: This document
 
-* Label: TBD_3
+* Label: TBD_3 (requested assignment 37)
 * Value type: [+ ccf-proof-element]
 * Reference: This document
 
