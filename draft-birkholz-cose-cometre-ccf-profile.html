@@ -4,31 +4,30 @@
 <meta charset="utf-8">
 <meta content="Common,Latin" name="scripts">
 <meta content="initial-scale=1.0" name="viewport">
-<title>A CoMETRE Profile and Tree Algorithm for the Confidential Consortium Framework</title>
+<title>COSE Receipts with CCF</title>
 <meta content="Henk Birkholz" name="author">
 <meta content="Antoine Delignat-Lavaud" name="author">
 <meta content="Cedric Fournet" name="author">
 <meta content="
-       This document defines a new verifiable data structure type for COSE Signed Merkle Tree Proofs specifically designed for implementations that rely on Trusted Execution Environments (TEEs) to provide stronger tamper-evidence guarantees. 
+       This document defines a new verifiable data structure type for COSE Signed Merkle Tree Proofs specifically designed for transaction ledgers produced by Trusted Execution Environments (TEEs), such as the Confidential Consortium Framework ( ) to provide stronger tamper-evidence guarantees. 
     " name="description">
-<meta content="xml2rfc 3.17.4" name="generator">
+<meta content="xml2rfc 3.23.1" name="generator">
 <meta content="Internet-Draft" name="keyword">
 <meta content="draft-birkholz-cose-cometre-ccf-profile-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.17.4
-    Python 3.11.4
-    ConfigArgParse 1.5.3
-    google-i18n-address 3.1.0
+  xml2rfc 3.23.1
+    Python 3.12.6
+    ConfigArgParse 1.7
+    google-i18n-address 3.1.1
     intervaltree 3.1.0
-    Jinja2 3.1.2
-    lxml 4.9.2
-    platformdirs 3.8.0
+    Jinja2 3.1.4
+    lxml 4.9.4
+    platformdirs 4.3.6
     pycountry 22.3.5
-    PyYAML 6.0
-    requests 2.31.0
-    setuptools 67.7.2
-    six 1.16.0
-    wcwidth 0.2.6
+    PyYAML 6.0.1
+    requests 2.32.3
+    setuptools 70.3.0
+    wcwidth 0.2.13
 -->
 <link href="draft-birkholz-cose-cometre-ccf-profile.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
@@ -651,7 +650,7 @@ sub, sup {
 }
 #toc nav li {
   line-height: 1.3em;
-  margin: 0.75em 0;
+  margin: 2px 0;
   padding-left: 1.2em;
   text-indent: -1.2em;
 }
@@ -744,7 +743,7 @@ hr.addr {
     z-index: 2;
     top: 0;
     right: 0;
-    padding: 0;
+    padding: 1px 0 0 0;
     margin: 0;
     border-bottom: 1px solid #ccc;
     opacity: 0.6;
@@ -868,16 +867,13 @@ hr.addr {
     border-top: none;
     padding-top: 0;
   }
-  figure, pre {
+  figure, pre, .vcard {
     page-break-inside: avoid;
-  }
-  figure {
-    overflow: scroll;
   }
   h1, h2, h3, h4, h5, h6 {
     page-break-after: avoid;
   }
-  h2+*, h3+*, h4+*, h5+*, h6+* {
+  :is(h2, h3, h4, h5, h6)+*, dd {
     page-break-before: avoid;
   }
   pre {
@@ -890,6 +886,9 @@ hr.addr {
   }
   td {
     border-top: 1px solid #ddd;
+  }
+  .toplink {
+    display: none;
   }
 }
 
@@ -991,28 +990,6 @@ address div.right {
   text-align: right;
 }
 
-/* Give the table caption label the same styling as the figcaption */
-
-@media print {
-  .toplink {
-    display: none;
-  }
-
-  /* avoid overwriting the top border line with the ToC header */
-  #toc {
-    padding-top: 1px;
-  }
-
-  /* Avoid page breaks inside dl and author address entries */
-  dd {
-    page-break-before: avoid;
-  }
-  .vcard {
-    page-break-inside: avoid;
-  }
-
-}
-
 /* Dark mode. */
 @media (prefers-color-scheme: dark) {
 :root {
@@ -1048,12 +1025,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <table class="ears">
 <thead><tr>
 <td class="left">Internet-Draft</td>
-<td class="center">CoMTRE CFF Profile</td>
-<td class="right">July 2023</td>
+<td class="center">COSE Receipts with CCF</td>
+<td class="right">September 2024</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Birkholz, et al.</td>
-<td class="center">Expires 11 January 2024</td>
+<td class="center">Expires 29 March 2025</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1066,12 +1043,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-birkholz-cose-cometre-ccf-profile-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2023-07-10" class="published">10 July 2023</time>
+<time datetime="2024-09-25" class="published">25 September 2024</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2024-01-11">11 January 2024</time></dd>
+<dd class="expires"><time datetime="2025-03-29">29 March 2025</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1089,10 +1066,10 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </dd>
 </dl>
 </div>
-<h1 id="title">A CoMETRE Profile and Tree Algorithm for the Confidential Consortium Framework</h1>
+<h1 id="title">COSE Receipts with CCF</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">This document defines a new verifiable data structure type for COSE Signed Merkle Tree Proofs specifically designed for implementations that rely on Trusted Execution Environments (TEEs) to provide stronger tamper-evidence guarantees.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+<p id="section-abstract-1">This document defines a new verifiable data structure type for COSE Signed Merkle Tree Proofs specifically designed for transaction ledgers produced by Trusted Execution Environments (TEEs), such as the Confidential Consortium Framework (<span>[<a href="#CCF" class="cite xref">CCF</a>]</span>) to provide stronger tamper-evidence guarantees.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
       <h2 id="name-discussion-venues">
@@ -1121,7 +1098,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 11 January 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 29 March 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1130,7 +1107,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <a href="#name-copyright-notice" class="section-name selfRef">Copyright Notice</a>
         </h2>
 <p id="section-boilerplate.2-1">
-            Copyright (c) 2023 IETF Trust and the persons identified as the
+            Copyright (c) 2024 IETF Trust and the persons identified as the
             document authors. All rights reserved.<a href="#section-boilerplate.2-1" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.2-2">
             This document is subject to BCP 78 and the IETF Trust's Legal
@@ -1162,10 +1139,10 @@ svg :is([fill="white"], [fill^="#fff"]) {
             <p id="section-toc.1-1.2.1"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-description-of-the-ccf-ledg" class="internal xref">Description of the CCF Ledger Verifiable Data Structure</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2.2.1">
-                <p id="section-toc.1-1.2.2.1.1" class="keepWithNext"><a href="#section-2.1" class="auto internal xref">2.1</a>.  <a href="#name-tree-shape" class="internal xref">Tree Shape</a></p>
+                <p id="section-toc.1-1.2.2.1.1" class="keepWithNext"><a href="#section-2.1" class="auto internal xref">2.1</a>.  <a href="#name-merkle-tree-shape" class="internal xref">Merkle Tree Shape</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2.2.2">
-                <p id="section-toc.1-1.2.2.2.1"><a href="#section-2.2" class="auto internal xref">2.2</a>.  <a href="#name-leaf-components" class="internal xref">Leaf Components</a></p>
+                <p id="section-toc.1-1.2.2.2.1"><a href="#section-2.2" class="auto internal xref">2.2</a>.  <a href="#name-transaction-components" class="internal xref">Transaction Components</a></p>
 </li>
             </ul>
 </li>
@@ -1203,15 +1180,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7">
-            <p id="section-toc.1-1.7.1"><a href="#section-7" class="auto internal xref">7</a>.  <a href="#name-references" class="internal xref">References</a></p>
-<ul class="compact toc ulBare ulEmpty">
-<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.1">
-                <p id="section-toc.1-1.7.2.1.1"><a href="#section-7.1" class="auto internal xref">7.1</a>.  <a href="#name-normative-references" class="internal xref">Normative References</a></p>
-</li>
-              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.2">
-                <p id="section-toc.1-1.7.2.2.1"><a href="#section-7.2" class="auto internal xref">7.2</a>.  <a href="#name-informative-references" class="internal xref">Informative References</a></p>
-</li>
-            </ul>
+            <p id="section-toc.1-1.7.1"><a href="#section-7" class="auto internal xref">7</a>.  <a href="#name-normative-references" class="internal xref">Normative References</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8">
             <p id="section-toc.1-1.8.1"><a href="#appendix-A" class="auto internal xref">Appendix A</a>.  <a href="#name-attic" class="internal xref">Attic</a></p>
@@ -1228,8 +1197,17 @@ svg :is([fill="white"], [fill^="#fff"]) {
       <h2 id="name-introduction">
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
-<p id="section-1-1">The Concise Encoding of Signed Merkle Tree Proofs (CoMeTre) <span>[<a href="#I-D.steele-cose-merkle-tree-proofs" class="cite xref">I-D.steele-cose-merkle-tree-proofs</a>]</span> defines a common framework for defining different types of proofs, such as proof of inclusion, about verifiable data structures (also abbreviated as "logs" in this document). For instance, inclusion proofs guarantee to a verifier that a given serializable element is recorded at a given state of the log, while consistency proofs are used to establish that an inclusion proof is still consistent with the new state of the log at a later time.<a href="#section-1-1" class="pilcrow">¶</a></p>
-<p id="section-1-2">In this document, we define a new type of log, associated with the Confidential Consortium Framework (CCF) ledger. Compared to <span>[<a href="#RFC9162" class="cite xref">RFC9162</a>]</span>, the leaves of CCF trees carry additional opaque information that is used to verify that elements are only written by the Trusted Execution Environment, which addresses the persistence of committed transactions that happen between new signatures of the Merkle Tree root.<a href="#section-1-2" class="pilcrow">¶</a></p>
+<p id="section-1-1">The COSE Receipts document <span>[<a href="#I-D.IETF-cose-merkle-tree-proofs" class="cite xref">I-D.IETF-cose-merkle-tree-proofs</a>]</span> defines a common framework for defining different types of proofs, such as proof of inclusion, about verifiable data structures (VDS). For instance, inclusion proofs guarantee to a verifier that a given serializable element is recorded at a given state of the VDS, while consistency proofs are used to establish that an inclusion proof is still consistent with the new state of the VDS at a later time.<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-2">In this document, we define a new type of VDS, associated with the Confidential Consortium Framework (CCF) ledger. This VDS carries indexed transaction information in a binary Merkle Tree, where new transactions are appended to the right, so that the binary decomposition of the index of a transaction can be interpreted as the position in the tree if 0 represents the left branch and 1 the right branch.
+Compared to <span>[<a href="#RFC9162" class="cite xref">RFC9162</a>]</span>, the leaves of CCF trees carry additional internal information for the following purposes:<a href="#section-1-2" class="pilcrow">¶</a></p>
+<ol start="1" type="1" class="normal type-1" id="section-1-3">
+<li id="section-1-3.1">
+          <p id="section-1-3.1.1">To bind the full details of the transaction executed, which is a super-set of what is exposed in the proof and captures internal information details useful for detailed system audit, but not for application purposes.<a href="#section-1-3.1.1" class="pilcrow">¶</a></p>
+</li>
+        <li id="section-1-3.2">
+          <p id="section-1-3.2.1">To verify that elements are only written by the Trusted Execution Environment, which addresses the persistence of committed transactions that happen between new signatures of the Merkle Tree root.<a href="#section-1-3.2.1" class="pilcrow">¶</a></p>
+</li>
+      </ol>
 <div id="requirements-notation">
 <section id="section-1.1">
         <h3 id="name-requirements-notation">
@@ -1248,7 +1226,7 @@ appear in all capitals, as shown here.<a href="#section-1.1-1" class="pilcrow">�
       <h2 id="name-description-of-the-ccf-ledg">
 <a href="#section-2" class="section-number selfRef">2. </a><a href="#name-description-of-the-ccf-ledg" class="section-name selfRef">Description of the CCF Ledger Verifiable Data Structure</a>
       </h2>
-<p id="section-2-1">This documents extends the verifiable data structure registry of <span>[<a href="#I-D.steele-cose-merkle-tree-proofs" class="cite xref">I-D.steele-cose-merkle-tree-proofs</a>]</span> with the following value:<a href="#section-2-1" class="pilcrow">¶</a></p>
+<p id="section-2-1">This documents extends the verifiable data structure registry of <span>[<a href="#I-D.IETF-cose-merkle-tree-proofs" class="cite xref">I-D.IETF-cose-merkle-tree-proofs</a>]</span> with the following value:<a href="#section-2-1" class="pilcrow">¶</a></p>
 <span id="name-verifiable-data-structure-a"></span><div id="verifiable-data-structure-values">
 <table class="left" id="table-1">
         <caption>
@@ -1257,72 +1235,81 @@ appear in all capitals, as shown here.<a href="#section-1.1-1" class="pilcrow">�
         </caption>
 <thead>
           <tr>
-            <th class="text-left" rowspan="1" colspan="1">Identifier</th>
-            <th class="text-left" rowspan="1" colspan="1">Algorithm</th>
+            <th class="text-left" rowspan="1" colspan="1">Name</th>
+            <th class="text-left" rowspan="1" colspan="1">Value</th>
+            <th class="text-left" rowspan="1" colspan="1">Description</th>
             <th class="text-left" rowspan="1" colspan="1">Reference</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td class="text-left" rowspan="1" colspan="1">TBD_1</td>
-            <td class="text-left" rowspan="1" colspan="1">CCF_LEDGER</td>
+            <td class="text-left" rowspan="1" colspan="1">CCF_LEDGER_SHA256</td>
+            <td class="text-left" rowspan="1" colspan="1">TBD_1 (requested assignment 2)</td>
+            <td class="text-left" rowspan="1" colspan="1">Historical transaction ledgers, such as the CCF ledger</td>
             <td class="text-left" rowspan="1" colspan="1">This document</td>
           </tr>
         </tbody>
       </table>
 </div>
-<div id="tree-shape">
+<p id="section-2-3">This document defines inclusion proofs for CCF ledgers. Verifiers <span class="bcp14">MUST</span> reject all other proof types<a href="#section-2-3" class="pilcrow">¶</a></p>
+<div id="merkle-tree-shape">
 <section id="section-2.1">
-        <h3 id="name-tree-shape">
-<a href="#section-2.1" class="section-number selfRef">2.1. </a><a href="#name-tree-shape" class="section-name selfRef">Tree Shape</a>
+        <h3 id="name-merkle-tree-shape">
+<a href="#section-2.1" class="section-number selfRef">2.1. </a><a href="#name-merkle-tree-shape" class="section-name selfRef">Merkle Tree Shape</a>
         </h3>
-<p id="section-2.1-1">The input of the Merkle Tree Hash (MTH) function is a list of n byte strings, written D_n = {d[0], d[1], ..., d[n-1]}. The output is a single HASH_SIZE byte string, also called the Merkle root hash.<a href="#section-2.1-1" class="pilcrow">¶</a></p>
-<p id="section-2.1-2">This function is defined as follows:<a href="#section-2.1-2" class="pilcrow">¶</a></p>
-<p id="section-2.1-3">The hash of an empty list is the hash of an empty string:<a href="#section-2.1-3" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="section-2.1-4">
+<p id="section-2.1-1">A CCF ledger is a binary Merkle Tree constructed from a hash function H, which is defined from the log type. For instance, the hash function for <code>CCF_LEDGER_SHA256</code> is <code>SHA256</code>, whose <code>HASH_SIZE</code> is 32 bytes.<a href="#section-2.1-1" class="pilcrow">¶</a></p>
+<p id="section-2.1-2">The Merkle tree encodes an ordered list of <code>n</code> transactions T_n = {T[0], T[1], ..., T[n-1]}. We define the Merkle Tree Hash (MTH) function, which takes as input a list of serialized transactions (as byte strings), and outputs a single HASH_SIZE byte string called the Merkle root hash, by induction on the list:<a href="#section-2.1-2" class="pilcrow">¶</a></p>
+<p id="section-2.1-3">This function is defined as follows:<a href="#section-2.1-3" class="pilcrow">¶</a></p>
+<p id="section-2.1-4">The hash of an empty list is the hash of an empty string:<a href="#section-2.1-4" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-2.1-5">
 <pre>
 MTH({}) = HASH().
-</pre><a href="#section-2.1-4" class="pilcrow">¶</a>
+</pre><a href="#section-2.1-5" class="pilcrow">¶</a>
 </div>
-<p id="section-2.1-5">The hash of a list with one entry (also known as a leaf hash) is:<a href="#section-2.1-5" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="section-2.1-6">
+<p id="section-2.1-6">The hash of a list with one entry (also known as a leaf hash) is:<a href="#section-2.1-6" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-2.1-7">
 <pre>
 MTH({d[0]}) = HASH(d[0]).
-</pre><a href="#section-2.1-6" class="pilcrow">¶</a>
+</pre><a href="#section-2.1-7" class="pilcrow">¶</a>
 </div>
-<p id="section-2.1-7">For n &gt; 1, let k be the largest power of two smaller than n (i.e., k &lt; n &lt;= 2k). The Merkle Tree Hash of an n-element list D_n is then defined recursively as:<a href="#section-2.1-7" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="section-2.1-8">
+<p id="section-2.1-8">For n &gt; 1, let k be the largest power of two smaller than n (i.e., k &lt; n &lt;= 2k). The Merkle Tree Hash of an n-element list D_n is then defined recursively as:<a href="#section-2.1-8" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-2.1-9">
 <pre>
 MTH(D_n) = HASH(MTH(D[0:k]) || MTH(D[k:n])),
-</pre><a href="#section-2.1-8" class="pilcrow">¶</a>
+</pre><a href="#section-2.1-9" class="pilcrow">¶</a>
 </div>
-<p id="section-2.1-9">where:<a href="#section-2.1-9" class="pilcrow">¶</a></p>
+<p id="section-2.1-10">where:<a href="#section-2.1-10" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-2.1-10.1">|| denotes concatenation<a href="#section-2.1-10.1" class="pilcrow">¶</a>
+<li class="normal" id="section-2.1-11.1">
+            <p id="section-2.1-11.1.1">|| denotes concatenation<a href="#section-2.1-11.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-2.1-10.2">: denotes concatenation of lists<a href="#section-2.1-10.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-2.1-11.2">
+            <p id="section-2.1-11.2.1">: denotes concatenation of lists<a href="#section-2.1-11.2.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-2.1-10.3">D[k1:k2] = D'_(k2-k1) denotes the list {d'[0] = d[k1], d'[1] = d[k1+1], ..., d'[k2-k1-1] = d[k2-1]} of length (k2 - k1).<a href="#section-2.1-10.3" class="pilcrow">¶</a>
+          <li class="normal" id="section-2.1-11.3">
+            <p id="section-2.1-11.3.1">D[k1:k2] = D'_(k2-k1) denotes the list {d'[0] = d[k1], d'[1] = d[k1+1], ..., d'[k2-k1-1] = d[k2-1]} of length (k2 - k1).<a href="#section-2.1-11.3.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
 </div>
-<div id="leaf-components">
+<div id="transaction-components">
 <section id="section-2.2">
-        <h3 id="name-leaf-components">
-<a href="#section-2.2" class="section-number selfRef">2.2. </a><a href="#name-leaf-components" class="section-name selfRef">Leaf Components</a>
+        <h3 id="name-transaction-components">
+<a href="#section-2.2" class="section-number selfRef">2.2. </a><a href="#name-transaction-components" class="section-name selfRef">Transaction Components</a>
         </h3>
 <p id="section-2.2-1">Each leaf in a CCF ledger carries the following components:<a href="#section-2.2-1" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-2.2-2">
 <pre>
-CCF-leaf = [
-  internal-hash: bstr ; a string of HASH_SIZE bytes;
-  internal-data: bstr; a string of at most 1024 bytes; and
-  data_hash: bstr ; the serialization of the element stored at this leaf.
+ccf-leaf = [
+  internal-transaction-hash: bstr ; a string of HASH_SIZE bytes
+  internal-evidence: tstr         ; a string of at most 1024 bytes
+  data-hash: bstr                 ; a string of HASH_SIZE bytes
 ]
 </pre><a href="#section-2.2-2" class="pilcrow">¶</a>
 </div>
-<p id="section-2.2-3">The <code>internal_hash</code> and <code>internal_data</code> byte strings are internal to the CCF implementation. Similarly, the auxiliary tree entries are internal to CCF. They are opaque to receipt Verifiers, but they commit the TS to the whole tree contents and may be used for additional, CCF-specific auditing.<a href="#section-2.2-3" class="pilcrow">¶</a></p>
+<p id="section-2.2-3">The <code>internal-transaction-hash</code> and <code>internal-evidence</code> byte strings are internal to the CCF implementation. They can be safely ignored by receipt Verifiers, but they commit the TS to the whole tree contents and may be used for additional, CCF-specific auditing.<a href="#section-2.2-3" class="pilcrow">¶</a></p>
+<p id="section-2.2-4"><code>internal-transaction-hash</code> is a hash over the complete entry in the <span>[<a href="#CCF-Ledger-Format" class="cite xref">CCF-Ledger-Format</a>]</span>, and <code>internal-evidence</code> is a revealable <span>[<a href="#CCF-Commit-Evidence" class="cite xref">CCF-Commit-Evidence</a>]</span> value that allows early persistence of ledger entries before distributed consensus can be established.<a href="#section-2.2-4" class="pilcrow">¶</a></p>
+<p id="section-2.2-5"><code>data-hash</code> summarises the subject of the proof: the data which is included in the ledger at this transaction.<a href="#section-2.2-5" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -1335,11 +1322,14 @@ CCF-leaf = [
 <p id="section-3-1">CCF inclusion proofs consist of a list of digests tagged with a single left-or-right bit.<a href="#section-3-1" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-3-2">
 <pre>
-CCF-inclusion-proof: [+ proof-element],
+ccf-inclusion-proof = bstr .cbor {
+  leaf: ccf-leaf              ; leaf label TBD_2
+  path: [+ ccf-proof-element] ; path label TBD_3
+}
 
-proof-element = [
-  left: bool
-  hash: bstr
+ccf-proof-element = [
+  left: bool ; position of the element
+  hash: bstr ; hash of the proof element (string of HASH_SIZE bytes)
 ]
 </pre><a href="#section-3-2" class="pilcrow">¶</a>
 </div>
@@ -1353,22 +1343,19 @@ proof-element = [
 <p id="section-3.1-2">The protected headers for the CCF inclusion proof signature <span class="bcp14">MUST</span> include the following:<a href="#section-3.1-2" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-3.1-3.1">
-            <code>verifiable-data-structure: int/tstr</code>. This header <span class="bcp14">MUST</span> be set to the verifiable data structure algorithm identifier for <code>ccf-ledger</code> (TBD_1).<a href="#section-3.1-3.1" class="pilcrow">¶</a>
+            <p id="section-3.1-3.1.1"><code>verifiable-data-structure: int/tstr</code>. This header <span class="bcp14">MUST</span> be set to the verifiable data structure algorithm identifier for <code>ccf-ledger</code> (TBD_1).<a href="#section-3.1-3.1.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-3.1-3.2">
-            <code>proof-type: int</code>. This header <span class="bcp14">MUST</span> be set to the value of the <code>inclusion</code> proof type in the IANA registry of Verifiable Data Structure Proof Type.<a href="#section-3.1-3.2" class="pilcrow">¶</a>
+            <p id="section-3.1-3.2.1"><code>label: int</code>. This header <span class="bcp14">MUST</span> be set to the value of the <code>inclusion</code> proof type in the IANA registry of Verifiable Data Structure Proof Type (-1).<a href="#section-3.1-3.2.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 <p id="section-3.1-4">The unprotected header for a CCF inclusion proof signature <span class="bcp14">MUST</span> include the following:<a href="#section-3.1-4" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-3.1-5.1">
-            <code>inclusion-proof: bstr .cbor CCF-inclusion-proof</code>. This contains the serialized CCF inclusion proof, as defined above.<a href="#section-3.1-5.1" class="pilcrow">¶</a>
-</li>
-          <li class="normal" id="section-3.1-5.2">
-            <code>leaf</code> (label TBD_2): <code>bstr .cbor CCF-leaf</code>. This contains the CCF-specific serialization of the leaf element<a href="#section-3.1-5.2" class="pilcrow">¶</a>
+            <p id="section-3.1-5.1.1"><code>inclusion-proof: bstr .cbor ccf-inclusion-proof</code>. This contains the serialized CCF inclusion proof, as defined above.<a href="#section-3.1-5.1.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
-<p id="section-3.1-6">The payload of the signature is the CCF ledger Markle root digest, and <span class="bcp14">MUST</span> be detached in order to force verifiers to recompute the root from the inclusion proof in the unprotected header. This provides a safeguard against implementation errors that use the payload of the signature but do not recompute the root from the inclusion proof.<a href="#section-3.1-6" class="pilcrow">¶</a></p>
+<p id="section-3.1-6">The payload of the signature is the CCF ledger Merkle root digest, and <span class="bcp14">MUST</span> be detached in order to force verifiers to recompute the root from the inclusion proof in the unprotected header. This provides a safeguard against implementation errors that use the payload of the signature but do not recompute the root from the inclusion proof.<a href="#section-3.1-6" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="inclusion-proof-verification-algorithm">
@@ -1376,26 +1363,29 @@ proof-element = [
         <h3 id="name-inclusion-proof-verificatio">
 <a href="#section-3.2" class="section-number selfRef">3.2. </a><a href="#name-inclusion-proof-verificatio" class="section-name selfRef">Inclusion Proof Verification Algorithm</a>
         </h3>
-<p id="section-3.2-1">CCF uses the following algorithm to recompute the payload of the signature based on the <code>inclusion-proof</code> header:<a href="#section-3.2-1" class="pilcrow">¶</a></p>
+<p id="section-3.2-1">CCF uses the following algorithm to verify an inclusion receipt:<a href="#section-3.2-1" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-3.2-2">
 <pre>
-compute_root(leaf, proof):
-  h := leaf.internal-hash
-       || HASH(leaf.internal-data)
-       || leaf.data-hash
+compute_root(proof):
+  h := proof.leaf.internal-transaction-hash
+       || HASH(proof.leaf.internal-evidence)
+       || proof.leaf.data-hash
 
   for [left, hash] in proof:
       h := HASH(hash + h) if left
            HASH(h + hash) else
   return h
 
-verify_inclusion_proof(signed_proof):
-  leaf := signed_proof.unprotected_headers[LEAF_LABEL] or fail
-  proof := signed_proof.unprotected_headers[INCLUSION_PROOF_LABEL] or fail
-  payload := compute_root(leaf, proof)
-  return verif_cose_detached(signed_proof, payload)
+verify_inclusion_receipt(inclusion_receipt):
+  let proof = inclusion_receipt.unprotected_headers[INCLUSION_PROOF_LABEL] or fail
+  assert(inclusion_receipt.payload == nil)
+  let payload = compute_root(proof)
+
+  # Use the Merkle Root as the detached payload
+  return verify_cose(inclusion_receipt, payload)
 </pre><a href="#section-3.2-2" class="pilcrow">¶</a>
 </div>
+<p id="section-3.2-3">A description can also be found at <span>[<a href="#CCF-Receipt-Verification" class="cite xref">CCF-Receipt-Verification</a>]</span>.<a href="#section-3.2-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -1433,11 +1423,23 @@ verify_inclusion_proof(signed_proof):
           </h4>
 <p id="section-6.1.1-1">This document requests IANA to add the following new value to the 'COSE Header Parameters' registry:<a href="#section-6.1.1-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-6.1.1-2.1">Label: TBD_2<a href="#section-6.1.1-2.1" class="pilcrow">¶</a>
+<li class="normal" id="section-6.1.1-2.1">
+              <p id="section-6.1.1-2.1.1">Label: TBD_2 (requested assignment 36)<a href="#section-6.1.1-2.1.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-6.1.1-2.2">Value type: <code>bstr</code><a href="#section-6.1.1-2.2" class="pilcrow">¶</a>
+            <li class="normal" id="section-6.1.1-2.2">
+              <p id="section-6.1.1-2.2.1">Value type: ccf-leaf<a href="#section-6.1.1-2.2.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-6.1.1-2.3">Reference: This document<a href="#section-6.1.1-2.3" class="pilcrow">¶</a>
+            <li class="normal" id="section-6.1.1-2.3">
+              <p id="section-6.1.1-2.3.1">Reference: This document<a href="#section-6.1.1-2.3.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-6.1.1-2.4">
+              <p id="section-6.1.1-2.4.1">Label: TBD_3 (requested assignment 37)<a href="#section-6.1.1-2.4.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-6.1.1-2.5">
+              <p id="section-6.1.1-2.5.1">Value type: [+ ccf-proof-element]<a href="#section-6.1.1-2.5.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-6.1.1-2.6">
+              <p id="section-6.1.1-2.6.1">Reference: This document<a href="#section-6.1.1-2.6.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 </section>
@@ -1447,13 +1449,19 @@ verify_inclusion_proof(signed_proof):
           <h4 id="name-tree-algorithms">
 <a href="#section-6.1.2" class="section-number selfRef">6.1.2. </a><a href="#name-tree-algorithms" class="section-name selfRef">Tree Algorithms</a>
           </h4>
-<p id="section-6.1.2-1">This document requests IANA to add the following new value to the 'Tree Algorithms' registry:<a href="#section-6.1.2-1" class="pilcrow">¶</a></p>
+<p id="section-6.1.2-1">This document requests IANA to add the following new value to the ''COSE Verifiable Data Structures' registry:<a href="#section-6.1.2-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-6.1.2-2.1">Identifier: TBD_1 (requested assignment 2)<a href="#section-6.1.2-2.1" class="pilcrow">¶</a>
+<li class="normal" id="section-6.1.2-2.1">
+              <p id="section-6.1.2-2.1.1">Name: CCF_LEDGER_SHA256<a href="#section-6.1.2-2.1.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-6.1.2-2.2">Tree Algorithm: ccf-ledger<a href="#section-6.1.2-2.2" class="pilcrow">¶</a>
+            <li class="normal" id="section-6.1.2-2.2">
+              <p id="section-6.1.2-2.2.1">Value: TBD_1 (requested assignment 2)<a href="#section-6.1.2-2.2.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-6.1.2-2.3">Reference: This document<a href="#section-6.1.2-2.3" class="pilcrow">¶</a>
+            <li class="normal" id="section-6.1.2-2.3">
+              <p id="section-6.1.2-2.3.1">Description: Historical transaction ledgers, such as the CCF ledger<a href="#section-6.1.2-2.3.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-6.1.2-2.4">
+              <p id="section-6.1.2-2.4.1">Reference: This document<a href="#section-6.1.2-2.4.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 </section>
@@ -1462,41 +1470,47 @@ verify_inclusion_proof(signed_proof):
 </div>
 </section>
 </div>
+<div id="sec-normative-references">
 <section id="section-7">
-      <h2 id="name-references">
-<a href="#section-7" class="section-number selfRef">7. </a><a href="#name-references" class="section-name selfRef">References</a>
+      <h2 id="name-normative-references">
+<a href="#section-7" class="section-number selfRef">7. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
       </h2>
-<section id="section-7.1">
-        <h3 id="name-normative-references">
-<a href="#section-7.1" class="section-number selfRef">7.1. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
-        </h3>
 <dl class="references">
+<dt id="CCF">[CCF]</dt>
+      <dd>
+<span class="refTitle">"Confidential Consortium Framework"</span>, <span>n.d.</span>, <span>&lt;<a href="https://github.com/microsoft/ccf">https://github.com/microsoft/ccf</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="CCF-Commit-Evidence">[CCF-Commit-Evidence]</dt>
+      <dd>
+<span class="refTitle">"CCF Commit Evidence"</span>, <span>n.d.</span>, <span>&lt;<a href="https://microsoft.github.io/CCF/main/use_apps/verify_tx.html#commit-evidence">https://microsoft.github.io/CCF/main/use_apps/verify_tx.html#commit-evidence</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="CCF-Ledger-Format">[CCF-Ledger-Format]</dt>
+      <dd>
+<span class="refTitle">"CCF Ledger Format"</span>, <span>n.d.</span>, <span>&lt;<a href="https://microsoft.github.io/CCF/main/architecture/ledger.html">https://microsoft.github.io/CCF/main/architecture/ledger.html</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="CCF-Receipt-Verification">[CCF-Receipt-Verification]</dt>
+      <dd>
+<span class="refTitle">"CCF Receipt Verification"</span>, <span>n.d.</span>, <span>&lt;<a href="https://microsoft.github.io/CCF/main/use_apps/verify_tx.html#receipt-verification">https://microsoft.github.io/CCF/main/use_apps/verify_tx.html#receipt-verification</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="I-D.IETF-cose-merkle-tree-proofs">[I-D.IETF-cose-merkle-tree-proofs]</dt>
+      <dd>
+<span class="refTitle">"*** BROKEN REFERENCE ***"</span>. </dd>
+<dd class="break"></dd>
 <dt id="RFC2119">[RFC2119]</dt>
-        <dd>
+      <dd>
 <span class="refAuthor">Bradner, S.</span>, <span class="refTitle">"Key words for use in RFCs to Indicate Requirement Levels"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 2119</span>, <span class="seriesInfo">DOI 10.17487/RFC2119</span>, <time datetime="1997-03" class="refDate">March 1997</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8174">[RFC8174]</dt>
-        <dd>
+      <dd>
 <span class="refAuthor">Leiba, B.</span>, <span class="refTitle">"Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 8174</span>, <span class="seriesInfo">DOI 10.17487/RFC8174</span>, <time datetime="2017-05" class="refDate">May 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC9162">[RFC9162]</dt>
-      <dd>
+    <dd>
 <span class="refAuthor">Laurie, B.</span>, <span class="refAuthor">Messeri, E.</span>, and <span class="refAuthor">R. Stradling</span>, <span class="refTitle">"Certificate Transparency Version 2.0"</span>, <span class="seriesInfo">RFC 9162</span>, <span class="seriesInfo">DOI 10.17487/RFC9162</span>, <time datetime="2021-12" class="refDate">December 2021</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9162">https://www.rfc-editor.org/rfc/rfc9162</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
-<section id="section-7.2">
-        <h3 id="name-informative-references">
-<a href="#section-7.2" class="section-number selfRef">7.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
-        </h3>
-<dl class="references">
-<dt id="I-D.steele-cose-merkle-tree-proofs">[I-D.steele-cose-merkle-tree-proofs]</dt>
-      <dd>
-<span class="refAuthor">Steele, O.</span>, <span class="refAuthor">Birkholz, H.</span>, <span class="refAuthor">Riechert, M.</span>, <span class="refAuthor">Delignat-Lavaud, A.</span>, and <span class="refAuthor">C. Fournet</span>, <span class="refTitle">"Concise Encoding of Signed Merkle Tree Proofs"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-steele-cose-merkle-tree-proofs-00</span>, <time datetime="2023-03-13" class="refDate">13 March 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-steele-cose-merkle-tree-proofs-00">https://datatracker.ietf.org/doc/html/draft-steele-cose-merkle-tree-proofs-00</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-</dl>
-</section>
-</section>
+</div>
 <div id="attic">
 <section id="appendix-A">
       <h2 id="name-attic">
