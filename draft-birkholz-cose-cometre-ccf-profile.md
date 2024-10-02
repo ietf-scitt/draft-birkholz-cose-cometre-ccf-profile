@@ -144,15 +144,15 @@ The `internal-transaction-hash` and `internal-evidence` byte strings are interna
 CCF inclusion proofs consist of a list of digests tagged with a single left-or-right bit.
 
 ~~~
-ccf-inclusion-proof = bstr .cbor {
-  leaf: ccf-leaf              ; leaf label TBD_2
-  path: [+ ccf-proof-element] ; path label TBD_3
-}
-
 ccf-proof-element = [
   left: bool ; position of the element
   hash: bstr ; hash of the proof element (string of HASH_SIZE bytes)
 ]
+
+ccf-inclusion-proof = bstr .cbor {
+  &(leaf: 1) => ccf-leaf
+  &(path: 2) => [+ ccf-proof-element]
+}
 ~~~
 
 Unlike some other tree algorithms, the index of the element in the tree is not explicit in the inclusion proof, but the list of left-or-right bits can be treated as the binary decomposition of the index, from the least significant (leaf) to the most significant (root).
@@ -210,25 +210,13 @@ Security Considerations
 
 ## Additions to Existing Registries
 
-### COSE Header Parameters registry
-
-This document requests IANA to add the following new value to the 'COSE Header Parameters' registry:
-
-* Label: TBD_2 (requested assignment 36)
-* Value type: ccf-leaf
-* Reference: This document
-
-* Label: TBD_3 (requested assignment 37)
-* Value type: [+ ccf-proof-element]
-* Reference: This document
-
 ### Tree Algorithms {#tree-alg-registry}
 
-This document requests IANA to add the following new value to the ''COSE Verifiable Data Structures' registry:
+This document requests IANA to add the following new value to the 'COSE Verifiable Data Structures' registry:
 
 * Name: CCF_LEDGER_SHA256
 * Value: TBD_1 (requested assignment 2)
-* Description: Historical transaction ledgers, such as the CCF ledger
+* Description: Historical transaction ledgers produced by Trusted Execution Environments, such as the CCF ledger
 * Reference: This document
 
 --- back
