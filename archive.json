@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-10-01T00:37:28.460281+00:00",
+  "timestamp": "2024-10-03T00:33:24.589248+00:00",
   "repo": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
   "labels": [
     {
@@ -1262,6 +1262,32 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 5,
+      "id": "PR_kwDOJs2zh859WwXL",
+      "title": "Amend assignment requests",
+      "url": "https://github.com/ietf-scitt/draft-birkholz-cose-cometre-ccf-profile/pull/5",
+      "state": "OPEN",
+      "author": "achamayou",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "As discussed with @OR13 and @henkbirkholz, because the proof is scoped under `(unprotected) 396: -1`, when `(protected) 395 == 2 (requested assignment)`, and is ultimately wrapped in bstr to make parsing optional, there is no need to obtain assignments for keys it uses internally.\r\n\r\nThis PR is assigning values, and removing the requested assignments accordingly.",
+      "createdAt": "2024-10-02T10:01:33Z",
+      "updatedAt": "2024-10-02T10:01:34Z",
+      "baseRepository": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
+      "baseRefName": "main",
+      "baseRefOid": "a5e19afa261685f038531c84f6be0e0b54939bff",
+      "headRepository": "achamayou/draft-birkholz-cose-cometre-ccf-profile",
+      "headRefName": "amend_assignment_requests",
+      "headRefOid": "53eb78f5f2be4474ad4da4eaabb61e49b1a75763",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
