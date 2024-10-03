@@ -127,9 +127,9 @@ Each leaf in a CCF ledger carries the following components:
 
 ~~~
 ccf-leaf = [
-  internal-transaction-hash: bstr ; a string of HASH_SIZE bytes
-  internal-evidence: tstr         ; a string of at most 1024 bytes
-  data-hash: bstr                 ; a string of HASH_SIZE bytes
+  internal-transaction-hash: bstr .size 32 ; a string of HASH_SIZE(32) bytes
+  internal-evidence: tstr .size (1..1024)  ; a string of at most 1024 bytes
+  data-hash: bstr .size 32                 ; a string of HASH_SIZE(32) bytes
 ]
 ~~~
 
@@ -145,8 +145,8 @@ CCF inclusion proofs consist of a list of digests tagged with a single left-or-r
 
 ~~~
 ccf-proof-element = [
-  left: bool ; position of the element
-  hash: bstr ; hash of the proof element (string of HASH_SIZE bytes)
+  left: bool         ; position of the element
+  hash: bstr .size 32; hash of the proof element (string of HASH_SIZE(32) bytes)
 ]
 
 ccf-inclusion-proof = bstr .cbor {
