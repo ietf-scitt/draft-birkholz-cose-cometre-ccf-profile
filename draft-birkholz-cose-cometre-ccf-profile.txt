@@ -5,9 +5,9 @@
 TBD                                                          H. Birkholz
 Internet-Draft                                            Fraunhofer SIT
 Intended status: Standards Track                      A. Delignat-Lavaud
-Expires: 29 March 2025                                        C. Fournet
+Expires: 11 April 2025                                        C. Fournet
                                                       Microsoft Research
-                                                       25 September 2024
+                                                          8 October 2024
 
 
                          COSE Receipts with CCF
@@ -44,7 +44,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 29 March 2025.
+   This Internet-Draft will expire on 11 April 2025.
 
 Copyright Notice
 
@@ -74,8 +74,7 @@ Table of Contents
    5.  Security Considerations
    6.  IANA Considerations
      6.1.  Additions to Existing Registries
-       6.1.1.  COSE Header Parameters registry
-       6.1.2.  Tree Algorithms
+       6.1.1.  Tree Algorithms
    7.  Normative References
    Appendix A.  Attic
    Authors' Addresses
@@ -178,11 +177,11 @@ Table of Contents
 
    Each leaf in a CCF ledger carries the following components:
 
-   ccf-leaf = [
-     internal-transaction-hash: bstr ; a string of HASH_SIZE bytes
-     internal-evidence: tstr         ; a string of at most 1024 bytes
-     data-hash: bstr                 ; a string of HASH_SIZE bytes
-   ]
+ccf-leaf = [
+  internal-transaction-hash: bstr .size 32 ; a string of HASH_SIZE(32) bytes
+  internal-evidence: tstr .size (1..1024)  ; a string of at most 1024 bytes
+  data-hash: bstr .size 32                 ; a string of HASH_SIZE(32) bytes
+]
 
    The internal-transaction-hash and internal-evidence byte strings are
    internal to the CCF implementation.  They can be safely ignored by
@@ -202,15 +201,15 @@ Table of Contents
    CCF inclusion proofs consist of a list of digests tagged with a
    single left-or-right bit.
 
-   ccf-inclusion-proof = bstr .cbor {
-     leaf: ccf-leaf              ; leaf label TBD_2
-     path: [+ ccf-proof-element] ; path label TBD_3
-   }
+ccf-proof-element = [
+  left: bool         ; position of the element
+  hash: bstr .size 32; hash of the proof element (string of HASH_SIZE(32) bytes)
+]
 
-   ccf-proof-element = [
-     left: bool ; position of the element
-     hash: bstr ; hash of the proof element (string of HASH_SIZE bytes)
-   ]
+ccf-inclusion-proof = bstr .cbor {
+  &(leaf: 1) => ccf-leaf
+  &(path: 2) => [+ ccf-proof-element]
+}
 
    Unlike some other tree algorithms, the index of the element in the
    tree is not explicit in the inclusion proof, but the list of left-or-
@@ -285,34 +284,17 @@ verify_inclusion_receipt(inclusion_receipt):
 
 6.1.  Additions to Existing Registries
 
-6.1.1.  COSE Header Parameters registry
+6.1.1.  Tree Algorithms
 
    This document requests IANA to add the following new value to the
-   'COSE Header Parameters' registry:
-
-   *  Label: TBD_2 (requested assignment 36)
-
-   *  Value type: ccf-leaf
-
-   *  Reference: This document
-
-   *  Label: TBD_3 (requested assignment 37)
-
-   *  Value type: [+ ccf-proof-element]
-
-   *  Reference: This document
-
-6.1.2.  Tree Algorithms
-
-   This document requests IANA to add the following new value to the
-   ''COSE Verifiable Data Structures' registry:
+   'COSE Verifiable Data Structures' registry:
 
    *  Name: CCF_LEDGER_SHA256
 
    *  Value: TBD_1 (requested assignment 2)
 
-   *  Description: Historical transaction ledgers, such as the CCF
-      ledger
+   *  Description: Historical transaction ledgers produced by Trusted
+      Execution Environments, such as the CCF ledger
 
    *  Reference: This document
 
