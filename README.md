@@ -1,8 +1,8 @@
-# A CoMETRE Profile and Tree Algorithm for the Confidential Consortium Framework
+# COSE Receipts Profile and Tree Algorithm for the Confidential Consortium Framework 
 
-This is the working area for the individual Internet-Draft, "A CoMETRE Profile and Tree Algorithm for the Confidential Consortium Framework".
+This is the working area for the individual Internet-Draft, "COSE Receipts Profile and Tree Algorithm for the Confidential Consortium Framework".
 
-* [Editor's Copy](https://ietf-scitt.github.io/draft-birkholz-cose-cometre-ccf-profile/#go.draft-birkholz-cose-cometre-ccf-profile.html)
+* [Editor's Copy](https://ietf-scitt.github.io/draft-birkholz-cose-cometre-ccf-profile/draft-birkholz-cose-receipts-ccf-profile.html)
 * [Datatracker Page](https://datatracker.ietf.org/doc/draft-birkholz-cose-cometre-ccf-profile)
 * [Individual Draft](https://datatracker.ietf.org/doc/html/draft-birkholz-cose-cometre-ccf-profile)
 * [Compare Editor's Copy to Individual Draft](https://ietf-scitt.github.io/draft-birkholz-cose-cometre-ccf-profile/#go.draft-birkholz-cose-cometre-ccf-profile.diff)

@@ -1,5 +1,5 @@
 ---
-title: COSE Receipts with CCF
+title: COSE Receipts Profile and Tree Algorithm for the Confidential Consortium Framework
 abbrev: COSE Receipts with CCF
 docname: draft-birkholz-cose-receipts-ccf-profile-latest
 stand_alone: true
