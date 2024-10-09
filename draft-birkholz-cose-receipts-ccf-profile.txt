@@ -5,13 +5,14 @@
 TBD                                                          H. Birkholz
 Internet-Draft                                            Fraunhofer SIT
 Intended status: Standards Track                      A. Delignat-Lavaud
-Expires: 11 April 2025                                        C. Fournet
+Expires: 12 April 2025                                        C. Fournet
+                                                             A. Chamayou
                                                       Microsoft Research
-                                                          8 October 2024
+                                                          9 October 2024
 
 
                          COSE Receipts with CCF
-             draft-birkholz-cose-cometre-ccf-profile-latest
+            draft-birkholz-cose-receipts-ccf-profile-latest
 
 Abstract
 
@@ -44,7 +45,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 11 April 2025.
+   This Internet-Draft will expire on 12 April 2025.
 
 Copyright Notice
 
@@ -364,3 +365,12 @@ Authors' Addresses
    CB1 2FB
    United Kingdom
    Email: fournet@microsoft.com
+
+
+   Amaury Chamayou
+   Microsoft Research
+   21 Station Road
+   Cambridge
+   CB1 2FB
+   United Kingdom
+   Email: amaury.chamayou@microsoft.com
