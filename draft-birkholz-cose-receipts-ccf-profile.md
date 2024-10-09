@@ -1,7 +1,7 @@
 ---
 title: COSE Receipts with CCF
 abbrev: COSE Receipts with CCF
-docname: draft-birkholz-cose-cometre-ccf-profile-latest
+docname: draft-birkholz-cose-receipts-ccf-profile-latest
 stand_alone: true
 ipr: trust200902
 area: Security
@@ -36,6 +36,13 @@ author:
   code: 'CB1 2FB'
   city: Cambridge
   email: fournet@microsoft.com
+  country: UK
+- name: Amaury Chamayou
+  organization: Microsoft Research
+  street: 21 Station Road
+  code: 'CB1 2FB'
+  city: Cambridge
+  email: amaury.chamayou@microsoft.com
   country: UK
 
 normative:
