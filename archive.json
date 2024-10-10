@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-10-08T00:33:11.245945+00:00",
+  "timestamp": "2024-10-10T00:33:13.448325+00:00",
   "repo": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
   "labels": [
     {
@@ -1268,26 +1268,77 @@
       "id": "PR_kwDOJs2zh859WwXL",
       "title": "Amend assignment requests",
       "url": "https://github.com/ietf-scitt/draft-birkholz-cose-cometre-ccf-profile/pull/5",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "achamayou",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "As discussed with @OR13 and @henkbirkholz, because the proof is scoped under `(unprotected) 396: -1`, when `(protected) 395 == 2 (requested assignment)`, and is ultimately wrapped in bstr to make parsing optional, there is no need to obtain assignments for keys it uses internally.\r\n\r\nThis PR is assigning values, and removing the requested assignments accordingly.\r\n\r\nEdit: I've found that it's possible to be more precise about sizes in CDDL, so I've tightened the schema a bit.",
       "createdAt": "2024-10-02T10:01:33Z",
-      "updatedAt": "2024-10-03T14:25:44Z",
+      "updatedAt": "2024-10-08T16:46:05Z",
       "baseRepository": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
       "baseRefName": "main",
       "baseRefOid": "a5e19afa261685f038531c84f6be0e0b54939bff",
       "headRepository": "achamayou/draft-birkholz-cose-cometre-ccf-profile",
       "headRefName": "amend_assignment_requests",
       "headRefOid": "79fff6e430c2d78c9a053b07c672b3473d27a60d",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
-      "comments": [],
-      "reviews": []
+      "closedAt": "2024-10-08T16:46:05Z",
+      "mergedAt": "2024-10-08T16:46:05Z",
+      "mergedBy": "henkbirkholz",
+      "mergeCommit": {
+        "oid": "82d57fdf88e097d7bb3841139d1414d74c1927ec"
+      },
+      "comments": [
+        {
+          "author": "achamayou",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "@henkbirkholz if you have a minute to have a look ahead of today's meeting, that'd be wonderful :)",
+          "createdAt": "2024-10-08T10:34:48Z",
+          "updatedAt": "2024-10-08T10:34:48Z"
+        },
+        {
+          "author": "achamayou",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "@henkbirkholz CCF tests now automatically check some of the proofs against the schema: https://github.com/microsoft/CCF/pull/6520\r\nSince this is approved, can it be merged?",
+          "createdAt": "2024-10-08T14:57:21Z",
+          "updatedAt": "2024-10-08T14:57:21Z"
+        },
+        {
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "body": "@achamayou yes :-)",
+          "createdAt": "2024-10-08T16:45:59Z",
+          "updatedAt": "2024-10-08T16:45:59Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJs2zh86MWY_W",
+          "commit": {
+            "abbreviatedOid": "79fff6e"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": "lgtm! Thanks a ton.",
+          "createdAt": "2024-10-08T14:26:06Z",
+          "updatedAt": "2024-10-08T14:26:06Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOJs2zh86MWfZ_",
+          "commit": {
+            "abbreviatedOid": "79fff6e"
+          },
+          "author": "OR13",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-10-08T14:34:27Z",
+          "updatedAt": "2024-10-08T14:34:27Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
