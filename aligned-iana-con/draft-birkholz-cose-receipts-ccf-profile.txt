@@ -5,14 +5,13 @@
 TBD                                                          H. Birkholz
 Internet-Draft                                            Fraunhofer SIT
 Intended status: Standards Track                      A. Delignat-Lavaud
-Expires: 12 April 2025                                        C. Fournet
+Expires: 26 May 2025                                          C. Fournet
                                                              A. Chamayou
                                                       Microsoft Research
-                                                          9 October 2024
+                                                        22 November 2024
 
 
-COSE Receipts Profile and Tree Algorithm for the Confidential Consortium
-                               Framework
+                         COSE Receipts with CCF
             draft-birkholz-cose-receipts-ccf-profile-latest
 
 Abstract
@@ -46,7 +45,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 12 April 2025.
+   This Internet-Draft will expire on 26 May 2025.
 
 Copyright Notice
 
@@ -78,7 +77,6 @@ Table of Contents
      6.1.  Additions to Existing Registries
        6.1.1.  Tree Algorithms
    7.  Normative References
-   Appendix A.  Attic
    Authors' Addresses
 
 1.  Introduction
@@ -293,10 +291,13 @@ verify_inclusion_receipt(inclusion_receipt):
 
    *  Name: CCF_LEDGER_SHA256
 
-   *  Value: TBD_1 (requested assignment 2)
+   *  Value: 2 (requested assignment)
 
-   *  Description: Historical transaction ledgers produced by Trusted
-      Execution Environments, such as the CCF ledger
+   *  Description: Append-only logs that are integrity-protected by a
+      Merkle Tree and signatures produced via Trusted Execution
+      Environments containing a mix of public and confidential
+      information, as specified by the Confidential Consortium
+      Framework.
 
    *  Reference: This document
 
@@ -335,10 +336,6 @@ verify_inclusion_receipt(inclusion_receipt):
    [RFC9162]  Laurie, B., Messeri, E., and R. Stradling, "Certificate
               Transparency Version 2.0", RFC 9162, DOI 10.17487/RFC9162,
               December 2021, <https://www.rfc-editor.org/rfc/rfc9162>.
-
-Appendix A.  Attic
-
-   Not ready to throw these texts into the trash bin yet.
 
 Authors' Addresses
 
