@@ -222,13 +222,8 @@ Security Considerations
 This document requests IANA to add the following new value to the 'COSE Verifiable Data Structures' registry:
 
 * Name: CCF_LEDGER_SHA256
-* Value: TBD_1 (requested assignment 2)
-* Description: Historical transaction ledgers produced by Trusted Execution Environments, such as the CCF ledger
+* Value: 2 (requested assignment)
+* Description: Append-only logs that are integrity-protected by a Merkle Tree and signatures produced via Trusted Execution Environments containing a mix of public and confidential information, as specified by the Confidential Consortium Framework. 
 * Reference: This document
 
 --- back
-
-# Attic
-
-Not ready to throw these texts into the trash bin yet.
-
