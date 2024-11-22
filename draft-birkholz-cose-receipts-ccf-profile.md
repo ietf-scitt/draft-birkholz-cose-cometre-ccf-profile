@@ -223,7 +223,7 @@ This document requests IANA to add the following new value to the 'COSE Verifiab
 
 * Name: CCF_LEDGER_SHA256
 * Value: 2 (requested assignment)
-* Description: Append-only logs that are integrity-protected by a Merkle Tree and signatures produced via Trusted Execution Environments containing a mix of public and confidential information, as specified by the Confidential Consortium Framework. 
+* Description: Append-only logs that are integrity-protected by a Merkle Tree and signatures produced via Trusted Execution Environments containing a mix of public and confidential information, as specified by the Confidential Consortium Framework.
 * Reference: This document
 
 --- back
