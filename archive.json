@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-11-21T00:35:46.308190+00:00",
+  "timestamp": "2024-11-24T00:40:05.470663+00:00",
   "repo": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
   "labels": [
     {
@@ -695,7 +695,7 @@
       "url": "https://github.com/ietf-scitt/draft-birkholz-cose-cometre-ccf-profile/pull/4",
       "state": "MERGED",
       "author": "achamayou",
-      "authorAssociation": "CONTRIBUTOR",
+      "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "@henkbirkholz @OR13 I have read through https://datatracker.ietf.org/doc/draft-ietf-cose-merkle-tree-proofs/, and made some edits here as discussed to correct the leaf definition.\r\n\r\nThis is deliberately quite light on details, but I am obviously very happy to expand wherever necessary.",
@@ -716,35 +716,35 @@
       "comments": [
         {
           "author": "achamayou",
-          "authorAssociation": "CONTRIBUTOR",
+          "authorAssociation": "COLLABORATOR",
           "body": "@ad-l I had not seen the updates made in https://github.com/ietf-scitt/draft-birkholz-cose-cometre-ccf-profile/pull/3, I have attempted to merge them in here.",
           "createdAt": "2024-08-30T12:51:48Z",
           "updatedAt": "2024-08-30T12:51:48Z"
         },
         {
           "author": "achamayou",
-          "authorAssociation": "CONTRIBUTOR",
+          "authorAssociation": "COLLABORATOR",
           "body": "@henkbirkholz if/when you have a chance, I would be grateful for a review and some feedback on how to take this forward :)",
           "createdAt": "2024-09-05T10:07:49Z",
           "updatedAt": "2024-09-05T10:07:49Z"
         },
         {
           "author": "achamayou",
-          "authorAssociation": "CONTRIBUTOR",
+          "authorAssociation": "COLLABORATOR",
           "body": "@henkbirkholz I have tried to address your feedback, I hope I did not miss anything.",
           "createdAt": "2024-09-11T14:10:42Z",
           "updatedAt": "2024-09-11T14:10:42Z"
         },
         {
           "author": "achamayou",
-          "authorAssociation": "CONTRIBUTOR",
+          "authorAssociation": "COLLABORATOR",
           "body": "@henkbirkholz may I ask you to check if the changes correctly addressed your feedback, and what the next steps are?",
           "createdAt": "2024-09-24T10:50:09Z",
           "updatedAt": "2024-09-24T10:50:09Z"
         },
         {
           "author": "achamayou",
-          "authorAssociation": "CONTRIBUTOR",
+          "authorAssociation": "COLLABORATOR",
           "body": "@henkbirkholz thank you for the discussion yesterday, I have [corrected the CDDL](https://github.com/ietf-scitt/draft-birkholz-cose-cometre-ccf-profile/pull/4/files#r1774895105) and added requested assignments for the labels. Please let me know if I need to do anything else before this can be merged.",
           "createdAt": "2024-09-25T09:39:42Z",
           "updatedAt": "2024-09-25T09:39:42Z"
@@ -777,7 +777,7 @@
             "abbreviatedOid": "da4d863"
           },
           "author": "achamayou",
-          "authorAssociation": "CONTRIBUTOR",
+          "authorAssociation": "COLLABORATOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2024-08-30T13:25:47Z",
@@ -797,7 +797,7 @@
             "abbreviatedOid": "da4d863"
           },
           "author": "achamayou",
-          "authorAssociation": "CONTRIBUTOR",
+          "authorAssociation": "COLLABORATOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2024-08-30T13:27:23Z",
@@ -857,7 +857,7 @@
             "abbreviatedOid": "da4d863"
           },
           "author": "achamayou",
-          "authorAssociation": "CONTRIBUTOR",
+          "authorAssociation": "COLLABORATOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2024-08-30T14:38:53Z",
@@ -941,7 +941,7 @@
             "abbreviatedOid": "7cd3153"
           },
           "author": "achamayou",
-          "authorAssociation": "CONTRIBUTOR",
+          "authorAssociation": "COLLABORATOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2024-09-06T15:11:18Z",
@@ -961,7 +961,7 @@
             "abbreviatedOid": "7cd3153"
           },
           "author": "achamayou",
-          "authorAssociation": "CONTRIBUTOR",
+          "authorAssociation": "COLLABORATOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2024-09-06T15:14:47Z",
@@ -981,7 +981,7 @@
             "abbreviatedOid": "7cd3153"
           },
           "author": "achamayou",
-          "authorAssociation": "CONTRIBUTOR",
+          "authorAssociation": "COLLABORATOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2024-09-06T15:17:38Z",
@@ -1001,7 +1001,7 @@
             "abbreviatedOid": "7cd3153"
           },
           "author": "achamayou",
-          "authorAssociation": "CONTRIBUTOR",
+          "authorAssociation": "COLLABORATOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2024-09-06T15:18:53Z",
@@ -1021,7 +1021,7 @@
             "abbreviatedOid": "7cd3153"
           },
           "author": "achamayou",
-          "authorAssociation": "CONTRIBUTOR",
+          "authorAssociation": "COLLABORATOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2024-09-06T15:19:51Z",
@@ -1041,7 +1041,7 @@
             "abbreviatedOid": "9c6e360"
           },
           "author": "achamayou",
-          "authorAssociation": "CONTRIBUTOR",
+          "authorAssociation": "COLLABORATOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2024-09-06T17:01:39Z",
@@ -1061,7 +1061,7 @@
             "abbreviatedOid": "7cd3153"
           },
           "author": "achamayou",
-          "authorAssociation": "CONTRIBUTOR",
+          "authorAssociation": "COLLABORATOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2024-09-06T17:22:01Z",
@@ -1121,7 +1121,7 @@
             "abbreviatedOid": "567aef4"
           },
           "author": "achamayou",
-          "authorAssociation": "CONTRIBUTOR",
+          "authorAssociation": "COLLABORATOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2024-09-16T13:00:26Z",
@@ -1141,7 +1141,7 @@
             "abbreviatedOid": "375fcb6"
           },
           "author": "achamayou",
-          "authorAssociation": "CONTRIBUTOR",
+          "authorAssociation": "COLLABORATOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2024-09-17T09:26:37Z",
@@ -1161,7 +1161,7 @@
             "abbreviatedOid": "c6b8775"
           },
           "author": "achamayou",
-          "authorAssociation": "CONTRIBUTOR",
+          "authorAssociation": "COLLABORATOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2024-09-17T12:15:08Z",
@@ -1181,7 +1181,7 @@
             "abbreviatedOid": "5851ce9"
           },
           "author": "achamayou",
-          "authorAssociation": "CONTRIBUTOR",
+          "authorAssociation": "COLLABORATOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2024-09-24T14:54:38Z",
@@ -1201,7 +1201,7 @@
             "abbreviatedOid": "5851ce9"
           },
           "author": "achamayou",
-          "authorAssociation": "CONTRIBUTOR",
+          "authorAssociation": "COLLABORATOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2024-09-24T14:56:34Z",
@@ -1221,7 +1221,7 @@
             "abbreviatedOid": "5851ce9"
           },
           "author": "achamayou",
-          "authorAssociation": "CONTRIBUTOR",
+          "authorAssociation": "COLLABORATOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2024-09-25T09:30:00Z",
@@ -1270,7 +1270,7 @@
       "url": "https://github.com/ietf-scitt/draft-birkholz-cose-cometre-ccf-profile/pull/5",
       "state": "MERGED",
       "author": "achamayou",
-      "authorAssociation": "CONTRIBUTOR",
+      "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "As discussed with @OR13 and @henkbirkholz, because the proof is scoped under `(unprotected) 396: -1`, when `(protected) 395 == 2 (requested assignment)`, and is ultimately wrapped in bstr to make parsing optional, there is no need to obtain assignments for keys it uses internally.\r\n\r\nThis PR is assigning values, and removing the requested assignments accordingly.\r\n\r\nEdit: I've found that it's possible to be more precise about sizes in CDDL, so I've tightened the schema a bit.",
@@ -1291,14 +1291,14 @@
       "comments": [
         {
           "author": "achamayou",
-          "authorAssociation": "CONTRIBUTOR",
+          "authorAssociation": "COLLABORATOR",
           "body": "@henkbirkholz if you have a minute to have a look ahead of today's meeting, that'd be wonderful :)",
           "createdAt": "2024-10-08T10:34:48Z",
           "updatedAt": "2024-10-08T10:34:48Z"
         },
         {
           "author": "achamayou",
-          "authorAssociation": "CONTRIBUTOR",
+          "authorAssociation": "COLLABORATOR",
           "body": "@henkbirkholz CCF tests now automatically check some of the proofs against the schema: https://github.com/microsoft/CCF/pull/6520\r\nSince this is approved, can it be merged?",
           "createdAt": "2024-10-08T14:57:21Z",
           "updatedAt": "2024-10-08T14:57:21Z"
@@ -1336,6 +1336,101 @@
           "body": "",
           "createdAt": "2024-10-08T14:34:27Z",
           "updatedAt": "2024-10-08T14:34:27Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "id": "PR_kwDOJs2zh86C1wDp",
+      "title": "Specific VDS reg request",
+      "url": "https://github.com/ietf-scitt/draft-birkholz-cose-cometre-ccf-profile/pull/6",
+      "state": "MERGED",
+      "author": "henkbirkholz",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "In alignment with draft-bryce-cose-merkle-mountain-range-proofs (i.e. this I-D will request VDS reg entry \"2\" and mmrp will request vds reg entry \"3\").",
+      "createdAt": "2024-11-22T16:35:58Z",
+      "updatedAt": "2024-11-22T17:33:38Z",
+      "baseRepository": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
+      "baseRefName": "main",
+      "baseRefOid": "083955473309bed19fece1cdc80d274d846d0510",
+      "headRepository": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
+      "headRefName": "aligned-iana-con",
+      "headRefOid": "98bd62ba34b164732e035bc681b990ebe99a1a3e",
+      "closedAt": "2024-11-22T17:33:38Z",
+      "mergedAt": "2024-11-22T17:33:37Z",
+      "mergedBy": "achamayou",
+      "mergeCommit": {
+        "oid": "7ae79387b03d4b5e439c92d6f6d8b7e2dd070fa2"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJs2zh86SVIIM",
+          "commit": {
+            "abbreviatedOid": "21e28ce"
+          },
+          "author": "achamayou",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-11-22T16:39:33Z",
+          "updatedAt": "2024-11-22T16:39:33Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOJs2zh86SVNTZ",
+          "commit": {
+            "abbreviatedOid": "98bd62b"
+          },
+          "author": "achamayou",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-11-22T16:43:42Z",
+          "updatedAt": "2024-11-22T16:43:42Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "```suggestion\r\n* Description: Append-only logs that are integrity-protected by\r\n  a Merkle Tree and signatures produced via Trusted Execution\r\n  Environments containing a mix of public and confidential information,\r\n  as specified by the Confidential Consortium Framework.\r\n```",
+              "createdAt": "2024-11-22T16:43:42Z",
+              "updatedAt": "2024-11-22T16:43:42Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86SVNzS",
+          "commit": {
+            "abbreviatedOid": "98bd62b"
+          },
+          "author": "achamayou",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-11-22T16:44:03Z",
+          "updatedAt": "2024-11-22T16:44:03Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "Should fit in the line-length constraint of the formatter, I think.",
+              "createdAt": "2024-11-22T16:44:03Z",
+              "updatedAt": "2024-11-22T16:44:03Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86SVTGt",
+          "commit": {
+            "abbreviatedOid": "98bd62b"
+          },
+          "author": "JAG-UK",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "2 is a good number.\r\nThanks for cleaning out the attic",
+          "createdAt": "2024-11-22T16:50:26Z",
+          "updatedAt": "2024-11-22T16:50:26Z",
           "comments": []
         }
       ]
