@@ -223,7 +223,7 @@ protected-header-map = {
 The unprotected header for an inclusion proof signature is described by the following CDDL definition:
 
 ~~~~ cddl
-inclusion-proof: bstr .cbor ccf-inclusion-proof
+inclusion-proof = bstr .cbor ccf-inclusion-proof
 
 inclusion-proofs = [ + inclusion-proof ]
 
