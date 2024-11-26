@@ -207,7 +207,7 @@ A description can also be found at {{CCF-Receipt-Verification}}.
 
 # Usage in COSE receipt
 
-A COSE receipt with a CCF inclusion proof is described by the following schema:
+A COSE receipt with a CCF inclusion proof is described by the following CDDL definition:
 
 ~~~~ cddl
 protected-header-map = {
