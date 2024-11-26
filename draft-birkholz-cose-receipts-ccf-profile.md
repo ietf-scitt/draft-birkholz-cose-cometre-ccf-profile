@@ -132,7 +132,7 @@ where:
 
 Each leaf in a CCF ledger carries the following components:
 
-~~~ ccdl
+~~~ cddl
 ccf-leaf = [
   internal-transaction-hash: bstr .size 32 ; a string of HASH_SIZE(32) bytes
   internal-evidence: tstr .size (1..1024)  ; a string of at most 1024 bytes
