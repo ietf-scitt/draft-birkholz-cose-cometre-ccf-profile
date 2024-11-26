@@ -5,10 +5,10 @@
 TBD                                                          H. Birkholz
 Internet-Draft                                            Fraunhofer SIT
 Intended status: Standards Track                      A. Delignat-Lavaud
-Expires: 26 May 2025                                          C. Fournet
+Expires: 30 May 2025                                          C. Fournet
                                                              A. Chamayou
                                                       Microsoft Research
-                                                        22 November 2024
+                                                        26 November 2024
 
 
                          COSE Receipts with CCF
@@ -45,7 +45,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 26 May 2025.
+   This Internet-Draft will expire on 30 May 2025.
 
 Copyright Notice
 
@@ -71,12 +71,13 @@ Table of Contents
    3.  CCF Inclusion Proofs
      3.1.  CCF Inclusion Proof Signature
      3.2.  Inclusion Proof Verification Algorithm
-   4.  Privacy Considerations
-   5.  Security Considerations
-   6.  IANA Considerations
-     6.1.  Additions to Existing Registries
-       6.1.1.  Tree Algorithms
-   7.  Normative References
+   4.  Usage in COSE receipt
+   5.  Privacy Considerations
+   6.  Security Considerations
+   7.  IANA Considerations
+     7.1.  Additions to Existing Registries
+       7.1.1.  Tree Algorithms
+   8.  Normative References
    Authors' Addresses
 
 1.  Introduction
@@ -177,11 +178,11 @@ Table of Contents
 
    Each leaf in a CCF ledger carries the following components:
 
-ccf-leaf = [
-  internal-transaction-hash: bstr .size 32 ; a string of HASH_SIZE(32) bytes
-  internal-evidence: tstr .size (1..1024)  ; a string of at most 1024 bytes
-  data-hash: bstr .size 32                 ; a string of HASH_SIZE(32) bytes
-]
+   ccf-leaf = [
+     internal-transaction-hash: bstr .size 32 ; a string of HASH_SIZE(32) bytes
+     internal-evidence: tstr .size (1..1024)  ; a string of at most 1024 bytes
+     data-hash: bstr .size 32                 ; a string of HASH_SIZE(32) bytes
+   ]
 
    The internal-transaction-hash and internal-evidence byte strings are
    internal to the CCF implementation.  They can be safely ignored by
@@ -201,15 +202,15 @@ ccf-leaf = [
    CCF inclusion proofs consist of a list of digests tagged with a
    single left-or-right bit.
 
-ccf-proof-element = [
-  left: bool         ; position of the element
-  hash: bstr .size 32; hash of the proof element (string of HASH_SIZE(32) bytes)
-]
+   ccf-proof-element = [
+     left: bool         ; position of the element
+     hash: bstr .size 32; hash of the proof element (string of HASH_SIZE(32) bytes)
+   ]
 
-ccf-inclusion-proof = bstr .cbor {
-  &(leaf: 1) => ccf-leaf
-  &(path: 2) => [+ ccf-proof-element]
-}
+   ccf-inclusion-proof = bstr .cbor {
+     &(leaf: 1) => ccf-leaf
+     &(path: 2) => [+ ccf-proof-element]
+   }
 
    Unlike some other tree algorithms, the index of the element in the
    tree is not explicit in the inclusion proof, but the list of left-or-
@@ -272,19 +273,52 @@ verify_inclusion_receipt(inclusion_receipt):
 
    A description can also be found at [CCF-Receipt-Verification].
 
-4.  Privacy Considerations
+4.  Usage in COSE receipt
+
+   A COSE receipt with a CCF inclusion proof is described by the
+   following CDDL definition:
+
+   protected-header-map = {
+     &(alg: 1) => int
+     &(vds: 395) => 2
+     * cose-label => cose-value
+   }
+
+   *  alg (label: 1): REQUIRED.  Signature algorithm identifier.  Value
+      type: int.
+
+   *  vds (label: 395): REQUIRED. verifiable data structure algorithm
+      identifier.  Value type: int.
+
+   The unprotected header for an inclusion proof signature is described
+   by the following CDDL definition:
+
+   inclusion-proof = ccf-inclusion-proof
+
+   inclusion-proofs = [ + inclusion-proof ]
+
+   verifiable-proofs = {
+     &(inclusion-proof: -1) => inclusion-proofs
+   }
+
+   unprotected-header-map = {
+     &(vdp: 396) => verifiable-proofs
+     * cose-label => cose-value
+   }
+
+5.  Privacy Considerations
 
    Privacy Considerations
 
-5.  Security Considerations
+6.  Security Considerations
 
    Security Considerations
 
-6.  IANA Considerations
+7.  IANA Considerations
 
-6.1.  Additions to Existing Registries
+7.1.  Additions to Existing Registries
 
-6.1.1.  Tree Algorithms
+7.1.1.  Tree Algorithms
 
    This document requests IANA to add the following new value to the
    'COSE Verifiable Data Structures' registry:
@@ -301,7 +335,7 @@ verify_inclusion_receipt(inclusion_receipt):
 
    *  Reference: This document
 
-7.  Normative References
+8.  Normative References
 
    [CCF]      "Confidential Consortium Framework", n.d.,
               <https://github.com/microsoft/ccf>.
