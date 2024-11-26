@@ -132,7 +132,7 @@ where:
 
 Each leaf in a CCF ledger carries the following components:
 
-~~~
+~~~ cddl
 ccf-leaf = [
   internal-transaction-hash: bstr .size 32 ; a string of HASH_SIZE(32) bytes
   internal-evidence: tstr .size (1..1024)  ; a string of at most 1024 bytes
@@ -150,7 +150,7 @@ The `internal-transaction-hash` and `internal-evidence` byte strings are interna
 
 CCF inclusion proofs consist of a list of digests tagged with a single left-or-right bit.
 
-~~~
+~~~ cddl
 ccf-proof-element = [
   left: bool         ; position of the element
   hash: bstr .size 32; hash of the proof element (string of HASH_SIZE(32) bytes)
@@ -204,6 +204,38 @@ verify_inclusion_receipt(inclusion_receipt):
 ~~~
 
 A description can also be found at {{CCF-Receipt-Verification}}.
+
+# Usage in COSE receipt
+
+A COSE receipt with a CCF inclusion proof is described by the following CDDL definition:
+
+~~~~ cddl
+protected-header-map = {
+  &(alg: 1) => int
+  &(vds: 395) => 2
+  * cose-label => cose-value
+}
+~~~~
+
+- alg (label: 1): REQUIRED. Signature algorithm identifier. Value type: int.
+- vds (label: 395): REQUIRED. verifiable data structure algorithm identifier. Value type: int.
+
+The unprotected header for an inclusion proof signature is described by the following CDDL definition:
+
+~~~~ cddl
+inclusion-proof = ccf-inclusion-proof
+
+inclusion-proofs = [ + inclusion-proof ]
+
+verifiable-proofs = {
+  &(inclusion-proof: -1) => inclusion-proofs
+}
+
+unprotected-header-map = {
+  &(vdp: 396) => verifiable-proofs
+  * cose-label => cose-value
+}
+~~~~
 
 # Privacy Considerations
 
