@@ -220,7 +220,7 @@ protected-header-map = {
 - alg (label: 1): REQUIRED. Signature algorithm identifier. Value type: int.
 - vds (label: 395): REQUIRED. verifiable data structure algorithm identifier. Value type: int.
 
-The unprotected header for an inclusion proof signature is described by the following schema:
+The unprotected header for an inclusion proof signature is described by the following CDDL definition:
 
 ~~~~ cddl
 inclusion-proof: bstr .cbor ccf-inclusion-proof
