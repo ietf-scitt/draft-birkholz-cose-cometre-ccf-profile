@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-11-26T00:36:19.321156+00:00",
+  "timestamp": "2024-11-28T00:36:46.104011+00:00",
   "repo": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
   "labels": [
     {
@@ -49,7 +49,32 @@
       "color": "ffffff"
     }
   ],
-  "issues": [],
+  "issues": [
+    {
+      "number": 7,
+      "id": "I_kwDOJs2zh86goR7i",
+      "title": "Usage Example of VDS",
+      "url": "https://github.com/ietf-scitt/draft-birkholz-cose-cometre-ccf-profile/issues/7",
+      "state": "CLOSED",
+      "author": "henkbirkholz",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Should we add a small usage section similar to: https://www.ietf.org/archive/id/draft-bryce-cose-merkle-mountain-range-proofs-01.html#name-receipt-of-inclusion?",
+      "createdAt": "2024-11-26T14:41:55Z",
+      "updatedAt": "2024-11-26T17:43:55Z",
+      "closedAt": "2024-11-26T17:43:55Z",
+      "comments": [
+        {
+          "author": "achamayou",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Closed by #8",
+          "createdAt": "2024-11-26T17:43:55Z",
+          "updatedAt": "2024-11-26T17:43:55Z"
+        }
+      ]
+    }
+  ],
   "pulls": [
     {
       "number": 1,
@@ -1432,6 +1457,155 @@
           "createdAt": "2024-11-22T16:50:26Z",
           "updatedAt": "2024-11-22T16:50:26Z",
           "comments": []
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "id": "PR_kwDOJs2zh86DNB6q",
+      "title": "Add usage section",
+      "url": "https://github.com/ietf-scitt/draft-birkholz-cose-cometre-ccf-profile/pull/8",
+      "state": "MERGED",
+      "author": "achamayou",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Addresses #7, gratefully inspired by https://www.ietf.org/archive/id/draft-bryce-cose-merkle-mountain-range-proofs-01.html#name-receipt-of-inclusion",
+      "createdAt": "2024-11-26T15:06:01Z",
+      "updatedAt": "2024-11-26T17:43:40Z",
+      "baseRepository": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
+      "baseRefName": "main",
+      "baseRefOid": "7ae79387b03d4b5e439c92d6f6d8b7e2dd070fa2",
+      "headRepository": "achamayou/draft-birkholz-cose-cometre-ccf-profile",
+      "headRefName": "add_usage_section",
+      "headRefOid": "f8f395c89fb7c7a568b1e18f3dc6b174ab9b8b36",
+      "closedAt": "2024-11-26T17:43:40Z",
+      "mergedAt": "2024-11-26T17:43:40Z",
+      "mergedBy": "achamayou",
+      "mergeCommit": {
+        "oid": "177db78654a27ef3338c01c7cd2b893b87c39ab4"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJs2zh86Svivn",
+          "commit": {
+            "abbreviatedOid": "d2e7b21"
+          },
+          "author": "achamayou",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-11-26T15:41:38Z",
+          "updatedAt": "2024-11-26T15:41:39Z",
+          "comments": [
+            {
+              "originalPosition": 24,
+              "body": "```suggestion\r\nA COSE receipt with a CCF inclusion proof is described by the following CDDL definition:\r\n```",
+              "createdAt": "2024-11-26T15:41:38Z",
+              "updatedAt": "2024-11-26T15:41:39Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86SvixC",
+          "commit": {
+            "abbreviatedOid": "d2e7b21"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-11-26T15:41:40Z",
+          "updatedAt": "2024-11-26T15:41:41Z",
+          "comments": [
+            {
+              "originalPosition": 24,
+              "body": "```suggestion\r\nA COSE receipt with a CCF inclusion proof is described by the following CDDL definition:\r\n```",
+              "createdAt": "2024-11-26T15:41:40Z",
+              "updatedAt": "2024-11-26T15:41:41Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86Svi1H",
+          "commit": {
+            "abbreviatedOid": "d2e7b21"
+          },
+          "author": "achamayou",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-11-26T15:41:46Z",
+          "updatedAt": "2024-11-26T15:41:47Z",
+          "comments": [
+            {
+              "originalPosition": 37,
+              "body": "```suggestion\r\nThe unprotected header for an inclusion proof signature is described by the following CDDL definition:\r\n```",
+              "createdAt": "2024-11-26T15:41:46Z",
+              "updatedAt": "2024-11-26T15:41:47Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86SvjGc",
+          "commit": {
+            "abbreviatedOid": "d2e7b21"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-11-26T15:42:13Z",
+          "updatedAt": "2024-11-26T15:42:13Z",
+          "comments": [
+            {
+              "originalPosition": 37,
+              "body": "```suggestion\r\nThe unprotected header for an inclusion proof signature is described by the following CDDL definition:\r\n```",
+              "createdAt": "2024-11-26T15:42:13Z",
+              "updatedAt": "2024-11-26T15:42:13Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86Svlz9",
+          "commit": {
+            "abbreviatedOid": "85475cc"
+          },
+          "author": "achamayou",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-11-26T15:45:12Z",
+          "updatedAt": "2024-11-26T15:45:12Z",
+          "comments": [
+            {
+              "originalPosition": 40,
+              "body": "```suggestion\r\ninclusion-proof = bstr .cbor ccf-inclusion-proof\r\n```",
+              "createdAt": "2024-11-26T15:45:12Z",
+              "updatedAt": "2024-11-26T15:45:12Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86Svm2p",
+          "commit": {
+            "abbreviatedOid": "bccdeec"
+          },
+          "author": "achamayou",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-11-26T15:46:33Z",
+          "updatedAt": "2024-11-26T15:46:33Z",
+          "comments": [
+            {
+              "originalPosition": 40,
+              "body": "```suggestion\r\ninclusion-proof = ccf-inclusion-proof\r\n```",
+              "createdAt": "2024-11-26T15:46:33Z",
+              "updatedAt": "2024-11-26T15:49:29Z"
+            }
+          ]
         }
       ]
     }
