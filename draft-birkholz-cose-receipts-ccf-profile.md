@@ -47,7 +47,7 @@ author:
 
 normative:
   RFC9162: certificate-transparency-v2
-  I-D.IETF-cose-merkle-tree-proofs: COMTRE
+  I-D.ietf-cose-merkle-tree-proofs: cose-receipts
 
   CCF:
     title: "Confidential Consortium Framework"
@@ -73,7 +73,7 @@ This document defines a new verifiable data structure type for COSE Signed Merkl
 
 # Introduction
 
-The COSE Receipts document {{-COMTRE}} defines a common framework for defining different types of proofs, such as proof of inclusion, about verifiable data structures (VDS). For instance, inclusion proofs guarantee to a verifier that a given serializable element is recorded at a given state of the VDS, while consistency proofs are used to establish that an inclusion proof is still consistent with the new state of the VDS at a later time.
+The COSE Receipts document {{-cose-receipts}} defines a common framework for defining different types of proofs, such as proof of inclusion, about verifiable data structures (VDS). For instance, inclusion proofs guarantee to a verifier that a given serializable element is recorded at a given state of the VDS, while consistency proofs are used to establish that an inclusion proof is still consistent with the new state of the VDS at a later time.
 
 In this document, we define a new type of VDS, associated with the Confidential Consortium Framework (CCF) ledger. This VDS carries indexed transaction information in a binary Merkle Tree, where new transactions are appended to the right, so that the binary decomposition of the index of a transaction can be interpreted as the position in the tree if 0 represents the left branch and 1 the right branch.
 Compared to {{-certificate-transparency-v2}}, the leaves of CCF trees carry additional internal information for the following purposes:
@@ -87,7 +87,7 @@ Compared to {{-certificate-transparency-v2}}, the leaves of CCF trees carry addi
 
 # Description of the CCF Ledger Verifiable Data Structure
 
-This documents extends the verifiable data structure registry of {{-COMTRE}} with the following value:
+This documents extends the verifiable data structure registry of {{-cose-receipts}} with the following value:
 
 | Name | Value | Description | Reference
 |---
