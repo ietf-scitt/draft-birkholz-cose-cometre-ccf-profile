@@ -82,7 +82,7 @@ Table of Contents
 
 1.  Introduction
 
-   The COSE Receipts document [I-D.IETF-cose-merkle-tree-proofs] defines
+   The COSE Receipts document [I-D.ietf-cose-merkle-tree-proofs] defines
    a common framework for defining different types of proofs, such as
    proof of inclusion, about verifiable data structures (VDS).  For
    instance, inclusion proofs guarantee to a verifier that a given
@@ -120,7 +120,7 @@ Table of Contents
 2.  Description of the CCF Ledger Verifiable Data Structure
 
    This documents extends the verifiable data structure registry of
-   [I-D.IETF-cose-merkle-tree-proofs] with the following value:
+   [I-D.ietf-cose-merkle-tree-proofs] with the following value:
 
    +===================+===============+==================+===========+
    | Name              | Value         | Description      | Reference |
@@ -355,8 +355,12 @@ verify_inclusion_receipt(inclusion_receipt):
               <https://microsoft.github.io/CCF/main/use_apps/
               verify_tx.html#receipt-verification>.
 
-   [I-D.IETF-cose-merkle-tree-proofs]
-              "*** BROKEN REFERENCE ***".
+   [I-D.ietf-cose-merkle-tree-proofs]
+              Steele, O., Birkholz, H., Delignat-Lavaud, A., and C.
+              Fournet, "COSE Receipts", Work in Progress, Internet-
+              Draft, draft-ietf-cose-merkle-tree-proofs-07, 17 October
+              2024, <https://datatracker.ietf.org/doc/html/draft-ietf-
+              cose-merkle-tree-proofs-07>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,

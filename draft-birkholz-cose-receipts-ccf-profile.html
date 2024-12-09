@@ -1215,7 +1215,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
       <h2 id="name-introduction">
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
-<p id="section-1-1">The COSE Receipts document <span>[<a href="#I-D.IETF-cose-merkle-tree-proofs" class="cite xref">I-D.IETF-cose-merkle-tree-proofs</a>]</span> defines a common framework for defining different types of proofs, such as proof of inclusion, about verifiable data structures (VDS). For instance, inclusion proofs guarantee to a verifier that a given serializable element is recorded at a given state of the VDS, while consistency proofs are used to establish that an inclusion proof is still consistent with the new state of the VDS at a later time.<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-1">The COSE Receipts document <span>[<a href="#I-D.ietf-cose-merkle-tree-proofs" class="cite xref">I-D.ietf-cose-merkle-tree-proofs</a>]</span> defines a common framework for defining different types of proofs, such as proof of inclusion, about verifiable data structures (VDS). For instance, inclusion proofs guarantee to a verifier that a given serializable element is recorded at a given state of the VDS, while consistency proofs are used to establish that an inclusion proof is still consistent with the new state of the VDS at a later time.<a href="#section-1-1" class="pilcrow">¶</a></p>
 <p id="section-1-2">In this document, we define a new type of VDS, associated with the Confidential Consortium Framework (CCF) ledger. This VDS carries indexed transaction information in a binary Merkle Tree, where new transactions are appended to the right, so that the binary decomposition of the index of a transaction can be interpreted as the position in the tree if 0 represents the left branch and 1 the right branch.
 Compared to <span>[<a href="#RFC9162" class="cite xref">RFC9162</a>]</span>, the leaves of CCF trees carry additional internal information for the following purposes:<a href="#section-1-2" class="pilcrow">¶</a></p>
 <ol start="1" type="1" class="normal type-1" id="section-1-3">
@@ -1244,7 +1244,7 @@ appear in all capitals, as shown here.<a href="#section-1.1-1" class="pilcrow">�
       <h2 id="name-description-of-the-ccf-ledg">
 <a href="#section-2" class="section-number selfRef">2. </a><a href="#name-description-of-the-ccf-ledg" class="section-name selfRef">Description of the CCF Ledger Verifiable Data Structure</a>
       </h2>
-<p id="section-2-1">This documents extends the verifiable data structure registry of <span>[<a href="#I-D.IETF-cose-merkle-tree-proofs" class="cite xref">I-D.IETF-cose-merkle-tree-proofs</a>]</span> with the following value:<a href="#section-2-1" class="pilcrow">¶</a></p>
+<p id="section-2-1">This documents extends the verifiable data structure registry of <span>[<a href="#I-D.ietf-cose-merkle-tree-proofs" class="cite xref">I-D.ietf-cose-merkle-tree-proofs</a>]</span> with the following value:<a href="#section-2-1" class="pilcrow">¶</a></p>
 <span id="name-verifiable-data-structure-a"></span><div id="verifiable-data-structure-values">
 <table class="left" id="table-1">
         <caption>
@@ -1524,9 +1524,9 @@ unprotected-header-map = {
       <dd>
 <span class="refTitle">"CCF Receipt Verification"</span>, <span>n.d.</span>, <span>&lt;<a href="https://microsoft.github.io/CCF/main/use_apps/verify_tx.html#receipt-verification">https://microsoft.github.io/CCF/main/use_apps/verify_tx.html#receipt-verification</a>&gt;</span>. </dd>
 <dd class="break"></dd>
-<dt id="I-D.IETF-cose-merkle-tree-proofs">[I-D.IETF-cose-merkle-tree-proofs]</dt>
+<dt id="I-D.ietf-cose-merkle-tree-proofs">[I-D.ietf-cose-merkle-tree-proofs]</dt>
       <dd>
-<span class="refTitle">"*** BROKEN REFERENCE ***"</span>. </dd>
+<span class="refAuthor">Steele, O.</span>, <span class="refAuthor">Birkholz, H.</span>, <span class="refAuthor">Delignat-Lavaud, A.</span>, and <span class="refAuthor">C. Fournet</span>, <span class="refTitle">"COSE Receipts"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-cose-merkle-tree-proofs-07</span>, <time datetime="2024-10-17" class="refDate">17 October 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-cose-merkle-tree-proofs-07">https://datatracker.ietf.org/doc/html/draft-ietf-cose-merkle-tree-proofs-07</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC2119">[RFC2119]</dt>
       <dd>
