@@ -12,11 +12,11 @@
 <meta content="
        This document defines a new verifiable data structure type for COSE Signed Merkle Tree Proofs specifically designed for transaction ledgers produced by Trusted Execution Environments (TEEs), such as the Confidential Consortium Framework ( ) to provide stronger tamper-evidence guarantees. 
     " name="description">
-<meta content="xml2rfc 3.24.0" name="generator">
+<meta content="xml2rfc 3.25.0" name="generator">
 <meta content="Internet-Draft" name="keyword">
 <meta content="draft-birkholz-cose-receipts-ccf-profile-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.24.0
+  xml2rfc 3.25.0
     Python 3.12.7
     ConfigArgParse 1.7
     google-i18n-address 3.1.1
@@ -1043,11 +1043,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">COSE Receipts with CCF</td>
-<td class="right">November 2024</td>
+<td class="right">December 2024</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Birkholz, et al.</td>
-<td class="center">Expires 30 May 2025</td>
+<td class="center">Expires 12 June 2025</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1060,12 +1060,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-birkholz-cose-receipts-ccf-profile-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2024-11-26" class="published">26 November 2024</time>
+<time datetime="2024-12-09" class="published">9 December 2024</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2025-05-30">30 May 2025</time></dd>
+<dd class="expires"><time datetime="2025-06-12">12 June 2025</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1119,7 +1119,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 30 May 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 12 June 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1179,7 +1179,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4">
-            <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-usage-in-cose-receipt" class="internal xref">Usage in COSE receipt</a></p>
+            <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-usage-in-cose-receipts" class="internal xref">Usage in COSE Receipts</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5">
             <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-privacy-considerations" class="internal xref">Privacy Considerations</a></p>
@@ -1408,12 +1408,12 @@ verify_inclusion_receipt(inclusion_receipt):
 </div>
 </section>
 </div>
-<div id="usage-in-cose-receipt">
+<div id="usage-in-cose-receipts">
 <section id="section-4">
-      <h2 id="name-usage-in-cose-receipt">
-<a href="#section-4" class="section-number selfRef">4. </a><a href="#name-usage-in-cose-receipt" class="section-name selfRef">Usage in COSE receipt</a>
+      <h2 id="name-usage-in-cose-receipts">
+<a href="#section-4" class="section-number selfRef">4. </a><a href="#name-usage-in-cose-receipts" class="section-name selfRef">Usage in COSE Receipts</a>
       </h2>
-<p id="section-4-1">A COSE receipt with a CCF inclusion proof is described by the following CDDL definition:<a href="#section-4-1" class="pilcrow">¶</a></p>
+<p id="section-4-1">A COSE Receipt with a CCF inclusion proof is described by the following CDDL definition:<a href="#section-4-1" class="pilcrow">¶</a></p>
 <div class="lang-cddl sourcecode" id="section-4-2">
 <pre>
 protected-header-map = {
@@ -1558,7 +1558,7 @@ unprotected-header-map = {
 <div dir="auto" class="left"><span class="country-name">Germany</span></div>
 <div class="email">
 <span>Email:</span>
-<a href="mailto:henk.birkholz@sit.fraunhofer.de" class="email">henk.birkholz@sit.fraunhofer.de</a>
+<a href="mailto:henk.birkholz@ietf.contact" class="email">henk.birkholz@ietf.contact</a>
 </div>
 </address>
 <address class="vcard">

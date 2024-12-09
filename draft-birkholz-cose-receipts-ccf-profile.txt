@@ -5,10 +5,10 @@
 TBD                                                          H. Birkholz
 Internet-Draft                                            Fraunhofer SIT
 Intended status: Standards Track                      A. Delignat-Lavaud
-Expires: 30 May 2025                                          C. Fournet
+Expires: 12 June 2025                                         C. Fournet
                                                              A. Chamayou
                                                       Microsoft Research
-                                                        26 November 2024
+                                                         9 December 2024
 
 
                          COSE Receipts with CCF
@@ -45,7 +45,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 30 May 2025.
+   This Internet-Draft will expire on 12 June 2025.
 
 Copyright Notice
 
@@ -71,7 +71,7 @@ Table of Contents
    3.  CCF Inclusion Proofs
      3.1.  CCF Inclusion Proof Signature
      3.2.  Inclusion Proof Verification Algorithm
-   4.  Usage in COSE receipt
+   4.  Usage in COSE Receipts
    5.  Privacy Considerations
    6.  Security Considerations
    7.  IANA Considerations
@@ -273,9 +273,9 @@ verify_inclusion_receipt(inclusion_receipt):
 
    A description can also be found at [CCF-Receipt-Verification].
 
-4.  Usage in COSE receipt
+4.  Usage in COSE Receipts
 
-   A COSE receipt with a CCF inclusion proof is described by the
+   A COSE Receipt with a CCF inclusion proof is described by the
    following CDDL definition:
 
    protected-header-map = {
@@ -378,7 +378,7 @@ Authors' Addresses
    Rheinstrasse 75
    64295 Darmstadt
    Germany
-   Email: henk.birkholz@sit.fraunhofer.de
+   Email: henk.birkholz@ietf.contact
 
 
    Antoine Delignat-Lavaud
