@@ -18,7 +18,7 @@ author:
 - name: Henk Birkholz
   org: Fraunhofer SIT
   abbrev: Fraunhofer SIT
-  email: henk.birkholz@sit.fraunhofer.de
+  email: henk.birkholz@ietf.contact
   street: Rheinstrasse 75
   code: '64295'
   city: Darmstadt
@@ -205,9 +205,9 @@ verify_inclusion_receipt(inclusion_receipt):
 
 A description can also be found at {{CCF-Receipt-Verification}}.
 
-# Usage in COSE receipt
+# Usage in COSE Receipts
 
-A COSE receipt with a CCF inclusion proof is described by the following CDDL definition:
+A COSE Receipt with a CCF inclusion proof is described by the following CDDL definition:
 
 ~~~~ cddl
 protected-header-map = {
