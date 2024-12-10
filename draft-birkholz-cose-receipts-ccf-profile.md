@@ -91,10 +91,10 @@ This documents extends the verifiable data structure registry of {{-cose-receipt
 
 | Name | Value | Description | Reference
 |---
-|CCF_LEDGER_SHA256 | TBD_1 (requested assignment 2) | Historical transaction ledgers, such as the CCF ledger | This document
+|CCF_LEDGER_SHA256 | TBD_1 (requested assignment 2) | Historical transaction ledgers, such as the CCF ledger | RFCthis
 {: #verifiable-data-structure-values align="left" title="Verifiable Data Structure Algorithms"}
 
-This document defines inclusion proofs for CCF ledgers. Verifiers MUST reject all other proof types
+This document defines inclusion proofs for CCF ledgers. Corresponding CCF Verifiers MUST reject proof types they do not support.
 
 ## Merkle Tree Shape
 
@@ -209,20 +209,20 @@ A description can also be found at {{CCF-Receipt-Verification}}.
 
 A COSE Receipt with a CCF inclusion proof is described by the following CDDL definition:
 
-~~~~ cddl
+~~~ cddl
 protected-header-map = {
   &(alg: 1) => int
   &(vds: 395) => 2
   * cose-label => cose-value
 }
-~~~~
+~~~
 
 - alg (label: 1): REQUIRED. Signature algorithm identifier. Value type: int.
 - vds (label: 395): REQUIRED. verifiable data structure algorithm identifier. Value type: int.
 
 The unprotected header for an inclusion proof signature is described by the following CDDL definition:
 
-~~~~ cddl
+~~~ cddl
 inclusion-proof = ccf-inclusion-proof
 
 inclusion-proofs = [ + inclusion-proof ]
@@ -235,15 +235,15 @@ unprotected-header-map = {
   &(vdp: 396) => verifiable-proofs
   * cose-label => cose-value
 }
-~~~~
+~~~
 
 # Privacy Considerations
 
-Privacy Considerations
+TBD
 
 # Security Considerations
 
-Security Considerations
+Maybe a list of precursors that are specific to CCF VDS goes here (e.g., trade-offs, pro/con, use of TEE).
 
 # IANA Considerations
 
