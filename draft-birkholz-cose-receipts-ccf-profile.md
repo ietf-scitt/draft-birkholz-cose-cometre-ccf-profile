@@ -243,7 +243,7 @@ TBD
 
 # Security Considerations
 
-Maybe a list of precursors that are specific to CCF VDS goes here (e.g., trade-offs, pro/con, use of TEE). 
+Maybe a list of precursors that are specific to CCF VDS goes here (e.g., trade-offs, pro/con, use of TEE).
 
 # IANA Considerations
 
