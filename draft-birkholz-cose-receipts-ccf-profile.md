@@ -257,7 +257,7 @@ CCF networks of nodes rely on executing in Trusted Execution Environments to sec
 2. The creation and usage of receipt signing keys
 
 A compromise in the Trusted Execution Environment platform used to execute the network may allow an attacker to produce invalid and incompatible ledger branches.
-Clients can mitigate this risk by regularly fetching attestation information about the TEE instances, available in the ledger and from the network itself, and confirming that the nodes composing the network are running up-to-date, trusted platform components.  
+Clients can mitigate this risk by regularly fetching attestation information about the TEE instances, available in the ledger and from the network itself, and confirming that the nodes composing the network are running up-to-date, trusted platform components.
 
 ## Operators
 
