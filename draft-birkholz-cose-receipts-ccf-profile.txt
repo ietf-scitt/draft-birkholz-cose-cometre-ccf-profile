@@ -5,10 +5,10 @@
 TBD                                                          H. Birkholz
 Internet-Draft                                            Fraunhofer SIT
 Intended status: Standards Track                      A. Delignat-Lavaud
-Expires: 12 June 2025                                         C. Fournet
+Expires: 13 June 2025                                         C. Fournet
                                                              A. Chamayou
                                                       Microsoft Research
-                                                         9 December 2024
+                                                        10 December 2024
 
 
                          COSE Receipts with CCF
@@ -45,7 +45,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 12 June 2025.
+   This Internet-Draft will expire on 13 June 2025.
 
 Copyright Notice
 
@@ -125,16 +125,17 @@ Table of Contents
    +===================+===============+==================+===========+
    | Name              | Value         | Description      | Reference |
    +===================+===============+==================+===========+
-   | CCF_LEDGER_SHA256 | TBD_1         | Historical       | This      |
-   |                   | (requested    | transaction      | document  |
+   | CCF_LEDGER_SHA256 | TBD_1         | Historical       | RFCthis   |
+   |                   | (requested    | transaction      |           |
    |                   | assignment 2) | ledgers, such as |           |
    |                   |               | the CCF ledger   |           |
    +-------------------+---------------+------------------+-----------+
 
               Table 1: Verifiable Data Structure Algorithms
 
-   This document defines inclusion proofs for CCF ledgers.  Verifiers
-   MUST reject all other proof types
+   This document defines inclusion proofs for CCF ledgers.
+   Corresponding CCF Verifiers MUST reject proof types they do not
+   support.
 
 2.1.  Merkle Tree Shape
 
@@ -308,11 +309,12 @@ verify_inclusion_receipt(inclusion_receipt):
 
 5.  Privacy Considerations
 
-   Privacy Considerations
+   TBD
 
 6.  Security Considerations
 
-   Security Considerations
+   Maybe a list of precursors that are specific to CCF VDS goes here
+   (e.g., trade-offs, pro/con, use of TEE).
 
 7.  IANA Considerations
 
