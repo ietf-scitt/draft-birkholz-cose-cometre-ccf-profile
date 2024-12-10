@@ -47,7 +47,7 @@ author:
 
 normative:
   RFC9162: certificate-transparency-v2
-  I-D.ietf-cose-merkle-tree-proofs: cose-receipts
+  I-D.draft-ietf-cose-merkle-tree-proofs: cose-receipts
 
   CCF:
     title: "Confidential Consortium Framework"
@@ -67,7 +67,7 @@ normative:
 
 --- abstract
 
-This document defines a new verifiable data structure type for COSE Signed Merkle Tree Proofs specifically designed for transaction ledgers produced by Trusted Execution Environments (TEEs), such as the Confidential Consortium Framework ({{CCF}}) to provide stronger tamper-evidence guarantees.
+This document defines a new verifiable data structure type for COSE Signed Merkle Tree Proofs specifically designed for transaction ledgers produced via Trusted Execution Environments (TEEs), such as the Confidential Consortium Framework ({{CCF}}) to provide stronger tamper-evidence guarantees.
 
 --- middle
 
@@ -239,11 +239,31 @@ unprotected-header-map = {
 
 # Privacy Considerations
 
-TBD
+See the privacy considerations section of:
+
+*  {{-cose-receipts}}
 
 # Security Considerations
 
-Maybe a list of precursors that are specific to CCF VDS goes here (e.g., trade-offs, pro/con, use of TEE).
+See the security considerations section of:
+
+*  {{-cose-receipts}}
+
+## Trusted Execution Environments
+
+CCF networks of nodes rely on executing in Trusted Execution Environments to secure their function, in particular:
+
+1. The evaluation of registration policies
+2. The creation and usage of receipt signing keys
+
+A compromise in the Trusted Execution Environment platform used to execute the network may allow an attacker to produce invalid and incompatible ledger branches.
+Clients can mitigate this risk by regularly fetching attestation information about the TEE instances, available in the ledger and from the network itself, and confirming that the nodes composing the network are running up-to-date, trusted platform components.  
+
+## Operators
+
+The operator of a CCF network has the ability to start successor networks, with a distinct identity, which endorse the receipts produced by a previous instance.
+This functionality is important to provide service continuity in the case of a catastrophic failure of a majority of nodes, but allows a potentially malicious operator to start from a prefix of an earlier ledger.
+Clients can mitigate this risk by checking the latest receipt they hold is present in the ledger of a successor ledger, before they begin making use of it.
 
 # IANA Considerations
 
