@@ -263,7 +263,7 @@ Clients can mitigate this risk in two ways: by regularly auditing the consistenc
 
 The operator of a CCF network has the ability to start successor networks, with a distinct identity, which endorse the receipts produced by a previous instance.
 This functionality is important to provide service continuity in the case of a catastrophic failure of a majority of nodes, but allows a potentially malicious operator to start from a prefix of an earlier ledger.
-Clients can mitigate this risk by checking the latest receipt they hold is present in the ledger of a successor ledger, before they begin making use of it.
+Clients can mitigate this risk by auditing the successor ledger and its attestation information, as described above. In particular, clients can check that the latest receipt they hold is present in the successor ledger before they begin making use of it.
 
 # IANA Considerations
 
