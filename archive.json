@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-12-10T00:38:01.021455+00:00",
+  "timestamp": "2024-12-12T00:37:21.683430+00:00",
   "repo": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
   "labels": [
     {
@@ -1604,6 +1604,181 @@
               "body": "```suggestion\r\ninclusion-proof = ccf-inclusion-proof\r\n```",
               "createdAt": "2024-11-26T15:46:33Z",
               "updatedAt": "2024-11-26T15:49:29Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "id": "PR_kwDOJs2zh86Eq_lT",
+      "title": "addressing Jon's review",
+      "url": "https://github.com/ietf-scitt/draft-birkholz-cose-cometre-ccf-profile/pull/9",
+      "state": "MERGED",
+      "author": "henkbirkholz",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "https://mailarchive.ietf.org/arch/msg/cose/N0yB0oSDJn8ayWhL-X6kFz-3ZLc",
+      "createdAt": "2024-12-10T09:13:37Z",
+      "updatedAt": "2024-12-10T09:29:58Z",
+      "baseRepository": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
+      "baseRefName": "main",
+      "baseRefOid": "c54e68ae135019c177aee476ab9febc347dfe876",
+      "headRepository": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
+      "headRefName": "review-jon",
+      "headRefOid": "fbee79fef45a02b967c96caf537751143795b185",
+      "closedAt": "2024-12-10T09:29:57Z",
+      "mergedAt": "2024-12-10T09:29:57Z",
+      "mergedBy": "henkbirkholz",
+      "mergeCommit": {
+        "oid": "2dbaac6c941aad3498c7d07d95d2cfd6d433fee9"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJs2zh86UgpYk",
+          "commit": {
+            "abbreviatedOid": "fbee79f"
+          },
+          "author": "achamayou",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-10T09:20:04Z",
+          "updatedAt": "2024-12-10T09:20:04Z",
+          "comments": [
+            {
+              "originalPosition": 9,
+              "body": "@JAG-UK is quite right that this is a better wording, getting proofs from multiple ledgers definitely must be possible, and should be encouraged if anything.",
+              "createdAt": "2024-12-10T09:20:04Z",
+              "updatedAt": "2024-12-10T09:20:04Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86Ugse-",
+          "commit": {
+            "abbreviatedOid": "fbee79f"
+          },
+          "author": "achamayou",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-12-10T09:22:37Z",
+          "updatedAt": "2024-12-10T09:22:37Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "id": "PR_kwDOJs2zh86EvP8t",
+      "title": "Address remaining elements of Jon's review",
+      "url": "https://github.com/ietf-scitt/draft-birkholz-cose-cometre-ccf-profile/pull/10",
+      "state": "OPEN",
+      "author": "achamayou",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Follow up to #9, hopefully covers points raised in https://mailarchive.ietf.org/arch/msg/cose/N0yB0oSDJn8ayWhL-X6kFz-3ZLc/ that were still outstanding.",
+      "createdAt": "2024-12-10T17:20:30Z",
+      "updatedAt": "2024-12-11T17:09:01Z",
+      "baseRepository": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
+      "baseRefName": "main",
+      "baseRefOid": "2dbaac6c941aad3498c7d07d95d2cfd6d433fee9",
+      "headRepository": "achamayou/draft-birkholz-cose-cometre-ccf-profile",
+      "headRefName": "address_the_rest_of_jons_feedback",
+      "headRefOid": "aaca45f7e0ce965e9edb1faf9e8c24038e7290ce",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJs2zh86UmNv0",
+          "commit": {
+            "abbreviatedOid": "afb2dd9"
+          },
+          "author": "achamayou",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-10T17:23:59Z",
+          "updatedAt": "2024-12-10T17:23:59Z",
+          "comments": [
+            {
+              "originalPosition": 45,
+              "body": "We have reasonably complete descriptions of the DR procedure from an operations (https://microsoft.github.io/CCF/main/operations/recovery.html) and governance (https://microsoft.github.io/CCF/main/governance/accept_recovery.html) perspective. I do not know to what extent we want to go in depth here and/or add references. I started short, but happy to expand if desired.",
+              "createdAt": "2024-12-10T17:23:59Z",
+              "updatedAt": "2024-12-10T17:23:59Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86UmOTN",
+          "commit": {
+            "abbreviatedOid": "afb2dd9"
+          },
+          "author": "achamayou",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-10T17:24:58Z",
+          "updatedAt": "2024-12-10T17:24:58Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "I think this is right, but I am not sure how to check that references work properly. I am willing to learn though.",
+              "createdAt": "2024-12-10T17:24:58Z",
+              "updatedAt": "2024-12-10T17:24:59Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86UmOwC",
+          "commit": {
+            "abbreviatedOid": "afb2dd9"
+          },
+          "author": "achamayou",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-10T17:25:50Z",
+          "updatedAt": "2024-12-10T17:25:50Z",
+          "comments": [
+            {
+              "originalPosition": 14,
+              "body": "@JAG-UK is this is a sufficient clarification? Should we expand and explain that it's software that's running in the TEE that produces the ledger, or do we think that's reasonably obvious?",
+              "createdAt": "2024-12-10T17:25:50Z",
+              "updatedAt": "2024-12-10T17:25:50Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86UyYL-",
+          "commit": {
+            "abbreviatedOid": "afb2dd9"
+          },
+          "author": "fournet",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "Thanks; I made minor edits. ",
+          "createdAt": "2024-12-11T16:39:19Z",
+          "updatedAt": "2024-12-11T16:47:22Z",
+          "comments": [
+            {
+              "originalPosition": 42,
+              "body": "```suggestion\r\nClients can mitigate this risk in two ways: by regularly auditing the consistency of the CCF ledger; and by regularly fetching attestation information about the TEE instances, available in the ledger and from the network itself, and confirming that the nodes composing the network are running up-to-date, trusted platform components.\r\n```",
+              "createdAt": "2024-12-11T16:39:19Z",
+              "updatedAt": "2024-12-11T16:47:22Z"
+            },
+            {
+              "originalPosition": 48,
+              "body": "```suggestion\r\nClients can mitigate this risk by auditing the successor ledger and its attestation information, as described above. In particular, clients can check that the latest receipt they hold is present in the successor ledger before they begin making use of it.\r\n```",
+              "createdAt": "2024-12-11T16:46:45Z",
+              "updatedAt": "2024-12-11T16:47:22Z"
             }
           ]
         }
