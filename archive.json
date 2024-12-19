@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-12-17T00:37:38.126116+00:00",
+  "timestamp": "2024-12-19T00:36:26.771604+00:00",
   "repo": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
   "labels": [
     {
@@ -1683,7 +1683,7 @@
       "labels": [],
       "body": "Follow up to #9, hopefully covers points raised in https://mailarchive.ietf.org/arch/msg/cose/N0yB0oSDJn8ayWhL-X6kFz-3ZLc/ that were still outstanding.",
       "createdAt": "2024-12-10T17:20:30Z",
-      "updatedAt": "2024-12-11T17:09:01Z",
+      "updatedAt": "2024-12-18T17:52:23Z",
       "baseRepository": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
       "baseRefName": "main",
       "baseRefOid": "2dbaac6c941aad3498c7d07d95d2cfd6d433fee9",
@@ -1694,7 +1694,15 @@
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
+      "comments": [
+        {
+          "author": "achamayou",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@henkbirkholz does this look ok?",
+          "createdAt": "2024-12-18T17:52:22Z",
+          "updatedAt": "2024-12-18T17:52:22Z"
+        }
+      ],
       "reviews": [
         {
           "id": "PRR_kwDOJs2zh86UmNv0",
