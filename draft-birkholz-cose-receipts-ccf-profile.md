@@ -134,9 +134,14 @@ Each leaf in a CCF ledger carries the following components:
 
 ~~~ cddl
 ccf-leaf = [
-  internal-transaction-hash: bstr .size 32 ; a string of HASH_SIZE(32) bytes
-  internal-evidence: tstr .size (1..1024)  ; a string of at most 1024 bytes
-  data-hash: bstr .size 32                 ; a string of HASH_SIZE(32) bytes
+  ; Byte string of size HASH_SIZE(32)
+  internal-transaction-hash: bstr .size 32
+
+  ; Text string of at most 1024 bytes
+  internal-evidence: tstr .size (1..1024)
+
+  ; Byte string of size HASH_SIZE(32)
+  data-hash: bstr .size 32
 ]
 ~~~
 
@@ -152,8 +157,11 @@ CCF inclusion proofs consist of a list of digests tagged with a single left-or-r
 
 ~~~ cddl
 ccf-proof-element = [
-  left: bool         ; position of the element
-  hash: bstr .size 32; hash of the proof element (string of HASH_SIZE(32) bytes)
+  ; Position of the element
+  left: bool
+
+  ; Hash of the proof element: byte string of size HASH_SIZE(32)
+  hash: bstr .size 32;
 ]
 
 ccf-inclusion-proof = bstr .cbor {
@@ -195,7 +203,8 @@ compute_root(proof):
   return h
 
 verify_inclusion_receipt(inclusion_receipt):
-  let proof = inclusion_receipt.unprotected_header[INCLUSION_PROOF_LABEL] or fail
+  let label = INCLUSION_PROOF_LABEL
+  let proof = inclusion_receipt.unprotected_header[label] or fail
   assert(inclusion_receipt.payload == nil)
   let payload = compute_root(proof)
 
