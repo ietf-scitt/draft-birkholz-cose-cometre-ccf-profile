@@ -166,9 +166,9 @@ Unlike some other tree algorithms, the index of the element in the tree is not e
 
 ## CCF Inclusion Proof Signature
 
-The proof signature for a CCF inclusion proof is a COSE signature (encoded with the `COSE_Sign1` CBOR type) which includes the following additional requirements for protected and unprotected headers. Please note that there may be additional headers defined by the application.
+The proof signature for a CCF inclusion proof is a COSE signature (encoded with the `COSE_Sign1` CBOR type) which includes the following additional requirements for protected and unprotected headers. Please note that there may be additional header parameters defined by the application.
 
-The protected headers for the CCF inclusion proof signature MUST include the following:
+The protected header parameters for the CCF inclusion proof signature MUST include the following:
 
 * `verifiable-data-structure: int/tstr`. This header MUST be set to the verifiable data structure algorithm identifier for `ccf-ledger` (TBD_1).
 * `label: int`. This header MUST be set to the value of the `inclusion` proof type in the IANA registry of Verifiable Data Structure Proof Type (-1).
@@ -195,7 +195,7 @@ compute_root(proof):
   return h
 
 verify_inclusion_receipt(inclusion_receipt):
-  let proof = inclusion_receipt.unprotected_headers[INCLUSION_PROOF_LABEL] or fail
+  let proof = inclusion_receipt.unprotected_header[INCLUSION_PROOF_LABEL] or fail
   assert(inclusion_receipt.payload == nil)
   let payload = compute_root(proof)
 
