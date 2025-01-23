@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-01-21T00:33:14.310377+00:00",
+  "timestamp": "2025-01-23T00:33:47.026225+00:00",
   "repo": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
   "labels": [
     {
@@ -1683,13 +1683,13 @@
       "labels": [],
       "body": "Follow up to #9, hopefully covers points raised in https://mailarchive.ietf.org/arch/msg/cose/N0yB0oSDJn8ayWhL-X6kFz-3ZLc/ that were still outstanding.",
       "createdAt": "2024-12-10T17:20:30Z",
-      "updatedAt": "2024-12-18T17:52:23Z",
+      "updatedAt": "2025-01-22T13:31:28Z",
       "baseRepository": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
       "baseRefName": "main",
       "baseRefOid": "2dbaac6c941aad3498c7d07d95d2cfd6d433fee9",
       "headRepository": "achamayou/draft-birkholz-cose-cometre-ccf-profile",
       "headRefName": "address_the_rest_of_jons_feedback",
-      "headRefOid": "aaca45f7e0ce965e9edb1faf9e8c24038e7290ce",
+      "headRefOid": "8cafc177dfe3f6a4db281c05bd6471cc0fc53cab",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -1701,6 +1701,13 @@
           "body": "@henkbirkholz does this look ok?",
           "createdAt": "2024-12-18T17:52:22Z",
           "updatedAt": "2024-12-18T17:52:22Z"
+        },
+        {
+          "author": "achamayou",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@JAG-UK could you please check that this PR addresses what you spotted in review, and confirm whether you think additional changes are needed?\r\n\r\n@henkbirkholz your review would be welcome, thanks to @SteveLasker's helpful advice the linter is now happy with the content.",
+          "createdAt": "2025-01-22T13:31:25Z",
+          "updatedAt": "2025-01-22T13:31:25Z"
         }
       ],
       "reviews": [
@@ -1787,6 +1794,66 @@
               "body": "```suggestion\r\nClients can mitigate this risk by auditing the successor ledger and its attestation information, as described above. In particular, clients can check that the latest receipt they hold is present in the successor ledger before they begin making use of it.\r\n```",
               "createdAt": "2024-12-11T16:46:45Z",
               "updatedAt": "2024-12-11T16:47:22Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86Y5cRf",
+          "commit": {
+            "abbreviatedOid": "aaca45f"
+          },
+          "author": "SteveLasker",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-01-21T16:48:03Z",
+          "updatedAt": "2025-01-21T16:48:04Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "There are many ways, including https://author-tools.ietf.org/\r\nThe path I tend to use, which I find more iterative and local is to use the `make` tooling.\r\nYou'll need a current node environment. I tend to use nvm:\r\n\r\n```\r\nnvm use 18\r\nmake\r\n```\r\nAssuming make doesn't generate any errors, browse the generated HTML locally: \r\n file://wsl.localhost/Ubuntu/home/steve/go/src/github/achamayou/draft-birkholz-cose-cometre-ccf-profile/draft-birkholz-cose-receipts-ccf-profile.html \r\n\r\nEach file change, locally, you can then just re-run make, and refresh your browser... voila\r\n\r\nThere are a few nit warnings for longer than 72 bytes for samples\r\n```\r\n(160): Warning: Too long line found (L185), 7 characters longer than 72 characters:\r\n     internal-transaction-hash: bstr .size 32 ; a string of HASH_SIZE(32) bytes\r\n/home/steve/go/src/github/achamayou/draft-birkholz-cose-cometre-ccf-profile/draft-birkholz-cose-receipts-ccf-profile.xml(160): Warning: Too long line found (L186), 6 characters longer than 72 characters:\r\n     internal-evidence: tstr .size (1..1024)  ; a string of at most 1024 bytes\r\n/home/steve/go/src/github/achamayou/draft-birkholz-cose-cometre-ccf-profile/draft-birkholz-cose-receipts-ccf-profile.xml(160): Warning: Too long line found (L187), 7 characters longer than 72 characters:\r\n     data-hash: bstr .size 32                 ; a string of HASH_SIZE(32) bytes\r\n/home/steve/go/src/github/achamayou/draft-birkholz-cose-cometre-ccf-profile/draft-birkholz-cose-receipts-ccf-profile.xml(175): Warning: Too long line found (L210), 11 characters longer than 72 characters:\r\n     hash: bstr .size 32; hash of the proof element (string of HASH_SIZE(32) bytes)\r\n/home/steve/go/src/github/achamayou/draft-birkholz-cose-cometre-ccf-profile/draft-birkholz-cose-receipts-ccf-profile.xml(210): Warning: Too long line found (L270), 10 characters longer than 72 characters:\r\n  let proof = inclusion_receipt.unprotected_headers[INCLUSION_PROOF_LABEL] or fail\r\n```\r\n\r\n...but the reference change is correct.",
+              "createdAt": "2025-01-21T16:48:04Z",
+              "updatedAt": "2025-01-21T16:49:35Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86ZBC5P",
+          "commit": {
+            "abbreviatedOid": "afb2dd9"
+          },
+          "author": "achamayou",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-01-22T13:18:47Z",
+          "updatedAt": "2025-01-22T13:18:47Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "@SteveLasker thank you for the pointers, I have found that it is also necessary to `gem install kramdown-rfc` to get the Makefile working. I will try to fix the warnings.",
+              "createdAt": "2025-01-22T13:18:47Z",
+              "updatedAt": "2025-01-22T13:18:47Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86ZBInT",
+          "commit": {
+            "abbreviatedOid": "afb2dd9"
+          },
+          "author": "achamayou",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-01-22T13:28:39Z",
+          "updatedAt": "2025-01-22T13:28:39Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "```\r\n~/draft-birkholz-cose-cometre-ccf-profile$ make\r\nlib/deps.mk:192: ruby bundler not installed; skipping bundle install\r\ndraft-birkholz-cose-receipts-ccf-profile: kramdowm-rfc ... OK\r\ndraft-birkholz-cose-receipts-ccf-profile: xml2rfc-txt ... OK\r\ndraft-birkholz-cose-receipts-ccf-profile: xml2rfc-html ... OK\r\nrm draft-birkholz-cose-receipts-ccf-profile.xml\r\n```\r\n\r\nall fixed now",
+              "createdAt": "2025-01-22T13:28:39Z",
+              "updatedAt": "2025-01-22T13:28:40Z"
             }
           ]
         }
