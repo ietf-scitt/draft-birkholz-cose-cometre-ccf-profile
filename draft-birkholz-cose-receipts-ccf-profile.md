@@ -47,7 +47,7 @@ author:
 
 normative:
   RFC9162: certificate-transparency-v2
-  I-D.draft-ietf-cose-merkle-tree-proofs: cose-receipts
+  I-D.ietf-cose-merkle-tree-proofs: cose-receipts
 
   CCF:
     title: "Confidential Consortium Framework"
