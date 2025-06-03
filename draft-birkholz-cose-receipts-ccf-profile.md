@@ -254,7 +254,7 @@ See the privacy considerations section of:
 
 # Security Considerations
 
-See the security considerations section of:
+The security consideration of {{-cose-receipts}} apply.
 
 *  {{-cose-receipts}}
 
