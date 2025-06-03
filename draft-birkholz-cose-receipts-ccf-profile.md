@@ -161,7 +161,7 @@ ccf-proof-element = [
   left: bool
 
   ; Hash of the proof element: byte string of size HASH_SIZE(32)
-  hash: bstr .size 32;
+  hash: bstr .size 32
 ]
 
 ccf-inclusion-proof = bstr .cbor {
