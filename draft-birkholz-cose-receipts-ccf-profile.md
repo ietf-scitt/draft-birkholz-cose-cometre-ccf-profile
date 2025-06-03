@@ -204,7 +204,8 @@ compute_root(proof):
 
 verify_inclusion_receipt(inclusion_receipt):
   let label = INCLUSION_PROOF_LABEL
-  let proof = inclusion_receipt.unprotected_header[label] or fail
+  assert(label in inclusion_receipt.unprotected_header)
+  let proof = inclusion_receipt.unprotected_header[label]
   assert(inclusion_receipt.payload == nil)
   let payload = compute_root(proof)
 
