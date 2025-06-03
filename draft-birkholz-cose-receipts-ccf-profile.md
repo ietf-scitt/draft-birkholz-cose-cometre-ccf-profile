@@ -67,7 +67,7 @@ normative:
 
 --- abstract
 
-This document defines a new verifiable data structure type for COSE Signed Merkle Tree Proofs specifically designed for transaction ledgers produced by Trusted Execution Environments (TEEs), such as the Confidential Consortium Framework ({{CCF}}) to provide stronger tamper-evidence guarantees.
+This document defines a new verifiable data structure type for COSE Signed Merkle Tree Proofs specifically designed for transaction ledgers produced via Trusted Execution Environments (TEEs), such as the Confidential Consortium Framework ({{CCF}}) to provide stronger tamper-evidence guarantees.
 
 --- middle
 
@@ -134,9 +134,14 @@ Each leaf in a CCF ledger carries the following components:
 
 ~~~ cddl
 ccf-leaf = [
-  internal-transaction-hash: bstr .size 32 ; a string of HASH_SIZE(32) bytes
-  internal-evidence: tstr .size (1..1024)  ; a string of at most 1024 bytes
-  data-hash: bstr .size 32                 ; a string of HASH_SIZE(32) bytes
+  ; Byte string of size HASH_SIZE(32)
+  internal-transaction-hash: bstr .size 32
+
+  ; Text string of at most 1024 bytes
+  internal-evidence: tstr .size (1..1024)
+
+  ; Byte string of size HASH_SIZE(32)
+  data-hash: bstr .size 32
 ]
 ~~~
 
@@ -152,8 +157,11 @@ CCF inclusion proofs consist of a list of digests tagged with a single left-or-r
 
 ~~~ cddl
 ccf-proof-element = [
-  left: bool         ; position of the element
-  hash: bstr .size 32; hash of the proof element (string of HASH_SIZE(32) bytes)
+  ; Position of the element
+  left: bool
+
+  ; Hash of the proof element: byte string of size HASH_SIZE(32)
+  hash: bstr .size 32
 ]
 
 ccf-inclusion-proof = bstr .cbor {
@@ -166,9 +174,9 @@ Unlike some other tree algorithms, the index of the element in the tree is not e
 
 ## CCF Inclusion Proof Signature
 
-The proof signature for a CCF inclusion proof is a COSE signature (encoded with the `COSE_Sign1` CBOR type) which includes the following additional requirements for protected and unprotected headers. Please note that there may be additional headers defined by the application.
+The proof signature for a CCF inclusion proof is a COSE signature (encoded with the `COSE_Sign1` CBOR type) which includes the following additional requirements for protected and unprotected headers. Please note that there may be additional header parameters defined by the application.
 
-The protected headers for the CCF inclusion proof signature MUST include the following:
+The protected header parameters for the CCF inclusion proof signature MUST include the following:
 
 * `verifiable-data-structure: int/tstr`. This header MUST be set to the verifiable data structure algorithm identifier for `ccf-ledger` (TBD_1).
 * `label: int`. This header MUST be set to the value of the `inclusion` proof type in the IANA registry of Verifiable Data Structure Proof Type (-1).
@@ -195,7 +203,9 @@ compute_root(proof):
   return h
 
 verify_inclusion_receipt(inclusion_receipt):
-  let proof = inclusion_receipt.unprotected_headers[INCLUSION_PROOF_LABEL] or fail
+  let label = INCLUSION_PROOF_LABEL
+  assert(label in inclusion_receipt.unprotected_header)
+  let proof = inclusion_receipt.unprotected_header[label]
   assert(inclusion_receipt.payload == nil)
   let payload = compute_root(proof)
 
@@ -239,11 +249,29 @@ unprotected-header-map = {
 
 # Privacy Considerations
 
-TBD
+See the privacy considerations section of:
+
+*  {{-cose-receipts}}
 
 # Security Considerations
 
-Maybe a list of precursors that are specific to CCF VDS goes here (e.g., trade-offs, pro/con, use of TEE).
+The security consideration of {{-cose-receipts}} apply.
+
+## Trusted Execution Environments
+
+CCF networks of nodes rely on executing in Trusted Execution Environments to secure their function, in particular:
+
+1. The evaluation of registration policies
+2. The creation and usage of receipt signing keys
+
+A compromise in the Trusted Execution Environment platform used to execute the network may allow an attacker to produce invalid and incompatible ledger branches.
+Clients can mitigate this risk in two ways: by regularly auditing the consistency of the CCF ledger; and by regularly fetching attestation information about the TEE instances, available in the ledger and from the network itself, and confirming that the nodes composing the network are running up-to-date, trusted platform components.
+
+## Operators
+
+The operator of a CCF network has the ability to start successor networks, with a distinct identity, which endorse the receipts produced by a previous instance.
+This functionality is important to provide service continuity in the case of a catastrophic failure of a majority of nodes, but allows a potentially malicious operator to start from a prefix of an earlier ledger.
+Clients can mitigate this risk by auditing the successor ledger and its attestation information, as described above. In particular, clients can check that the latest receipt they hold is present in the successor ledger before they begin making use of it.
 
 # IANA Considerations
 
