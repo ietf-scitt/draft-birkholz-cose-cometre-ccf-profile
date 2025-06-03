@@ -5,10 +5,10 @@
 TBD                                                          H. Birkholz
 Internet-Draft                                            Fraunhofer SIT
 Intended status: Standards Track                      A. Delignat-Lavaud
-Expires: 13 June 2025                                         C. Fournet
+Expires: 5 December 2025                                      C. Fournet
                                                              A. Chamayou
                                                       Microsoft Research
-                                                        10 December 2024
+                                                             3 June 2025
 
 
                          COSE Receipts with CCF
@@ -45,11 +45,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 13 June 2025.
+   This Internet-Draft will expire on 5 December 2025.
 
 Copyright Notice
 
-   Copyright (c) 2024 IETF Trust and the persons identified as the
+   Copyright (c) 2025 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -360,9 +360,9 @@ verify_inclusion_receipt(inclusion_receipt):
    [I-D.ietf-cose-merkle-tree-proofs]
               Steele, O., Birkholz, H., Delignat-Lavaud, A., and C.
               Fournet, "COSE Receipts", Work in Progress, Internet-
-              Draft, draft-ietf-cose-merkle-tree-proofs-07, 17 October
-              2024, <https://datatracker.ietf.org/doc/html/draft-ietf-
-              cose-merkle-tree-proofs-07>.
+              Draft, draft-ietf-cose-merkle-tree-proofs-14, 11 May 2025,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-cose-
+              merkle-tree-proofs-14>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
