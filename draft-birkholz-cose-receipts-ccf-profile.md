@@ -256,8 +256,6 @@ See the privacy considerations section of:
 
 The security consideration of {{-cose-receipts}} apply.
 
-*  {{-cose-receipts}}
-
 ## Trusted Execution Environments
 
 CCF networks of nodes rely on executing in Trusted Execution Environments to secure their function, in particular:
