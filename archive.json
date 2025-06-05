@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-01-30T00:32:59.614256+00:00",
+  "timestamp": "2025-06-05T01:07:21.606004+00:00",
   "repo": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
   "labels": [
     {
@@ -1676,24 +1676,26 @@
       "id": "PR_kwDOJs2zh86EvP8t",
       "title": "Address remaining elements of Jon's review",
       "url": "https://github.com/ietf-scitt/draft-birkholz-cose-cometre-ccf-profile/pull/10",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "achamayou",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Follow up to #9, hopefully covers points raised in https://mailarchive.ietf.org/arch/msg/cose/N0yB0oSDJn8ayWhL-X6kFz-3ZLc/ that were still outstanding.",
       "createdAt": "2024-12-10T17:20:30Z",
-      "updatedAt": "2025-01-22T13:31:28Z",
+      "updatedAt": "2025-06-03T14:42:26Z",
       "baseRepository": "ietf-scitt/draft-birkholz-cose-cometre-ccf-profile",
       "baseRefName": "main",
-      "baseRefOid": "2dbaac6c941aad3498c7d07d95d2cfd6d433fee9",
+      "baseRefOid": "b88939ba7cf9a489c66c7e81efc0352a210d4c22",
       "headRepository": "achamayou/draft-birkholz-cose-cometre-ccf-profile",
       "headRefName": "address_the_rest_of_jons_feedback",
-      "headRefOid": "8cafc177dfe3f6a4db281c05bd6471cc0fc53cab",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "c6667d55023525d4534f29dbe9a85bb60239f397",
+      "closedAt": "2025-06-03T14:42:26Z",
+      "mergedAt": "2025-06-03T14:42:25Z",
+      "mergedBy": "achamayou",
+      "mergeCommit": {
+        "oid": "6a1fc6af4762103c776f3a348156e223da854664"
+      },
       "comments": [
         {
           "author": "achamayou",
@@ -1777,7 +1779,7 @@
             "abbreviatedOid": "afb2dd9"
           },
           "author": "fournet",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "APPROVED",
           "body": "Thanks; I made minor edits. ",
           "createdAt": "2024-12-11T16:39:19Z",
@@ -1856,6 +1858,205 @@
               "updatedAt": "2025-01-22T13:28:40Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86saXpp",
+          "commit": {
+            "abbreviatedOid": "8cafc17"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-06-03T14:10:39Z",
+          "updatedAt": "2025-06-03T14:10:39Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "```suggestion\r\n  I-D.ietf-cose-merkle-tree-proofs: cose-receipts\r\n```",
+              "createdAt": "2025-06-03T14:10:39Z",
+              "updatedAt": "2025-06-03T14:10:40Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86saYRo",
+          "commit": {
+            "abbreviatedOid": "8cafc17"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-06-03T14:11:04Z",
+          "updatedAt": "2025-06-03T14:11:04Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "this is how I-Ds are referenced in the yaml header part",
+              "createdAt": "2025-06-03T14:11:04Z",
+              "updatedAt": "2025-06-03T14:11:04Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86sabU7",
+          "commit": {
+            "abbreviatedOid": "1cc306f"
+          },
+          "author": "achamayou",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-06-03T14:12:48Z",
+          "updatedAt": "2025-06-03T14:12:48Z",
+          "comments": [
+            {
+              "originalPosition": 37,
+              "body": "```suggestion\r\n  hash: bstr .size 32\r\n```",
+              "createdAt": "2025-06-03T14:12:48Z",
+              "updatedAt": "2025-06-03T14:12:49Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86sabef",
+          "commit": {
+            "abbreviatedOid": "1cc306f"
+          },
+          "author": "JAG-UK",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-06-03T14:12:54Z",
+          "updatedAt": "2025-06-03T14:12:54Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOJs2zh86sacwn",
+          "commit": {
+            "abbreviatedOid": "1cc306f"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-06-03T14:13:37Z",
+          "updatedAt": "2025-06-03T14:13:38Z",
+          "comments": [
+            {
+              "originalPosition": 75,
+              "body": "```suggestion\r\nThe security considerations of {{-cose-receipts}} apply.\r\n```",
+              "createdAt": "2025-06-03T14:13:38Z",
+              "updatedAt": "2025-06-03T14:14:14Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86sadT2",
+          "commit": {
+            "abbreviatedOid": "1cc306f"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-06-03T14:13:57Z",
+          "updatedAt": "2025-06-03T14:13:57Z",
+          "comments": [
+            {
+              "originalPosition": 77,
+              "body": "```suggestion\r\n```",
+              "createdAt": "2025-06-03T14:13:57Z",
+              "updatedAt": "2025-06-03T14:13:57Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86samm8",
+          "commit": {
+            "abbreviatedOid": "b704617"
+          },
+          "author": "achamayou",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-06-03T14:19:21Z",
+          "updatedAt": "2025-06-03T14:19:22Z",
+          "comments": [
+            {
+              "originalPosition": 59,
+              "body": "```suggestion\r\n  assert(label in inclusion_receipt.unprotected_header)\r\n  let proof = inclusion_receipt.unprotected_header[label]\r\n```",
+              "createdAt": "2025-06-03T14:19:21Z",
+              "updatedAt": "2025-06-03T14:19:22Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86sanca",
+          "commit": {
+            "abbreviatedOid": "b704617"
+          },
+          "author": "aj-stein",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-06-03T14:19:51Z",
+          "updatedAt": "2025-06-03T14:20:06Z",
+          "comments": [
+            {
+              "originalPosition": 59,
+              "body": "Minor, non-blocking: I read the surrounding text and I am not sure what the consequence of pseudocode `or fail`. We discussed maybe it is also worthy of an `assert`? I just wanted to know if `or fail` is like an assert and there should be a hard failure or not.\r\n\r\n",
+              "createdAt": "2025-06-03T14:19:51Z",
+              "updatedAt": "2025-06-03T14:20:06Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86sapaG",
+          "commit": {
+            "abbreviatedOid": "b704617"
+          },
+          "author": "aj-stein",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-06-03T14:21:10Z",
+          "updatedAt": "2025-06-03T14:21:10Z",
+          "comments": [
+            {
+              "originalPosition": 59,
+              "body": "I find this proposed change acceptable, but I approved ahead of it with my question/suggestion to clean it up, @achamayou.",
+              "createdAt": "2025-06-03T14:21:10Z",
+              "updatedAt": "2025-06-03T14:21:10Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJs2zh86sbDqX",
+          "commit": {
+            "abbreviatedOid": "c6667d5"
+          },
+          "author": "JAG-UK",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-06-03T14:38:53Z",
+          "updatedAt": "2025-06-03T14:41:44Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOJs2zh86sbD7n",
+          "commit": {
+            "abbreviatedOid": "c6667d5"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-06-03T14:39:08Z",
+          "updatedAt": "2025-06-03T14:41:44Z",
+          "comments": []
         }
       ]
     }
