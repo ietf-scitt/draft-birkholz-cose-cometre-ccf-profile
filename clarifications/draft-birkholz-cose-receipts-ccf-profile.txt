@@ -201,7 +201,7 @@ Table of Contents
    [CCF-Ledger-Format], and internal-evidence is a revealable
    [CCF-Commit-Evidence] value that allows early persistence of ledger
    entries before distributed consensus can be established.  This
-   mechanism is useful to implement high throughput transparency
+   mechanism is useful to implement high-throughput transparency
    applications in Trusted Execution Environments that only provide a
    limited amount of memory, while maintaining high availability
    afforded by distributed consensus.
