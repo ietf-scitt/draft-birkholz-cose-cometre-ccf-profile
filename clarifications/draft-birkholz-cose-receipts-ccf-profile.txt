@@ -206,8 +206,8 @@ Table of Contents
    limited amount of memory, while maintaining high availability
    afforded by distributed consensus.
 
-   data-hash summarises the application data which is included in the
-   ledger at this transaction, which is a Signed Statement as defined by
+   data-hash summarises the application data included in the ledger at
+   this transaction, which is a Signed Statement as defined by
    [I-D.ietf-scitt-architecture].
 
 3.  CCF Inclusion Proofs
