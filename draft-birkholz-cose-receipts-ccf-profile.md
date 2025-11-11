@@ -46,8 +46,9 @@ author:
   country: UK
 
 normative:
-  RFC9162: certificate-transparency-v2
+  RFC9162:
   I-D.ietf-cose-merkle-tree-proofs: cose-receipts
+  I-D.ietf-scitt-architecture: scitt-architecture
 
   CCF:
     title: "Confidential Consortium Framework"
@@ -75,11 +76,11 @@ This document defines a new verifiable data structure type for COSE Signed Merkl
 
 The COSE Receipts document {{-cose-receipts}} defines a common framework for defining different types of proofs, such as proof of inclusion, about verifiable data structures (VDS). For instance, inclusion proofs guarantee to a verifier that a given serializable element is recorded at a given state of the VDS, while consistency proofs are used to establish that an inclusion proof is still consistent with the new state of the VDS at a later time.
 
-In this document, we define a new type of VDS, associated with the Confidential Consortium Framework (CCF) ledger. This VDS carries indexed transaction information in a binary Merkle Tree, where new transactions are appended to the right, so that the binary decomposition of the index of a transaction can be interpreted as the position in the tree if 0 represents the left branch and 1 the right branch.
-Compared to {{-certificate-transparency-v2}}, the leaves of CCF trees carry additional internal information for the following purposes:
+In this document, we define a new type of VDS, associated with an application of the Confidential Consortium Framework (CCF) ledger that implements the SCITT Architecture defined in {{-scitt-architecture}}. This VDS carries indexed transaction information in a binary Merkle Tree, where new transactions are appended to the right, so that the binary decomposition of the index of a transaction can be interpreted as the position in the tree if 0 represents the left branch and 1 the right branch.
+Compared to {{RFC9162}}, the leaves of CCF trees carry additional internal information for the following purposes:
 
 1. To bind the full details of the transaction executed, which is a super-set of what is exposed in the proof and captures internal information details useful for detailed system audit, but not for application purposes.
-1. To verify that elements are only written by the Trusted Execution Environment, which addresses the persistence of committed transactions that happen between new signatures of the Merkle Tree root.
+1. To allow the distributed system executing the application logic in Trusted Excecution Environments to persist signatures to storage early, but only enable receipt production once they are fully committed by the consensus protocol.
 
 ## Requirements Notation
 
@@ -94,13 +95,13 @@ This documents extends the verifiable data structure registry of {{-cose-receipt
 |CCF_LEDGER_SHA256 | TBD_1 (requested assignment 2) | Historical transaction ledgers, such as the CCF ledger | RFCthis
 {: #verifiable-data-structure-values align="left" title="Verifiable Data Structure Algorithms"}
 
-This document defines inclusion proofs for CCF ledgers. Corresponding CCF Verifiers MUST reject proof types they do not support.
+This document defines inclusion proofs for CCF ledgers.
 
 ## Merkle Tree Shape
 
 A CCF ledger is a binary Merkle Tree constructed from a hash function H, which is defined from the log type. For instance, the hash function for `CCF_LEDGER_SHA256` is `SHA256`, whose `HASH_SIZE` is 32 bytes.
 
-The Merkle tree encodes an ordered list of `n` transactions T_n = \{T\[0\], T\[1\], ..., T\[n-1\]\}. We define the Merkle Tree Hash (MTH) function, which takes as input a list of serialized transactions (as byte strings), and outputs a single HASH_SIZE byte string called the Merkle root hash, by induction on the list:
+The Merkle tree encodes an ordered list of `n` transactions T_n = \{T\[0\], T\[1\], ..., T\[n-1\]\}. We define the Merkle Tree Hash (MTH) function, which takes as input a list of serialized transactions (as byte strings), and outputs a single HASH_SIZE byte string called the Merkle root hash, by induction on the list.
 
 This function is defined as follows:
 
@@ -147,9 +148,9 @@ ccf-leaf = [
 
 The `internal-transaction-hash` and `internal-evidence` byte strings are internal to the CCF implementation. They can be safely ignored by receipt Verifiers, but they commit the TS to the whole tree contents and may be used for additional, CCF-specific auditing.
 
-`internal-transaction-hash` is a hash over the complete entry in the {{CCF-Ledger-Format}}, and `internal-evidence` is a revealable {{CCF-Commit-Evidence}} value that allows early persistence of ledger entries before distributed consensus can be established.
+`internal-transaction-hash` is a hash over the complete entry in the {{CCF-Ledger-Format}}, and `internal-evidence` is a revealable {{CCF-Commit-Evidence}} value that allows early persistence of ledger entries before distributed consensus can be established. This mechanism is useful to implement high throughput transparency applications in Trusted Execution Environments that only provide a limited amount of memory, while maintaining high availability afforded by distributed consensus.
 
-`data-hash` summarises the subject of the proof: the data which is included in the ledger at this transaction.
+`data-hash` summarises the application data which is included in the ledger at this transaction, which is a Signed Statement as defined by {{-scitt-architecture}}.
 
 # CCF Inclusion Proofs
 
