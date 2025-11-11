@@ -148,7 +148,7 @@ ccf-leaf = [
 
 The `internal-transaction-hash` and `internal-evidence` byte strings are internal to the CCF implementation. They can be safely ignored by receipt Verifiers, but they commit the TS to the whole tree contents and may be used for additional, CCF-specific auditing.
 
-`internal-transaction-hash` is a hash over the complete entry in the {{CCF-Ledger-Format}}, and `internal-evidence` is a revealable {{CCF-Commit-Evidence}} value that allows early persistence of ledger entries before distributed consensus can be established. This mechanism is useful to implement high throughput transparency applications in Trusted Execution Environments that only provide a limited amount of memory, while maintaining high availability afforded by distributed consensus.
+`internal-transaction-hash` is a hash over the complete entry in the {{CCF-Ledger-Format}}, and `internal-evidence` is a revealable {{CCF-Commit-Evidence}} value that allows early persistence of ledger entries before distributed consensus can be established. This mechanism is useful to implement high-throughput transparency applications in Trusted Execution Environments that only provide a limited amount of memory, while maintaining high availability afforded by distributed consensus.
 
 `data-hash` summarises the application data which is included in the ledger at this transaction, which is a Signed Statement as defined by {{-scitt-architecture}}.
 
