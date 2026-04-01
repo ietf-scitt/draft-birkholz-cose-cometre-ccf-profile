@@ -5,10 +5,10 @@
 TBD                                                          H. Birkholz
 Internet-Draft                                            Fraunhofer SIT
 Intended status: Standards Track                      A. Delignat-Lavaud
-Expires: 17 May 2026                                          C. Fournet
+Expires: 3 October 2026                                       C. Fournet
                                                              A. Chamayou
                                                       Microsoft Research
-                                                        13 November 2025
+                                                            1 April 2026
 
 
                          COSE Receipts with CCF
@@ -17,10 +17,9 @@ Expires: 17 May 2026                                          C. Fournet
 Abstract
 
    This document defines a new verifiable data structure type for COSE
-   Signed Merkle Tree Proofs specifically designed for transaction
-   ledgers produced via Trusted Execution Environments (TEEs), such as
-   the Confidential Consortium Framework ([CCF]) to provide stronger
-   tamper-evidence guarantees.
+   Receipts specifically designed for append-only logs produced by the
+   Confidential Consortium Framework (CCF) to provide stronger tamper-
+   evidence guarantees.
 
 Discussion Venues
 
@@ -45,11 +44,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 17 May 2026.
+   This Internet-Draft will expire on 3 October 2026.
 
 Copyright Notice
 
-   Copyright (c) 2025 IETF Trust and the persons identified as the
+   Copyright (c) 2026 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -411,9 +410,9 @@ Table of Contents
               Steele, O., Birkholz, H., Delignat-Lavaud, A., and C.
               Fournet, "COSE (CBOR Object Signing and Encryption)
               Receipts", Work in Progress, Internet-Draft, draft-ietf-
-              cose-merkle-tree-proofs-17, 10 September 2025,
+              cose-merkle-tree-proofs-18, 2 December 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-cose-
-              merkle-tree-proofs-17>.
+              merkle-tree-proofs-18>.
 
    [I-D.ietf-scitt-architecture]
               Birkholz, H., Delignat-Lavaud, A., Fournet, C., Deshpande,
